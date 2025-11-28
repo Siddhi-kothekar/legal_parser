@@ -1,0 +1,270 @@
+
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                         FORENSIC LAB REPORT                                   ║
+║                    FORENSIC SCIENCE LABORATORY, PUNE                          ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+REPORT REFERENCE:        FR-LAB/2025/121
+CASE REFERENCE:          FIR 121/2025
+REQUESTING AGENCY:       Shivaji Nagar Police Station, Pune
+REPORT DATE/TIME:        17 March 2025, 14:30 hours (2:30 PM)
+EVIDENCE RECEIVED DATE:  16 March 2025, 23:30 hours
+ANALYSIS COMPLETED:      17 March 2025, 12:00 hours
+
+
+LAB IDENTIFICATION:
+───────────────────
+Laboratory Name:        Forensic Science Laboratory (FSL), Pune
+Accreditation:          ISO 17025 Certified
+Examiner:              Dr. Suresh Patel, Forensic Expert
+License No:            FORSC-2018-3521
+Experience:            18 years in forensic analysis
+Reviewed By:           Dr. Rajesh Kumar, Senior Forensic Officer
+Lab Case No:           FSL-2025-007841
+
+
+EVIDENCE SUBMITTED FOR EXAMINATION:
+────────────────────────────────────
+
+Exhibit A - Handbag with Damaged Strap
+─────────────────────────────────────
+Description:           Brown leather handbag, medium size
+Status on Receipt:      Slightly damaged, strap torn
+Sealing Status:        Properly sealed in evidence bag (intact)
+Chain of Custody:      Maintained throughout
+Condition at Receipt:   Good, no additional damage in transit
+
+
+DETAILED EXAMINATION & FINDINGS:
+──────────────────────────────────
+
+HANDBAG EXAMINATION:
+────────────────────
+
+Visual Inspection:
+• Material: Genuine brown leather
+• Color: Light brown/tan
+• Estimated Size: Medium (approximately 10" x 8" x 4")
+• Condition: Generally good, appears well-maintained
+• Manufacturing: Professional grade, not counterfeit
+
+
+STRAP DAMAGE ANALYSIS:
+─────────────────────
+
+Damage Type:          Tear/rupture of leather strap
+Location:             Approximately 3 cm from attachment point (left side)
+Damage Pattern:       Linear tear, approximately 5-7 cm in length
+Tear Characteristics: Jagged edges indicate sudden forceful pulling
+Direction:            Horizontal tear (consistent with lateral pulling force)
+Stress Analysis:      Tear shows signs of sudden tensile stress
+
+Forensic Assessment:
+The strap damage is entirely consistent with a forceful snatching attempt. The 
+jagged edges and tear pattern indicate that the strap was subjected to sudden, 
+violent pulling in a lateral direction. This is typical of handbag snatching 
+attempts when the victim resists.
+
+The damage indicates that significant force was applied suddenly, rather than a 
+gradual weakening of the strap material. This supports the witness and victim 
+accounts of a sudden, violent attack.
+
+The location of the tear (near attachment point) is exactly where stress would 
+be concentrated during a snatching attempt.
+
+
+FIBER EVIDENCE ANALYSIS:
+────────────────────────
+
+Fibers Recovered:     YES - Present on torn strap area
+Fiber Type:          Black synthetic fibers
+Fiber Count:         12 distinct fibers recovered
+Fiber Length:        3-8 mm
+Fiber Color:         Black (consistent with black hoodie)
+Fiber Composition:   Polyester blend (typical hoodie material)
+
+Fiber Source Analysis:
+The black synthetic fibers are consistent with a black hoodie or similar black 
+synthetic garment. The fiber characteristics match common polyester hoodie 
+material sold commercially.
+
+The fibers likely transferred from the suspect's clothing during the physical 
+struggle and attempted snatching. This is typical trace evidence in violent 
+property crimes.
+
+
+FINGERPRINT EVIDENCE ANALYSIS:
+────────────────────────────────
+
+Fingerprint Search Status: UNSUCCESSFUL
+Condition:                 No usable fingerprints recovered
+Reason for Failure:       Evidence contamination
+Analysis:
+The handbag strap and surrounding areas were examined for fingerprint evidence 
+using standard enhancement techniques (ninhydrin, iodine fuming, cyanoacrylate).
+
+However, no identifiable fingerprints were recovered. This is likely due to:
+1. Contamination from multiple handlers (victim, witness, security guard, police)
+2. Weather exposure (outdoor incident)
+3. Leather surface material (difficult surface for fingerprint recovery)
+4. Time delay between incident and evidence collection
+
+While fingerprint evidence would have been valuable, the lack thereof does not 
+undermine the strength of other evidence (fiber, CCTV, witness testimony).
+
+
+TRACE EVIDENCE SUMMARY:
+───────────────────────
+
+Evidence Item           | Recovered | Findings
+────────────────────────┼───────────┼──────────────────────
+Black Synthetic Fibers  | YES (12)  | Consistent with black hoodie
+DNA Evidence            | NEGATIVE  | No usable DNA recovered
+Biological Evidence     | NONE      | No blood or other biological evidence
+Soil/Debris             | NONE      | Clean leather surface
+Chemical Residue        | NONE      | None detected
+
+
+COMPARATIVE EVIDENCE:
+──────────────────────
+
+Suspect Description (from CCTV/Witness):
+• Black hoodie
+• Synthetic material
+• Athletic build
+
+Recovered Fiber Evidence:
+• Black synthetic material
+• Polyester blend
+• Consistent with hoodie material
+
+Comparison Result:      CONSISTENT ✓
+Probability:           High degree of consistency with suspect's clothing
+
+
+FORENSIC CONCLUSIONS:
+──────────────────────
+
+1. PRIMARY FINDING:
+   The handbag strap damage is consistent with a forceful snatching attempt. 
+   The tear pattern, location, and physical characteristics all support this 
+   conclusion.
+
+2. FIBER EVIDENCE:
+   The black synthetic fibers recovered from the handbag are consistent with 
+   transfer from a black hoodie worn by the suspect during the violent 
+   altercation.
+
+3. INCIDENT RECONSTRUCTION:
+   The forensic evidence supports the following sequence of events:
+   • Suspect approached victim at rear exit
+   • Suspect grabbed handbag with force
+   • Suspect and victim engaged in struggle over handbag
+   • During struggle, fibers from suspect's hoodie transferred to handbag strap
+   • Forceful pulling caused the strap to tear
+   • Victim retained possession of handbag despite tear
+   • Suspect fled the scene
+
+4. EVIDENCE STRENGTH:
+   Combined Physical Evidence:  STRONG
+   • Fiber evidence (positive)
+   • Damage pattern analysis (positive)
+   • CCTV footage (positive identification available)
+   • Witness testimony (detailed account)
+   • Victim testimony (direct account)
+
+5. VICTIM ACCOUNT VERIFICATION:
+   All forensic evidence is consistent with the victim's account of events.
+   No contradictions or inconsistencies identified.
+
+
+EVIDENCE CHAIN OF CUSTODY:
+──────────────────────────
+
+Collected By:          Sub-Inspector Rajesh Kumar (Shivaji Nagar PS)
+Collection Date/Time:  16 March 2025, 21:45 hours
+Collection Location:   Sai Apartment Rear Exit, FC Road, Pune
+Sealed By:             Sub-Inspector Rajesh Kumar
+Seal Integrity:        INTACT upon receipt at laboratory
+Received at Lab:       17 March 2025, 08:00 hours
+Received By:           Dr. Suresh Patel, Forensic Expert
+Laboratory ID:         FSL-2025-007841
+Analysis Completed:    17 March 2025, 12:00 hours
+Storage Status:        Secure evidence locker (Room 304)
+Integrity Check:       PASSED - No evidence of tampering
+
+
+RECOMMENDATIONS FOR INVESTIGATION:
+───────────────────────────────────
+
+1. SUSPECT APPREHENSION:
+   • Use CCTV footage for identification and public appeal
+   • The visible scar on left cheek is a strong identifier
+   • Circulate suspect's description to local hospitals (assault injuries possible)
+   • Check pawn shops for handbag contents (wallet, mobile phone)
+
+2. EVIDENCE ADMISSIBILITY:
+   • Fiber evidence is admissible in court
+   • CCTV footage is admissible as video evidence
+   • Witness testimony will corroborate physical evidence
+   • Medical report documents victim's injuries
+
+3. INVESTIGATION DIRECTION:
+   • Link to possible similar crimes (check crime database for similar MO)
+   • Investigate if suspect is local criminal
+   • Review past incidents at Sai Apartment complex
+   • Check if suspect has prior arrests for theft/robbery
+
+4. FOLLOW-UP ANALYSIS:
+   • If suspect is apprehended and hoodie recovered, compare fibers
+   • If suspect is apprehended, photograph scar for comparison with CCTV
+   • Request additional CCTV footage from surrounding areas for escape tracking
+
+
+EXPERT OPINION:
+────────────────
+
+Based on my examination of the submitted evidence and comparative analysis with the 
+CCTV footage and witness statements, I am of the professional opinion that:
+
+1. The handbag strap damage is entirely consistent with a forceful snatching attempt 
+   as described by the victim and witnessed by other parties.
+
+2. The black synthetic fibers recovered provide trace evidence linking the suspect's 
+   clothing (black hoodie) to the crime scene.
+
+3. The combined physical evidence (strap damage pattern + fiber analysis) supports 
+   the accounts provided by the victim and witness.
+
+4. There are no inconsistencies between the forensic findings and the reported 
+   incident narrative.
+
+5. The evidence is strong enough to support prosecution once the suspect is apprehended 
+   and his clothing is examined.
+
+
+LAB CERTIFICATION:
+───────────────────
+
+This report certifies that the above examination and analysis have been conducted 
+in accordance with internationally recognized forensic standards and protocols.
+
+
+Examined and Reported By:
+___________________________
+Dr. Suresh Patel
+Forensic Expert, FSL Pune
+License No: FORSC-2018-3521
+Date: 17 March 2025
+Time: 14:30 hours
+
+Reviewed and Certified By:
+___________________________
+Dr. Rajesh Kumar
+Senior Forensic Officer, FSL Pune
+License No: FORSC-2016-2847
+Date: 17 March 2025
+Time: 15:00 hours
+
+Laboratory Stamp and Official Seal:
+[LABORATORY OFFICIAL STAMP AND SEAL]

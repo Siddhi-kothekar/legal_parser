@@ -1,0 +1,216 @@
+
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║              HOSPITAL MEDICAL INJURY REPORT (MEDICO LEGAL CASE)               ║
+║                         CITYCARE HOSPITAL, PUNE                               ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+CASE REFERENCE:          CR-5578/2025
+HOSPITAL NAME:           CityCare Hospital, Pune
+DEPARTMENT:              Emergency & Orthopedics
+ADMISSION DATE/TIME:     16 March 2025, 21:50 hours (9:50 PM)
+REPORT DATE/TIME:        16 March 2025, 22:30 hours (10:30 PM)
+
+
+PATIENT DETAILS:
+────────────────
+Name:                    Neha Deshmukh
+Age/Gender:              30 years / Female
+Blood Group:             AB+
+Father's Name:           Rajesh Deshmukh
+Address:                 Flat 102, Sai Apartment, FC Road, Pune - 411004
+Phone:                   9765432109
+Occupation:              Marketing Manager
+Insurance Status:        Corporate Health Insurance Policy
+
+
+CASE CLASSIFICATION:
+──────────────────
+Case Type:              Medico-Legal Case (Assault/Attempted Theft)
+Category:               Simple Hurt
+FIR Number:             121/2025
+Police Station:         Shivaji Nagar PS
+Case Status:            Reported to Police
+
+
+EMERGENCY EXAMINATION:
+──────────────────────
+Time of Arrival:        21:50 hours
+Triage Level:           3 (Moderate)
+Vital Signs at Admission:
+  • Blood Pressure:     130/85 mmHg (slightly elevated due to stress)
+  • Heart Rate:         95 beats per minute (elevated)
+  • Respiratory Rate:   19 breaths per minute (slightly elevated)
+  • Temperature:        37.0°C (Normal)
+  • SpO2 (Oxygen):      98% on room air
+
+General Condition:       Conscious and alert, shaken and anxious
+Cooperative:             Yes, frightened but cooperative
+
+
+PRIMARY COMPLAINTS:
+──────────────────
+Patient complained of pain in right shoulder and right elbow following a forceful push 
+during an attempted handbag snatching incident. Patient states she fell to the ground 
+after being pushed by an unknown male.
+
+
+DETAILED CLINICAL EXAMINATION:
+──────────────────────────────
+
+HEAD & NECK:
+• No visible head injury or lacerations
+• Eyes: Normal bilaterally, pupils equal and reacting to light
+• Ears: Normal
+• Neurological exam: Normal, alert and oriented
+• Neck: Normal range of motion, no tenderness
+
+UPPER LIMBS:
+
+RIGHT SHOULDER (Primary Injury):
+• Visible bruising: Moderate bruise approximately 6x8 cm
+• Location: Anterolateral aspect of right shoulder
+• Color: Blue-purple discoloration (indicating recent impact)
+• Tenderness: Significant, patient winces on palpation
+• Swelling: Mild to moderate swelling in shoulder joint
+• Range of Motion: Limited (approximately 50% normal range)
+• Pain with Movement: Yes, especially with forward flexion and abduction
+• Clinical Diagnosis: Shoulder sprain (Grade I-II), soft tissue injury
+• No neurovascular compromise detected
+
+X-ray Findings (Right Shoulder):
+  • No fracture detected
+  • No dislocation
+  • Shoulder joint properly aligned
+  • Soft tissue swelling noted
+  • Impression: Soft tissue strain, no bony involvement
+
+RIGHT ELBOW (Secondary Injury):
+• Bruising: Mild bruise approximately 3x4 cm on posterior aspect
+• Color: Slight purple-blue discoloration
+• Tenderness: Mild, localized to impact area
+• Swelling: Minimal swelling
+• Range of Motion: Normal (full active and passive range)
+• No fracture or dislocation visible
+• Clinical Diagnosis: Minor contusion (bruising only)
+
+LEFT SIDE:
+• No visible injuries
+• Normal range of motion
+• No tenderness
+
+CHEST:
+• Symmetrical, no tenderness
+• Clear lung sounds bilaterally
+• Heart: Regular rhythm
+• No rib fractures or injuries
+
+ABDOMEN:
+• Soft, non-tender
+• No evidence of internal injury
+• Normal bowel sounds
+
+LOWER LIMBS:
+• No visible injuries
+• Normal range of motion
+
+PSYCHOLOGICAL ASSESSMENT:
+• Patient experiencing acute stress reaction
+• Trembling observed initially, gradually subsiding
+• Anxiety and fear evident
+• Expressing concern about future safety
+• No signs of severe psychological trauma yet
+
+
+INJURY CLASSIFICATION:
+─────────────────────
+Nature of Injuries:       Soft tissue injury from forceful push/fall
+Type:                     Shoulder sprain (Grade I-II) + Elbow contusion
+Severity:                 Simple Hurt (per IPC definition)
+Causation:               Consistent with violent push causing fall
+Pattern Analysis:        Pattern consistent with assault account
+
+
+RADIOLOGICAL FINDINGS:
+──────────────────────
+X-ray Right Shoulder:
+  • No fracture or dislocation
+  • Soft tissue swelling noted
+  • Normal shoulder joint alignment
+  • Impression: Soft tissue injury, no bony involvement
+
+Clinical Ultrasound (Optional):
+  • Recommended if pain persists beyond 3-5 days
+  • To rule out rotator cuff involvement
+  • To assess extent of soft tissue damage
+
+
+TREATMENT PROVIDED:
+────────────────────
+1. Ice application for 20 minutes (pain and swelling management)
+2. Analgesia: Paracetamol 500mg + Ibuprofen 400mg orally
+3. Anti-inflammatory: Ibuprofen 400mg, thrice daily for 5 days
+4. Muscle relaxant: Chlorzoxazone 500mg, twice daily for 3 days
+5. Supportive bandaging with elastic wrap for immobilization
+6. Local anesthetic gel applied to bruised areas
+7. Psychological support and counseling provided
+8. Sleep aid: Melatonin 3mg tablet offered
+
+
+DOCTOR'S CLINICAL OPINION:
+──────────────────────────
+The injuries observed are entirely consistent with a forceful push causing the patient 
+to fall or impact against a hard surface. The pattern of bruising on the shoulder and 
+elbow suggests direct impact from an assailant's push combined with impact from the 
+ground.
+
+The injuries are compatible with the patient's account of being pushed during a handbag 
+snatching attempt. There is no evidence of any other mechanism causing these injuries.
+
+The patient is stable and poses no immediate medical risk. Primary concern is the 
+psychological trauma from the violent assault.
+
+
+PROGNOSIS:
+──────────
+With appropriate wound care and medication compliance, complete healing is expected 
+within 5-7 days. The shoulder sprain should resolve completely with conservative 
+management.
+
+
+RECOMMENDATIONS:
+─────────────────
+1. Rest and activity restriction for 3-5 days
+2. Ice application intermittently for pain management
+3. Continue prescribed medications for pain and inflammation
+4. Avoid heavy lifting or strenuous activity for 1 week
+5. Gentle range of motion exercises after 48 hours
+6. Follow-up visit after 5 days to assess healing progress
+7. Seek medical attention if pain worsens or new symptoms develop
+8. Psychological counseling recommended for trauma processing
+9. Contact for support resources related to assault victim assistance
+10. File victim impact statement with police if desired
+
+
+DISCHARGE SUMMARY:
+────────────────────
+Patient discharged in stable condition with pain controlled.
+Clear instructions provided for medication adherence and self-care.
+Emergency contact numbers provided for 24-hour support.
+Psychological support resources shared with patient.
+Discharge Time: 16 March 2025, 23:00 hours
+
+
+Examined and Report Prepared By:
+________________________________
+Dr. Priya Deshmukh
+Emergency Physician
+Registration No: MED/32156
+
+Reviewed and Certified By:
+________________________________
+Dr. Vikram Patel
+Senior Consultant, Emergency Department
+Registration No: MED/24567
+
+Hospital Stamp and Date: [HOSPITAL STAMP]
+16 March 2025

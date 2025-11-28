@@ -1,0 +1,210 @@
+
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                  CCTV SURVEILLANCE ANALYSIS REPORT                            ║
+║                    SAI APARTMENT COMPLEX, PUNE                                ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+REPORT REFERENCE:        CCTV-16-MAR-2025-002
+REPORT DATE/TIME:        16 March 2025, 22:00 hours
+CASE REFERENCE:          FIR 121/2025
+INCIDENT DATE:           16 March 2025
+
+
+SURVEILLANCE SYSTEM DETAILS:
+────────────────────────────
+System Type:             HD IP Camera Network
+Number of Cameras:       6 (covering complex)
+Primary Camera:          CAM-04 (Rear Exit)
+Resolution:              1920 x 1080 pixels (Full HD)
+Frame Rate:              30 frames per second (fps)
+Recording Format:        H.264 Video Codec
+Storage:                 Digital Video Recorder (DVR)
+Recording Period:        24/7 continuous
+
+
+CAMERA SPECIFICATIONS (CAM-04):
+───────────────────────────────
+Camera Type:             Fixed Dome IP Camera
+Model:                   Hikvision DS-2CD2143G0-I
+Field of View:           90 degrees (Horizontal)
+Focal Length:            2.8mm
+Night Vision:            Infrared (IR) - 30 meters
+Resolution:              1920 x 1080 @ 30fps
+Installation Location:   Rear exit entrance, height 2.5 meters
+
+
+VIDEO ANALYSIS TIME WINDOW:
+────────────────────────────
+Total Duration Analyzed: 30 minutes (20:50 PM - 21:20 PM)
+Critical Incident Period: 21:02 PM - 21:04 PM (2 minutes)
+Video Quality:           Clear, good lighting conditions
+Lighting Conditions:     Outdoor evening, building exterior lights on
+
+
+TIMELINE OF EVENTS (FROM CCTV ANALYSIS):
+─────────────────────────────────────────
+
+TIME: 21:02 PM (21:02 hours)
+EVENT: Unknown male approaches rear exit area
+DESCRIPTION:
+  • Male wearing black hoodie (very distinctive)
+  • Blue denim jeans
+  • Dark shoes
+  • Height approximately 5'8"-5'10"
+  • Build: Athletic/lean
+  • Walking with purpose toward rear exit
+  • Face partially obscured by hoodie hood
+  • Visible scar on left cheek (clearly visible in footage)
+  • Appears to be waiting or watching before approaching
+
+TIME: 21:03 PM (21:03 hours)
+EVENT: Neha Deshmukh enters frame at rear exit
+DESCRIPTION:
+  • Female walking toward apartment building from street
+  • Carrying brown leather handbag
+  • Casual walking pace
+  • Appears unaware of male's presence
+  • Walking alone
+
+TIME: 21:03:15 PM *** CRITICAL MOMENT ***
+EVENT: Accused suddenly approaches victim and attempts handbag snatch
+DESCRIPTION:
+  • Male suddenly closes distance to victim
+  • Aggressive movement toward handbag
+  • Reaches for victim's handbag with both hands
+  • Victim resists immediately, tries to retain handbag
+  • Struggle ensues (approximately 10-15 seconds)
+
+TIME: 21:03:30 PM
+EVENT: Accused pushes victim forcefully
+DESCRIPTION:
+  • Male applies forceful push to victim's upper body
+  • Push directed toward right shoulder/chest area
+  • Victim falls backward to ground
+  • Victim lands hard on right side (shoulder and elbow impact)
+  • Accused attempts to grab handbag during fall
+
+TIME: 21:03:45 PM
+EVENT: Victim retains handbag despite fall
+DESCRIPTION:
+  • Despite fall, victim maintains grip on handbag
+  • Victim on ground, holding handbag to body
+  • Handbag strap appears damaged/torn
+  • Accused realizes theft unsuccessful
+
+TIME: 21:04 PM
+EVENT: Accused flees scene
+DESCRIPTION:
+  • Accused abandons snatching attempt
+  • Runs away from scene at high speed
+  • Direction: Toward main road (FC Road)
+  • Speed: Approximately 15-20 km/h
+  • Does not look back
+  • Quickly exits camera frame
+
+TIME: 21:05 PM
+EVENT: Witness assistance and first responders
+DESCRIPTION:
+  • Witness (Rahul Patil) enters frame from building
+  • Rushes to assist fallen victim
+  • Security guard appears on scene
+  • Emergency services likely contacted
+
+
+KEY FORENSIC OBSERVATIONS:
+───────────────────────────
+1. SUSPECT IDENTIFICATION:
+   • Clear facial view in multiple frames
+   • Distinctive black hoodie (primary identifier)
+   • Visible scar on left cheek (precise identifier)
+   • Build, height, gait all recorded
+   • Positive identification possible if suspect apprehended
+
+2. ATTACK PATTERN:
+   • Single, rapid attack (total duration ~2 minutes)
+   • Sudden approach suggests either waiting or exceptional timing
+   • No hesitation or uncertainty in criminal action
+   • Suggests prior experience or observation
+
+3. VICTIM'S RESISTANCE:
+   • Victim immediately resisted (positive action)
+   • Did not comply with thief's demands
+   • Successfully retained handbag despite fall
+   • Victim's presence of mind prevented successful theft
+
+4. SUSPECT KNOWLEDGE:
+   • Knew exact location of rear exit
+   • Took most direct escape route
+   • Suggests possible prior surveillance or familiarity
+
+5. EVIDENCE LOCATION:
+   • Handbag remains at scene
+   • Strap damage visible in footage
+   • No physical evidence left by suspect
+   • Scene preserved for forensic collection
+
+
+VIDEO INTEGRITY:
+─────────────────
+All footage verified as authentic and unedited
+Recording continuous with no gaps or interruptions
+Time stamps synchronized with incident reports
+No evidence of tampering detected
+Digital metadata preserved
+
+
+FORENSIC TIMELINE ACCURACY:
+────────────────────────────
+CCTV Timeline:           21:02 - 21:04 PM
+Witness Account:         "Around 9 PM" (21:00 approximately)
+Victim's Account:        "Around 9 PM" (21:00 approximately)
+Medical Admission:       21:50 hours
+Police Report Time:      21:10 hours
+
+All sources consistent within reasonable margin (CCTV provides precise timing)
+
+
+COMPARATIVE ANALYSIS (WITH FIR 118/2025 - ASSAULT CASE):
+──────────────────────────────────────────────────────────
+Location:                Same (Sai Apartment, FC Road)
+Time Gap:                48 hours (14 March vs 16 March)
+Suspect Description:     Different person (assault was older, ~28 years)
+Crime Type:              Different (assault with knife vs handbag snatch)
+Weapon:                  No weapon in this case (physical force only)
+Witness Involvement:     Same security guard (Ramesh Singh)
+Pattern:                 Possible pattern of targeting apartment complex
+
+Conclusion: Likely INDEPENDENT incidents, but targeting same location suggests 
+            possible security vulnerability in complex
+
+
+CRITICAL EVIDENCE EXTRACTED:
+────────────────────────────
+1. Frame 21:03:00 - Suspect approaching victim
+2. Frame 21:03:15 - Snatching attempt beginning
+3. Frame 21:03:30 - Forceful push of victim
+4. Frame 21:03:45 - Victim falls with injury
+5. Frame 21:04:00 - Suspect fleeing scene
+6. Multiple frames clearly showing suspect's face and scar
+
+
+VIDEO REPORT CERTIFICATION:
+────────────────────────────
+This report certifies that the above analysis is based on authentic, unedited, 
+and verified CCTV footage from Sai Apartment Complex, Camera CAM-04.
+
+
+Analyzed and Certified By:
+_____________________________
+Mr. Suresh Desai
+CCTV Surveillance Expert
+License No: CCTV-2019-4521
+NASSCOM Certified Professional
+
+Reviewed By:
+_____________________________
+Inspector Amit Desai
+Shivaji Nagar Police Station
+Badge No: 4521
+
+Date: 16 March 2025, 22:00 hours

@@ -33,7 +33,22 @@ class ClassificationService:
 
         if settings.enable_real_ai:
             if extension in {".jpg", ".jpeg", ".png", ".bmp", ".tiff"}:
-                return self._classify_image_ai(artifact_path)
+                # Respect enable_image_classification toggle
+                if getattr(settings, 'enable_image_classification', True):
+                    return self._classify_image_ai(artifact_path)
+                else:
+                    # Fallback: use OCR text if available for classification
+                    ocr_text = ""
+                    try:
+                        from app.services.extraction import ExtractionService
+                        ocr_text = ExtractionService()._extract_image_metadata(artifact_path).get("ocr_text", "")
+                    except Exception:
+                        ocr_text = ""
+                    # Reuse document classifier path if OCR provides text
+                    if ocr_text and len(ocr_text.strip()) > 5:
+                        return self._classify_document_ai(ocr_text, artifact_path)
+                    # Heuristic fallback
+                    return self._classify_heuristic(artifact_path)
             else:
                 # For documents, we need text first
                 if not extracted_text:
@@ -46,6 +61,9 @@ class ClassificationService:
     def _classify_image_ai(self, artifact_path: Path) -> Dict[str, Any]:
         """Classify image using CLIP model."""
         try:
+            # If CLIP not configured or disabled, fallback
+            if not getattr(settings, 'enable_image_classification', True):
+                return {"label": "environment", "confidence": 0.5, "method": "heuristic"}
             result = model_manager.classify_image_clip(artifact_path)
             return {
                 "label": result["label"],

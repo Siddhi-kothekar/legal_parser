@@ -72,10 +72,11 @@ class EvidencePipeline:
             # Step 7/8: inconsistency detection and missing evidence suggestion
             inconsistencies = self.reasoning.detect_inconsistencies(events, normalized_data)
             missing = self.reasoning.suggest_missing_evidence(events, normalized_data)
+            warnings = self.reasoning.get_warnings()
             print(f"[Pipeline] Found {len(inconsistencies)} inconsistencies, {len(missing)} missing evidence suggestions")
 
             # Step 9: reporting
-            self.reporting.persist_summary(case_id, events, inconsistencies, missing, normalized_data)
+            self.reporting.persist_summary(case_id, events, inconsistencies, missing, normalized_data, warnings)
             print(f"[Pipeline] ✅ Report saved successfully for case {case_id}")
             
         except Exception as e:
@@ -83,4 +84,53 @@ class EvidencePipeline:
             import traceback
             traceback.print_exc()
             raise
+
+    def execute_case(self, case_id: str, case_dir: Path) -> int:
+        """
+        Process all artifact files within a case directory's raw_files and return
+        the number of processed artifacts.
+        """
+        processed = 0
+        normalized_data = []
+        for artifact in case_dir.iterdir():
+            if not artifact.is_file():
+                continue
+            try:
+                print(f"[Pipeline] Processing artifact: {artifact}")
+                # Step 2: low-level file identification
+                ingest_meta = self.ingestion.validate(artifact)
+
+                # Step 3: semantic evidence classification
+                classification = self.classification.classify(artifact)
+
+                # Step 4: content extraction
+                extraction = self.extraction.extract(artifact)
+
+                # Re-classify with extracted text if document
+                if extraction.get("type") == "document" and "raw_text" in extraction:
+                    classification = self.classification.classify(
+                        artifact_path=artifact, extracted_text=extraction.get("raw_text", "")
+                    )
+
+                normalized = self.normalization.normalize(extraction)
+                normalized["filename"] = artifact.name
+                normalized["classification"] = classification
+                normalized["ingestion"] = ingest_meta
+                normalized_data.append(normalized)
+                processed += 1
+            except Exception as e:
+                print(f"[Pipeline] Error processing artifact {artifact}: {e}")
+
+        # After processing all artifacts, produce a single report for the case
+        try:
+            events = self.timeline.build(case_id, normalized_data)
+            inconsistencies = self.reasoning.detect_inconsistencies(events, normalized_data)
+            missing = self.reasoning.suggest_missing_evidence(events, normalized_data)
+            warnings = self.reasoning.get_warnings()
+            self.reporting.persist_summary(case_id, events, inconsistencies, missing, normalized_data, warnings)
+            print(f"[Pipeline] ✅ Case-level report generated for {case_id} with {processed} artifacts")
+        except Exception as e:
+            print(f"[Pipeline] Error generating case-level report for {case_id}: {e}")
+
+        return processed
 

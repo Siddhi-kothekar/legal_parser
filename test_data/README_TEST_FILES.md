@@ -150,3 +150,23 @@ This will create PDF versions of all text files.
 ✅ **Missing Evidence:** Suggestions for additional evidence  
 ✅ **Classification:** Documents correctly classified (witness statement, medical report, FIR, police memo)
 
+### Sample Case Folder (Folder Upload)
+Use the helper script to produce a sample case with documents and placeholder images and metadata.
+
+```bash
+cd test_data
+python generate_sample_case.py
+```
+
+This will create `test_data/sample_case_CR_2024_001234/raw_files/` containing:
+- `FIR.pdf` — converted from `sample_fir.txt`
+- `witness_statement.pdf` — converted from `sample_witness_statement.txt`
+- `medical_report.pdf` — converted from `sample_medical_report.txt`
+- `police_memo.pdf` — converted from `sample_police_memo.txt`
+- `person_photo.jpg` — a placeholder person photo
+- `scene_photo.jpg` — a placeholder scene photo
+- `case_metadata.json` — simple metadata file for the case
+
+Then upload the zip or the files (multipart) using the `upload_folder` endpoint, or upload individually with `/evidence/upload` and process the case as a whole via `/evidence/process_case`.
+
+

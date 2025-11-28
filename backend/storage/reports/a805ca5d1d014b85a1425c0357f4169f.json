@@ -483,5 +483,71 @@
         }
       ]
     }
+  ],
+  "relationships": [
+    {
+      "source": "a805ca5d1d014b85a1425c0357f4169f",
+      "target": "117347727ad546efb234773dc3a4264d",
+      "reasons": [
+        "⚡ Matching event types: location_entry, location_exit, observation"
+      ],
+      "weight": 1,
+      "similarity": 0.0,
+      "shared_entities": {
+        "events": [
+          "location_entry",
+          "location_exit",
+          "observation"
+        ]
+      }
+    },
+    {
+      "source": "a805ca5d1d014b85a1425c0357f4169f",
+      "target": "43efee19bae440f782902f33559bdd90",
+      "reasons": [
+        "⚡ Matching event types: location_exit, observation, violence"
+      ],
+      "weight": 1,
+      "similarity": 0.0,
+      "shared_entities": {
+        "events": [
+          "location_exit",
+          "observation",
+          "violence"
+        ]
+      }
+    },
+    {
+      "source": "a805ca5d1d014b85a1425c0357f4169f",
+      "target": "a5451944f62844469bf185052abb6215",
+      "reasons": [
+        "⚡ Matching event types: location_exit, observation, violence"
+      ],
+      "weight": 1,
+      "similarity": 0.0,
+      "shared_entities": {
+        "events": [
+          "location_exit",
+          "observation",
+          "violence"
+        ]
+      }
+    },
+    {
+      "source": "a805ca5d1d014b85a1425c0357f4169f",
+      "target": "dcbb258ce4f44b53992f268bbc077d61",
+      "reasons": [
+        "⚡ Matching event types: location_entry, location_exit, observation"
+      ],
+      "weight": 1,
+      "similarity": 0.0,
+      "shared_entities": {
+        "events": [
+          "location_entry",
+          "location_exit",
+          "observation"
+        ]
+      }
+    }
   ]
 }

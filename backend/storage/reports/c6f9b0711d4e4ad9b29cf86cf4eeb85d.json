@@ -1,0 +1,553 @@
+{
+  "case_id": "c6f9b0711d4e4ad9b29cf86cf4eeb85d",
+  "generated_at": "2025-11-28T07:15:02.507599",
+  "timeline_events": [
+    {
+      "timestamp": "2025-11-28T10:00:00",
+      "source": "Police",
+      "description": "POLICE INVESTIGATION MEMO Case Number: CR-2024-001234 Date: November 16, 2024 Time: 10:00 AM Inves(cid:415)ga(cid:415)ng Officer: Inspector Mohan Das Badge Number: PS-4567 Inves(cid:415)ga(cid:415)on "
+    },
+    {
+      "timestamp": "2025-11-28T20:00:00",
+      "source": "CCTV",
+      "description": "hboring shops (requested) - Medical examina(cid:415)on report - Witness statements - Crime scene photographs Recommenda(cid:415)ons: - Obtain CCTV footage from all nearby shops for (cid:415)me period "
+    },
+    {
+      "timestamp": "2025-11-28T20:00:00",
+      "source": "CCTV",
+      "description": "period 8:00 PM to 9:00 PM - Conduct forensic examina(cid:415)on of crime scene - Interview addi(cid:415)onal witnesses from neighboring establishments - Verify suspect's alibi for (cid:415)me period 8"
+    },
+    {
+      "timestamp": "2025-11-28T20:12:00",
+      "source": "CCTV",
+      "description": "Witness Statements: - Vikas Sharma: Confirmed seeing suspect in black shirt enter at 8:12 PM, heard argument around 8:15 PM, saw suspect exit at 8:30 PM in white shirt - Anil Singh (Store Employee): C"
+    },
+    {
+      "timestamp": "2025-11-28T20:12:34",
+      "source": "CCTV",
+      "description": "CCTV Footage Analysis: - CCTV Camera 01 shows suspect entering shop at 8:12:34 PM - Suspect was wearing black shirt at (cid:415)me of entry - Alterca(cid:415)on visible in CCTV footage at 8:25:15 PM -"
+    },
+    {
+      "timestamp": "2025-11-28T20:15:00",
+      "source": "CCTV",
+      "description": "t at (cid:415)me of entry - Alterca(cid:415)on visible in CCTV footage at 8:25:15 PM - Suspect exits shop at 8:30:22 PM wearing white shirt - Time discrepancy noted: Witness statement men(cid:415)ons "
+    },
+    {
+      "timestamp": "2025-11-28T20:15:00",
+      "source": "CCTV",
+      "description": ": Witness statement men(cid:415)ons 8:15 PM for argument, but CCTV shows 8:25 PM 2"
+    },
+    {
+      "timestamp": "2025-11-28T20:15:00",
+      "source": "CCTV",
+      "description": "Inconsistencies Iden(cid:415)fied: - Time discrepancy: Witness says argument at 8:15 PM, CCTV shows 8:25 PM - Clothing change: Suspect entered in black shirt, exited in white shirt (unexplained) - Inj"
+    },
+    {
+      "timestamp": "2025-11-28T20:25:00",
+      "source": "CCTV",
+      "description": "id:415)on visible in CCTV footage at 8:25:15 PM - Suspect exits shop at 8:30:22 PM wearing white shirt - Time discrepancy noted: Witness statement men(cid:415)ons 8:15 PM for argument, but CCTV shows "
+    },
+    {
+      "timestamp": "2025-11-28T20:25:00",
+      "source": "CCTV",
+      "description": "Inconsistencies Iden(cid:415)fied: - Time discrepancy: Witness says argument at 8:15 PM, CCTV shows 8:25 PM - Clothing change: Suspect entered in black shirt, exited in white shirt (unexplained) - Inj"
+    },
+    {
+      "timestamp": "2025-11-28T20:25:15",
+      "source": "CCTV",
+      "description": "CCTV Footage Analysis: - CCTV Camera 01 shows suspect entering shop at 8:12:34 PM - Suspect was wearing black shirt at (cid:415)me of entry - Alterca(cid:415)on visible in CCTV footage at 8:25:15 PM -"
+    },
+    {
+      "timestamp": "2025-11-28T20:30:00",
+      "source": "CCTV",
+      "description": "Witness Statements: - Vikas Sharma: Confirmed seeing suspect in black shirt enter at 8:12 PM, heard argument around 8:15 PM, saw suspect exit at 8:30 PM in white shirt - Anil Singh (Store Employee): C"
+    },
+    {
+      "timestamp": "2025-11-28T20:30:00",
+      "source": "Witness",
+      "description": "irt enter at 8:12 PM, heard argument around 8:15 PM, saw suspect exit at 8:30 PM in white shirt - Anil Singh (Store Employee): Confirmed alterca(cid:415)on occurred, es(cid:415)mated (cid:415)me 8:20-"
+    },
+    {
+      "timestamp": "2025-11-28T20:30:00",
+      "source": "Witness",
+      "description": "Medical Evidence: - Vic(cid:415)m Rajesh Kumar sustained serious injuries - Medical report indicates deep lacera(cid:415)on and compound fracture - Injury (cid:415)me es(cid:415)mated between 8:30 PM "
+    },
+    {
+      "timestamp": "2025-11-28T20:30:22",
+      "source": "CCTV",
+      "description": "- CCTV Camera 01 shows suspect entering shop at 8:12:34 PM - Suspect was wearing black shirt at (cid:415)me of entry - Alterca(cid:415)on visible in CCTV footage at 8:25:15 PM - Suspect exits shop at "
+    },
+    {
+      "timestamp": "2025-11-28T21:00:00",
+      "source": "Witness",
+      "description": "cal Evidence: - Vic(cid:415)m Rajesh Kumar sustained serious injuries - Medical report indicates deep lacera(cid:415)on and compound fracture - Injury (cid:415)me es(cid:415)mated between 8:30 PM and "
+    },
+    {
+      "timestamp": "2025-11-28T21:00:00",
+      "source": "CCTV",
+      "description": "ps (requested) - Medical examina(cid:415)on report - Witness statements - Crime scene photographs Recommenda(cid:415)ons: - Obtain CCTV footage from all nearby shops for (cid:415)me period 8:00 PM to "
+    },
+    {
+      "timestamp": "2025-11-28T21:00:00",
+      "source": "CCTV",
+      "description": "0 PM to 9:00 PM - Conduct forensic examina(cid:415)on of crime scene - Interview addi(cid:415)onal witnesses from neighboring establishments - Verify suspect's alibi for (cid:415)me period 8:00 PM to "
+    },
+    {
+      "timestamp": "2025-11-28T21:05:00",
+      "source": "CCTV",
+      "description": "ember 16, 2024 Time: 10:00 AM Inves(cid:415)ga(cid:415)ng Officer: Inspector Mohan Das Badge Number: PS-4567 Inves(cid:415)ga(cid:415)on Summary: Following the FIR registered on November 15, 2024, at "
+    }
+  ],
+  "inconsistencies": [
+    {
+      "type": "time_discrepancy",
+      "severity": "moderate",
+      "details": "Time discrepancy mentioned in document: 8:15 pm vs 8:25 pm",
+      "source": "document_explicit"
+    },
+    {
+      "type": "description_conflict",
+      "severity": "moderate",
+      "details": "Clothing change mentioned in document (e.g., entered in black shirt, exited in white shirt)",
+      "source": "document_explicit"
+    },
+    {
+      "type": "statement_vs_medical",
+      "severity": "critical",
+      "details": "Injury severity conflict: witness described as minor but medical report shows serious injuries",
+      "source": "document_explicit"
+    }
+  ],
+  "missing_evidence": [
+    "Collect phone records and call logs if applicable.",
+    "Obtain statements from neighbors and nearby residents.",
+    "Verify alibis and cross-check with CCTV timestamps."
+  ],
+  "extracted_content": [
+    {
+      "file_type": "document",
+      "classification": {
+        "label": "general_document",
+        "confidence": 0.5,
+        "method": "fallback"
+      },
+      "extracted_text": "POLICE INVESTIGATION MEMO\nCase Number: CR-2024-001234\nDate: November 16, 2024\nTime: 10:00 AM\nInves(cid:415)ga(cid:415)ng Officer: Inspector Mohan Das\nBadge Number: PS-4567\nInves(cid:415)ga(cid:415)on Summary:\nFollowing the FIR registered on November 15, 2024, at 9:05 PM, I conducted a thorough inves(cid:415)ga(cid:415)on\nof the incident at ABC Supermarket, MG Road.\nKey Findings:\n1. CCTV Footage Analysis:\n- CCTV Camera 01 shows suspect entering shop at 8:12:34 PM\n- Suspect was wearing black shirt at (cid:415)me of entry\n- Alterca(cid:415)on visible in CCTV footage at 8:25:15 PM\n- Suspect exits shop at 8:30:22 PM wearing white shirt\n- Time discrepancy noted: Witness statement men(cid:415)ons 8:15 PM for argument, but CCTV shows\n8:25 PM\n2. Witness Statements:\n- Vikas Sharma: Confirmed seeing suspect in black shirt enter at 8:12 PM, heard argument around\n8:15 PM, saw suspect exit at 8:30 PM in white shirt\n- Anil Singh (Store Employee): Confirmed alterca(cid:415)on occurred, es(cid:415)mated (cid:415)me 8:20-8:30 PM\n3. Medical Evidence:\n- Vic(cid:415)m Rajesh Kumar sustained serious injuries\n- Medical report indicates deep lacera(cid:415)on and compound fracture\n- Injury (cid:415)me es(cid:415)mated between 8:30 PM and 9:00 PM\n- Note: Witness described injury as \"minor cut\" but medical report shows \"deep lacera(cid:415)on and\nfracture\"\n4. Inconsistencies Iden(cid:415)fied:\n- Time discrepancy: Witness says argument at 8:15 PM, CCTV shows 8:25 PM\n- Clothing change: Suspect entered in black shirt, exited in white shirt (unexplained)\n- Injury severity: Witness described \"minor injury\" but medical report shows serious injuries\n5. Evidence Collected:\n- CCTV footage from ABC Supermarket\n- CCTV footage from neighboring shops (requested)\n- Medical examina(cid:415)on report\n- Witness statements\n- Crime scene photographs\nRecommenda(cid:415)ons:\n- Obtain CCTV footage from all nearby shops for (cid:415)me period 8:00 PM to 9:00 PM\n- Conduct forensic examina(cid:415)on of crime scene\n- Interview addi(cid:415)onal witnesses from neighboring establishments\n- Verify suspect's alibi for (cid:415)me period 8:00 PM to 9:00 PM\nNext Steps:\n- Awai(cid:415)ng forensic report\n- Pending CCTV footage from 3 neighboring shops\n- Suspect iden(cid:415)fica(cid:415)on in progress\nOfficer Signature: Inspector Mohan Das\nDate: November 16, 2024",
+      "entities": [
+        {
+          "entity": "November 16, 2024",
+          "label": "DATE",
+          "start": 60,
+          "end": 77
+        },
+        {
+          "entity": "10:00 AM",
+          "label": "TIME",
+          "start": 84,
+          "end": 92
+        },
+        {
+          "entity": "Mohan Das",
+          "label": "PERSON",
+          "start": 140,
+          "end": 149
+        },
+        {
+          "entity": "FIR",
+          "label": "ORG",
+          "start": 223,
+          "end": 226
+        },
+        {
+          "entity": "November 15, 2024",
+          "label": "DATE",
+          "start": 241,
+          "end": 258
+        },
+        {
+          "entity": "9:05 PM",
+          "label": "TIME",
+          "start": 263,
+          "end": 270
+        },
+        {
+          "entity": "ABC Supermarket",
+          "label": "ORG",
+          "start": 342,
+          "end": 357
+        },
+        {
+          "entity": "MG Road",
+          "label": "FAC",
+          "start": 359,
+          "end": 366
+        },
+        {
+          "entity": "Key Findings",
+          "label": "LOC",
+          "start": 368,
+          "end": 380
+        },
+        {
+          "entity": "1",
+          "label": "CARDINAL",
+          "start": 382,
+          "end": 383
+        },
+        {
+          "entity": "CCTV Footage Analysis",
+          "label": "ORG",
+          "start": 385,
+          "end": 406
+        },
+        {
+          "entity": "CCTV",
+          "label": "ORG",
+          "start": 410,
+          "end": 414
+        },
+        {
+          "entity": "01",
+          "label": "CARDINAL",
+          "start": 422,
+          "end": 424
+        },
+        {
+          "entity": "8:12:34 PM",
+          "label": "TIME",
+          "start": 456,
+          "end": 466
+        },
+        {
+          "entity": "Alterca(cid:415)on",
+          "label": "ORG",
+          "start": 527,
+          "end": 545
+        },
+        {
+          "entity": "CCTV",
+          "label": "ORG",
+          "start": 557,
+          "end": 561
+        },
+        {
+          "entity": "8:25:15 PM",
+          "label": "TIME",
+          "start": 573,
+          "end": 583
+        },
+        {
+          "entity": "8:30:22 PM",
+          "label": "TIME",
+          "start": 608,
+          "end": 618
+        },
+        {
+          "entity": "men(cid:415)ons 8:15 PM",
+          "label": "TIME",
+          "start": 683,
+          "end": 706
+        },
+        {
+          "entity": "CCTV",
+          "label": "ORG",
+          "start": 725,
+          "end": 729
+        },
+        {
+          "entity": "8:25 PM",
+          "label": "TIME",
+          "start": 736,
+          "end": 743
+        },
+        {
+          "entity": "2",
+          "label": "CARDINAL",
+          "start": 744,
+          "end": 745
+        },
+        {
+          "entity": "8:12 PM",
+          "label": "TIME",
+          "start": 832,
+          "end": 839
+        },
+        {
+          "entity": "8:15 PM",
+          "label": "TIME",
+          "start": 863,
+          "end": 870
+        },
+        {
+          "entity": "8:30 PM",
+          "label": "TIME",
+          "start": 892,
+          "end": 899
+        },
+        {
+          "entity": "8:20-8:30 PM",
+          "label": "TIME",
+          "start": 1014,
+          "end": 1026
+        },
+        {
+          "entity": "3",
+          "label": "CARDINAL",
+          "start": 1027,
+          "end": 1028
+        },
+        {
+          "entity": "Rajesh Kumar",
+          "label": "PERSON",
+          "start": 1064,
+          "end": 1076
+        },
+        {
+          "entity": "between 8:30 PM",
+          "label": "TIME",
+          "start": 1214,
+          "end": 1229
+        },
+        {
+          "entity": "9:00 PM",
+          "label": "TIME",
+          "start": 1234,
+          "end": 1241
+        },
+        {
+          "entity": "4",
+          "label": "CARDINAL",
+          "start": 1353,
+          "end": 1354
+        },
+        {
+          "entity": "8:15 PM",
+          "label": "TIME",
+          "start": 1436,
+          "end": 1443
+        },
+        {
+          "entity": "CCTV",
+          "label": "ORG",
+          "start": 1445,
+          "end": 1449
+        },
+        {
+          "entity": "8:25 PM",
+          "label": "TIME",
+          "start": 1456,
+          "end": 1463
+        },
+        {
+          "entity": "5",
+          "label": "CARDINAL",
+          "start": 1645,
+          "end": 1646
+        },
+        {
+          "entity": "CCTV",
+          "label": "ORG",
+          "start": 1670,
+          "end": 1674
+        },
+        {
+          "entity": "ABC Supermarket",
+          "label": "ORG",
+          "start": 1688,
+          "end": 1703
+        },
+        {
+          "entity": "CCTV",
+          "label": "ORG",
+          "start": 1706,
+          "end": 1710
+        },
+        {
+          "entity": "CCTV",
+          "label": "ORG",
+          "start": 1870,
+          "end": 1874
+        },
+        {
+          "entity": "8:00 PM",
+          "label": "TIME",
+          "start": 1928,
+          "end": 1935
+        },
+        {
+          "entity": "9:00 PM",
+          "label": "TIME",
+          "start": 1939,
+          "end": 1946
+        },
+        {
+          "entity": "8:00 PM",
+          "label": "TIME",
+          "start": 2120,
+          "end": 2127
+        },
+        {
+          "entity": "9:00 PM",
+          "label": "TIME",
+          "start": 2131,
+          "end": 2138
+        },
+        {
+          "entity": "CCTV",
+          "label": "ORG",
+          "start": 2195,
+          "end": 2199
+        },
+        {
+          "entity": "3",
+          "label": "CARDINAL",
+          "start": 2213,
+          "end": 2214
+        },
+        {
+          "entity": "Officer Signature: Inspector",
+          "label": "WORK_OF_ART",
+          "start": 2284,
+          "end": 2312
+        },
+        {
+          "entity": "Mohan Das\nDate",
+          "label": "PERSON",
+          "start": 2313,
+          "end": 2327
+        },
+        {
+          "entity": "November 16, 2024",
+          "label": "DATE",
+          "start": 2329,
+          "end": 2346
+        }
+      ],
+      "objects_detected": [],
+      "ocr_text": "",
+      "timestamps": [
+        "10:00",
+        "9:00",
+        "AM",
+        "8:25:15",
+        "8:15",
+        "PM",
+        "8:12:34",
+        "8:20",
+        "8:30",
+        "8:12",
+        "9:05",
+        "8:00",
+        "8:25",
+        "8:30:22"
+      ],
+      "locations": [],
+      "summary": "POLICE INVESTIGATION MEMO\nCase Number: CR-2024-001234\nDate: November 16, 2024\nTime: 10:00 AM\nInves(cid:415)ga(cid:415)ng Officer: Inspector Mohan Das\nBadge Number: PS-4567\nInves(cid:415)ga(cid:415)on Summary:\nFollowing the FIR registered on November 15, 2024, at 9:05 PM, I conducted a thorough inves(cid:415)ga(cid:415)on\nof the incident at ABC Supermarket, MG Road.\nKey Findings:\n1. CCTV Footage Analysis:\n- CCTV Camera 01 shows suspect entering shop at 8:12:34 PM\n- Suspect was wearing black shirt...",
+      "dates": [
+        "November"
+      ],
+      "events": [
+        {
+          "event": "entered in black shirt",
+          "type": "location_entry",
+          "context": "PM, CCTV shows 8:25 PM\n- Clothing change: Suspect entered in black shirt, exited in white shirt (unexplained)\n- Injury sev"
+        },
+        {
+          "event": "heard argument around",
+          "type": "observation",
+          "context": "d seeing suspect in black shirt enter at 8:12 PM, heard argument around\n8:15 PM, saw suspect exit at 8:30 PM in white shi"
+        },
+        {
+          "event": "saw suspect exit at",
+          "type": "observation",
+          "context": " enter at 8:12 PM, heard argument around\n8:15 PM, saw suspect exit at 8:30 PM in white shirt\n- Anil Singh (Store Employ"
+        },
+        {
+          "event": "hit",
+          "type": "violence",
+          "context": "15 PM\n- Suspect exits shop at 8:30:22 PM wearing white shirt\n- Time discrepancy noted: Witness statemen"
+        },
+        {
+          "event": "hit",
+          "type": "violence",
+          "context": "t around\n8:15 PM, saw suspect exit at 8:30 PM in white shirt\n- Anil Singh (Store Employee): Confirmed a"
+        },
+        {
+          "event": "hit",
+          "type": "violence",
+          "context": "hange: Suspect entered in black shirt, exited in white shirt (unexplained)\n- Injury severity: Witness d"
+        },
+        {
+          "event": "exited in white shirt",
+          "type": "location_exit",
+          "context": " Clothing change: Suspect entered in black shirt, exited in white shirt (unexplained)\n- Injury severity: Witness describe"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "source": "c6f9b0711d4e4ad9b29cf86cf4eeb85d",
+      "target": "117347727ad546efb234773dc3a4264d",
+      "reasons": [
+        "⚡ Matching event types: location_entry, location_exit, observation"
+      ],
+      "weight": 1,
+      "similarity": 0.0,
+      "shared_entities": {
+        "events": [
+          "location_entry",
+          "location_exit",
+          "observation"
+        ]
+      }
+    },
+    {
+      "source": "c6f9b0711d4e4ad9b29cf86cf4eeb85d",
+      "target": "43efee19bae440f782902f33559bdd90",
+      "reasons": [
+        "⚡ Matching event types: location_exit, observation, violence"
+      ],
+      "weight": 1,
+      "similarity": 0.0,
+      "shared_entities": {
+        "events": [
+          "location_exit",
+          "observation",
+          "violence"
+        ]
+      }
+    },
+    {
+      "source": "c6f9b0711d4e4ad9b29cf86cf4eeb85d",
+      "target": "a5451944f62844469bf185052abb6215",
+      "reasons": [
+        "⚡ Matching event types: location_exit, observation, violence"
+      ],
+      "weight": 1,
+      "similarity": 0.0,
+      "shared_entities": {
+        "events": [
+          "location_exit",
+          "observation",
+          "violence"
+        ]
+      }
+    },
+    {
+      "source": "c6f9b0711d4e4ad9b29cf86cf4eeb85d",
+      "target": "dcbb258ce4f44b53992f268bbc077d61",
+      "reasons": [
+        "⚡ Matching event types: location_entry, location_exit, observation"
+      ],
+      "weight": 1,
+      "similarity": 0.0,
+      "shared_entities": {
+        "events": [
+          "location_entry",
+          "location_exit",
+          "observation"
+        ]
+      }
+    }
+  ]
+}

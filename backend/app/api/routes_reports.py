@@ -5,10 +5,18 @@ from pathlib import Path
 from fastapi import APIRouter, HTTPException
 
 from app.config import settings
-from app.models.schemas import ReportSummary
+from app.models.schemas import CaseGraphResponse, ReportSummary
+from app.services.case_graph import CaseGraphService
 
 
 router = APIRouter()
+case_graph_service = CaseGraphService()
+
+
+@router.get("/graph", response_model=CaseGraphResponse)
+async def get_case_graph() -> CaseGraphResponse:
+    graph = case_graph_service.build_graph_payload()
+    return CaseGraphResponse(**graph)
 
 
 @router.get("/{case_id}", response_model=ReportSummary)
@@ -49,6 +57,9 @@ async def get_report(case_id: str) -> ReportSummary:
                     "timeline": [e.get("description", str(e)) for e in data.get("timeline_events", [])[:5]],
                     "inconsistencies": data.get("inconsistencies", []),
                     "extracted_content": data.get("extracted_content", []),
+                    "evidence_map": data.get("evidence_map", {}),
+                    "case_summary": data.get("case_summary", ""),
+                "relationships": data.get("relationships", []),
                 },
             )
             print(f"[Reports API] Returning report for {case_id}: case_id={report_summary.case_id}, timeline_events={report_summary.timeline_events}, inconsistencies={report_summary.inconsistencies}")

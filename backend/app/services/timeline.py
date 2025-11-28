@@ -1,7 +1,14 @@
 import re
 from dataclasses import dataclass
-from datetime import datetime
-from typing import List
+from datetime import datetime, time as dt_time
+from typing import List, Optional
+
+try:
+    from dateutil import parser as date_parser
+except Exception:  # pragma: no cover
+    date_parser = None
+
+from app.config import settings
 
 
 @dataclass
@@ -24,18 +31,26 @@ class TimelineService:
         - For documents, use time mentions (if any) and summary text.
         """
         events: List[TimelineEvent] = []
+        case_anchor = self._derive_case_anchor(normalized_data)
+
         for idx, record in enumerate(normalized_data):
             base_source = record.get("type", "unknown")
+            source_label = self._resolve_source_label(record, base_source, idx)
+            record_anchor = self._derive_record_anchor(record, case_anchor)
 
             # Image-based event
             if record.get("type") == "image":
                 ts_raw = record.get("timestamp") or datetime.utcnow().isoformat()
-                dt = datetime.fromisoformat(ts_raw)
+                dt = self._safe_parse_datetime(ts_raw) or datetime.utcnow()
                 desc = f"Image evidence ({record.get('location', 'UNKNOWN')})"
+                # If object detection is disabled or image classification is disabled,
+                # mark the event as supporting evidence so the UI can prioritize document events
+                if not getattr(settings, 'enable_object_detection', True) or not getattr(settings, 'enable_image_classification', True):
+                    source_label = f"supporting_{source_label}"
                 events.append(
                     TimelineEvent(
                         timestamp=dt,
-                        source=f"{base_source}_{idx}",
+                        source=source_label,
                         description=desc,
                     )
                 )
@@ -44,10 +59,14 @@ class TimelineService:
             elif record.get("type") == "document":
                 raw_text = record.get("raw_text", "")
                 time_mentions = record.get("time_mentions") or []
-                dates = record.get("dates", [])
                 
                 # Extract actual events from the document text
-                extracted_events = self._extract_events_from_text(raw_text, time_mentions, dates)
+                extracted_events = self._extract_events_from_text(
+                    raw_text,
+                    time_mentions,
+                    record_anchor,
+                    source_label,
+                )
                 
                 if extracted_events:
                     print(f"[Timeline] Extracted {len(extracted_events)} events from document")
@@ -57,30 +76,14 @@ class TimelineService:
                     # Fallback: create events from time mentions
                     for t in time_mentions:
                         try:
-                            # Try to parse time and find context around it
-                            dt = datetime.strptime(t, "%H:%M")
-                            # Use current date or date from document
-                            base_date = datetime.utcnow()
-                            if dates:
-                                try:
-                                    # Try to parse first date found
-                                    date_str = dates[0]
-                                    if "2024" in date_str or "2025" in date_str:
-                                        # Extract year, month, day if possible
-                                        import re
-                                        year_match = re.search(r"20\d{2}", date_str)
-                                        if year_match:
-                                            base_date = base_date.replace(year=int(year_match.group()))
-                                except:
-                                    pass
-                            dt = dt.replace(year=base_date.year, month=base_date.month, day=base_date.day)
-                            
+                            time_obj = self._parse_time_only(t)
+                            dt = self._combine_date_time(record_anchor, time_obj)
                             # Find context around this time in the text
                             context = self._find_time_context(raw_text, t)
                             events.append(
                                 TimelineEvent(
                                     timestamp=dt,
-                                    source=f"{base_source}_{idx}",
+                                    source=source_label,
                                     description=context or f"Event at {t}",
                                 )
                             )
@@ -88,19 +91,11 @@ class TimelineService:
                             pass
                 else:
                     # No time mentions - use document date or current time
-                    dt = datetime.utcnow()
-                    if dates:
-                        try:
-                            date_str = dates[0]
-                            import re
-                            from dateutil import parser
-                            dt = parser.parse(date_str)
-                        except:
-                            pass
+                    dt = record_anchor or datetime.utcnow()
                     events.append(
                         TimelineEvent(
                             timestamp=dt,
-                            source=f"{base_source}_{idx}",
+                            source=source_label,
                             description=record.get("summary", "Document evidence")[:200],
                         )
                     )
@@ -108,7 +103,7 @@ class TimelineService:
         events.sort(key=lambda e: e.timestamp)
         return events
     
-    def _extract_events_from_text(self, text: str, time_mentions: List[str], dates: List[str]) -> List[TimelineEvent]:
+    def _extract_events_from_text(self, text: str, time_mentions: List[str], anchor_date: Optional[datetime], source_label: str) -> List[TimelineEvent]:
         """Extract structured events from document text with source identification."""
         events = []
         seen_events = set()  # Track to avoid duplicates
@@ -154,56 +149,13 @@ class TimelineService:
             
             # Parse time
             try:
-                parser_available = False
-                try:
-                    from dateutil import parser
-                    parser_available = True
-                    time_obj = parser.parse(time_str)
-                except ImportError:
-                    # Fallback to basic parsing
-                    time_match = re.search(r'(\d{1,2}):(\d{2})(?::(\d{2}))?\s*(AM|PM|am|pm)?', time_str, re.IGNORECASE)
-                    if time_match:
-                        hour = int(time_match.group(1))
-                        minute = int(time_match.group(2))
-                        second = int(time_match.group(3)) if time_match.group(3) else 0
-                        am_pm = time_match.group(4)
-                        if am_pm and am_pm.upper() == 'PM' and hour != 12:
-                            hour += 12
-                        elif am_pm and am_pm.upper() == 'AM' and hour == 12:
-                            hour = 0
-                        from datetime import time as dt_time
-                        time_obj = dt_time(hour, minute, second)
-                    else:
-                        raise ValueError("Could not parse time")
-                
-                # Use current date or date from document
-                base_date = datetime.utcnow()
-                if dates:
-                    try:
-                        date_str = dates[0]
-                        if "2024" in date_str or "2025" in date_str:
-                            year_match = re.search(r"20\d{2}", date_str)
-                            if year_match:
-                                base_date = base_date.replace(year=int(year_match.group()))
-                            if parser_available:
-                                try:
-                                    parsed_date = parser.parse(date_str, fuzzy=True)
-                                    base_date = parsed_date
-                                except:
-                                    pass
-                    except:
-                        pass
-                
-                # Convert time object to datetime
-                if isinstance(time_obj, datetime):
-                    dt = time_obj
-                else:
-                    dt = datetime.combine(base_date.date(), time_obj)
+                time_obj = self._parse_time_only(time_str)
+                dt = self._combine_date_time(anchor_date, time_obj)
                 
                 events.append(
                     TimelineEvent(
                         timestamp=dt,
-                        source=source,
+                        source=source if source != "Document" else source_label,
                         description=event_desc,
                     )
                 )
@@ -264,4 +216,122 @@ class TimelineService:
                 return sentences[0][:150]
             return context[:150]
         return f"Event at {time_str}"
+
+    def _resolve_source_label(self, record: dict, fallback: str, idx: int) -> str:
+        """Create a stable source identifier for timeline rows."""
+        label = record.get("classification", {}).get("label") or fallback
+        filename = record.get("filename") or record.get("ingestion", {}).get("filename")
+        parts = [label or fallback, str(idx)]
+        source = "_".join(filter(None, parts))
+        if filename:
+            source = f"{source}:{filename}"
+        return source
+
+    def _derive_case_anchor(self, records: list[dict]) -> Optional[datetime]:
+        """Determine the incident date anchor for the entire case."""
+        candidates: List[datetime] = []
+        for record in records:
+            # Check dates field first (more reliable for incident dates)
+            for raw in record.get("dates", []) or []:
+                parsed = self._safe_parse_datetime(raw)
+                if parsed and parsed.year >= 2020:  # Only accept reasonable dates
+                    candidates.append(parsed)
+            # Check timestamps
+            for raw in record.get("timestamps", []) or []:
+                parsed = self._safe_parse_datetime(raw)
+                if parsed and parsed.year >= 2020:
+                    candidates.append(parsed)
+            # Also check raw_text for date mentions
+            raw_text = record.get("raw_text", "")
+            if raw_text:
+                # Look for "16 March 2025" or "March 16, 2025" patterns
+                date_patterns = [
+                    r'\b(\d{1,2})\s+(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{4})\b',
+                    r'\b(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2}),?\s+(\d{4})\b',
+                ]
+                for pattern in date_patterns:
+                    matches = re.findall(pattern, raw_text, re.IGNORECASE)
+                    for match in matches:
+                        try:
+                            if len(match) == 3:
+                                if match[0].isdigit():
+                                    # "16 March 2025"
+                                    day, month_name, year = match
+                                else:
+                                    # "March 16, 2025"
+                                    month_name, day, year = match
+                                month_map = {
+                                    'january': 1, 'february': 2, 'march': 3, 'april': 4,
+                                    'may': 5, 'june': 6, 'july': 7, 'august': 8,
+                                    'september': 9, 'october': 10, 'november': 11, 'december': 12
+                                }
+                                month = month_map.get(month_name.lower())
+                                if month:
+                                    dt = datetime(int(year), month, int(day))
+                                    if dt.year >= 2020:
+                                        candidates.append(dt)
+                        except (ValueError, IndexError):
+                            continue
+        if not candidates:
+            return None
+        # Return the earliest date (most likely to be the incident date)
+        return min(candidates)
+
+    def _derive_record_anchor(self, record: dict, case_anchor: Optional[datetime]) -> Optional[datetime]:
+        """Pick the best anchor date for a single artifact."""
+        for field in ("dates", "timestamps"):
+            for raw in record.get(field, []) or []:
+                parsed = self._safe_parse_datetime(raw)
+                if parsed:
+                    return parsed
+        return case_anchor
+
+    def _safe_parse_datetime(self, value: str) -> Optional[datetime]:
+        if not value or not isinstance(value, str):
+            return None
+        value = value.strip()
+        formats = [
+            "%Y-%m-%dT%H:%M:%S",
+            "%Y-%m-%d %H:%M:%S",
+            "%Y:%m:%d %H:%M:%S",
+            "%Y-%m-%d",
+            "%d %B %Y",  # "14 March 2025"
+            "%d %b %Y",  # "14 Mar 2025"
+            "%B %d, %Y",  # "March 14, 2025"
+            "%b %d, %Y",  # "Mar 14, 2025"
+        ]
+        for fmt in formats:
+            try:
+                dt = datetime.strptime(value, fmt)
+                if fmt in ["%Y-%m-%d", "%d %B %Y", "%d %b %Y", "%B %d, %Y", "%b %d, %Y"]:
+                    return datetime.combine(dt.date(), dt_time(0, 0))
+                return dt
+            except ValueError:
+                continue
+        if date_parser:
+            try:
+                parsed = date_parser.parse(value, fuzzy=True, default=datetime.utcnow())
+                return parsed
+            except Exception:
+                return None
+        return None
+
+    def _parse_time_only(self, value: str) -> dt_time:
+        """Parse a time expression without date info."""
+        value = value.strip()
+        formats = ["%I:%M %p", "%H:%M", "%I:%M:%S %p", "%H:%M:%S"]
+        for fmt in formats:
+            try:
+                return datetime.strptime(value, fmt).time()
+            except ValueError:
+                continue
+        if date_parser:
+            parsed = date_parser.parse(value)
+            return parsed.time()
+        raise ValueError(f"Could not parse time: {value}")
+
+    def _combine_date_time(self, anchor: Optional[datetime], time_obj: dt_time) -> datetime:
+        """Combine an anchor date with a parsed time; fallback to current date."""
+        base = anchor or datetime.utcnow()
+        return datetime.combine(base.date(), time_obj)
 

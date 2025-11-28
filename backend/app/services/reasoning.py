@@ -21,6 +21,9 @@ class ReasoningService:
     Reasoning Service for inconsistency detection and missing evidence suggestions.
     """
 
+    def __init__(self) -> None:
+        self._warnings: List[str] = []
+
     def detect_inconsistencies(
         self,
         events: List[TimelineEvent],
@@ -36,6 +39,7 @@ class ReasoningService:
         Returns:
             List of inconsistency reports
         """
+        self._warnings.clear()
         conflicts: List[Dict[str, Any]] = []
 
         # First, check if document explicitly mentions inconsistencies
@@ -59,9 +63,9 @@ class ReasoningService:
             print(f"[Reasoning] LLM found {len(llm_conflicts)} inconsistencies")
             conflicts.extend(llm_conflicts)
         else:
-            print(f"[Reasoning] ⚠️ OpenAI LLM not available - using rule-based only")
-            print(f"   enable_real_ai: {settings.enable_real_ai}")
-            print(f"   openai_api_key set: {bool(settings.openai_api_key and settings.openai_api_key != '' and settings.openai_api_key != 'your_openai_api_key_here')}")
+            warning = "LLM inconsistency detection skipped: OpenAI key missing or disabled."
+            print(f"[Reasoning] ⚠️ {warning}")
+            self._record_warning(warning)
 
         return conflicts
     
@@ -228,33 +232,38 @@ class ReasoningService:
     ) -> List[Dict[str, Any]]:
         """Check for conflicts between witness statements and medical reports."""
         conflicts = []
-        
-        # Collect injury-related text
-        injury_texts = []
+
+        severity_records = []
         for data in extracted_data:
-            if data.get("type") == "document":
-                text = data.get("raw_text", "").lower()
-                if any(word in text for word in ["injury", "wound", "hurt", "damage", "fracture", "cut"]):
-                    injury_texts.append({
-                        "text": text,
-                        "source": data.get("summary", "unknown"),
-                    })
+            if data.get("type") != "document":
+                continue
+            text = data.get("raw_text", "")
+            severity_result = self._assess_injury_severity(text)
+            if severity_result["label"] == "unknown":
+                continue
+            severity_records.append({
+                "label": severity_result["label"],
+                "phrases": severity_result["phrases"],
+                "source": data.get("summary", data.get("filename", "document")),
+            })
 
-        if len(injury_texts) >= 2:
-            # Check for severity conflicts
-            minor_indicators = ["minor", "small", "slight", "superficial", "scratch"]
-            major_indicators = ["fracture", "deep", "severe", "serious", "critical", "compound"]
-            
-            has_minor = any(any(ind in text["text"] for ind in minor_indicators) for text in injury_texts)
-            has_major = any(any(ind in text["text"] for ind in major_indicators) for text in injury_texts)
-
-            if has_minor and has_major:
-                conflicts.append({
-                    "type": "statement_vs_medical",
-                    "severity": "critical",
-                    "details": "Conflicting injury severity descriptions: both 'minor' and 'major' indicators found",
-                    "sources": [text["source"] for text in injury_texts],
-                })
+        labels = {record["label"] for record in severity_records}
+        if "major" in labels and "minor" in labels:
+            major_sources = [rec for rec in severity_records if rec["label"] == "major"]
+            minor_sources = [rec for rec in severity_records if rec["label"] == "minor"]
+            conflicts.append({
+                "type": "statement_vs_medical",
+                "severity": "critical",
+                "details": (
+                    "Conflicting injury severity descriptions: "
+                    f"major indicators ({self._format_phrases(major_sources)}) "
+                    f"vs minor indicators ({self._format_phrases(minor_sources)})."
+                ),
+                "sources": {
+                    "major": [rec["source"] for rec in major_sources],
+                    "minor": [rec["source"] for rec in minor_sources],
+                },
+            })
 
         return conflicts
 
@@ -292,6 +301,99 @@ class ReasoningService:
             })
 
         return conflicts
+
+    def _assess_injury_severity(self, text: str) -> Dict[str, Any]:
+        """Assess injury severity indicators within a document."""
+        text_lower = (text or "").lower()
+        if not text_lower.strip():
+            return {"label": "unknown", "phrases": []}
+
+        major_terms = [
+            "compound fracture",
+            "fracture",
+            "deep laceration",
+            "severe bleeding",
+            "severe injury",
+            "serious injury",
+            "major vessel",
+            "critical condition",
+        ]
+        minor_terms = [
+            "minor injury",
+            "minor cut",
+            "superficial",
+            "abrasion",
+            "scratch",
+            "no fracture",
+            "no major vessel injury",
+            "stable condition",
+        ]
+
+        major_hits = self._find_affirmed_hits(text_lower, major_terms)
+        minor_hits = self._find_affirmed_hits(text_lower, minor_terms)
+        negated_major = self._find_negated_hits(text_lower, major_terms)
+        if negated_major and not minor_hits:
+            minor_hits.extend([f"no {term}" for term in negated_major])
+
+        if major_hits:
+            return {"label": "major", "phrases": major_hits}
+        if minor_hits:
+            return {"label": "minor", "phrases": minor_hits}
+
+        return {"label": "unknown", "phrases": []}
+
+    def _find_affirmed_hits(self, text_lower: str, phrases: List[str]) -> List[str]:
+        hits = []
+        for phrase in phrases:
+            normalized = phrase.lower()
+            if normalized in text_lower and not self._is_negated_phrase(text_lower, normalized):
+                hits.append(phrase)
+        return hits
+
+    def _find_negated_hits(self, text_lower: str, phrases: List[str]) -> List[str]:
+        hits = []
+        for phrase in phrases:
+            normalized = phrase.lower()
+            if normalized in text_lower and self._is_negated_phrase(text_lower, normalized):
+                hits.append(phrase)
+        return hits
+
+    def _is_negated_phrase(self, text_lower: str, phrase: str) -> bool:
+        negators = ["no", "without", "absent", "ruled out", "negative for"]
+        idx = text_lower.find(phrase)
+        while idx != -1:
+            window_start = max(0, idx - 40)
+            window = text_lower[window_start:idx]
+            if any(neg in window for neg in negators):
+                return True
+            idx = text_lower.find(phrase, idx + 1)
+        return False
+
+    def _format_phrases(self, records: List[Dict[str, Any]]) -> str:
+        phrases = []
+        for rec in records:
+            for phrase in rec.get("phrases", []):
+                phrases.append(phrase)
+        return ", ".join(sorted(set(phrases))) or "unspecified indicators"
+
+    def _record_warning(self, message: str) -> None:
+        if message not in self._warnings:
+            self._warnings.append(message)
+
+    def get_warnings(self) -> List[str]:
+        return list(self._warnings)
+
+    def _record_llm_error(self, context: str, raw_error: str) -> None:
+        friendly = f"{context} skipped: {self._humanize_llm_error(raw_error)}"
+        self._record_warning(friendly)
+
+    def _humanize_llm_error(self, raw_error: str) -> str:
+        lower = raw_error.lower()
+        if "429" in lower or "insufficient_quota" in lower or "insufficient quota" in lower:
+            return "OpenAI quota exceeded. Please update billing or try later."
+        if "api key" in lower:
+            return "OpenAI API key missing or invalid."
+        return "LLM service failed."
 
     def _llm_detect_inconsistencies(
         self,
@@ -349,6 +451,9 @@ If no inconsistencies found, return an empty array [].
             )
 
             # Try to parse JSON response
+            if response.lower().startswith("llm reasoning error"):
+                self._record_llm_error("LLM inconsistency detection", response)
+                return []
             if response.startswith("["):
                 llm_conflicts = json.loads(response)
                 return llm_conflicts
@@ -361,6 +466,7 @@ If no inconsistencies found, return an empty array [].
                     return llm_conflicts
         except Exception as e:
             print(f"LLM inconsistency detection error: {e}")
+            self._record_llm_error("LLM inconsistency detection", str(e))
 
         return []
 
@@ -541,11 +647,15 @@ Return as a JSON array of strings, e.g., ["Recommendation 1", "Recommendation 2"
 
             # Try to parse JSON
             import re
+            if response.lower().startswith("llm reasoning error"):
+                self._record_llm_error("LLM missing-evidence suggestions", response)
+                return []
             json_match = re.search(r'\[.*\]', response, re.DOTALL)
             if json_match:
                 suggestions = json.loads(json_match.group(0))
                 return suggestions if isinstance(suggestions, list) else []
         except Exception as e:
             print(f"LLM missing evidence suggestion error: {e}")
+            self._record_llm_error("LLM missing-evidence suggestions", str(e))
 
         return []

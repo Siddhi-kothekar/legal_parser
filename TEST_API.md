@@ -63,11 +63,32 @@ Then open: http://localhost:8080/index.html
 curl -X POST "http://127.0.0.1:8000/evidence/upload" -F "file=@test.pdf"
 ```
 
+### Upload Folder (multiple files or zip)
+```bash
+# Multiple files
+curl -X POST "http://127.0.0.1:8000/evidence/upload_folder" -F "files=@file1.pdf" -F "files=@file2.jpg"
+
+# Zip archive
+curl -X POST "http://127.0.0.1:8000/evidence/upload_folder" -F "files=@evidence_folder.zip"
+```
+
 ### Process Evidence
 ```bash
 curl -X POST "http://127.0.0.1:8000/evidence/process" \
   -H "Content-Type: application/json" \
   -d '{"case_id": "your_case_id", "artifact_path": "storage/uploads/your_file.pdf"}'
+```
+
+### Process Case Folder (process all files in case data folder)
+```bash
+curl -X POST "http://127.0.0.1:8000/evidence/process_case" \
+   -H "Content-Type: application/json" \
+   -d '{"case_id":"your_case_id"}'
+```
+
+### List Case Files
+```bash
+curl "http://127.0.0.1:8000/evidence/cases/your_case_id/files"
 ```
 
 ### Get Report

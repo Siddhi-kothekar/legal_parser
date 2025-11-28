@@ -4,14 +4,21 @@ import json
 import re
 from datetime import datetime
 from pathlib import Path
-from typing import List
+from typing import List, Optional
 
 from app.config import settings
 from app.models.schemas import ReportSummary
+from app.services.case_graph import CaseGraphService
 from app.services.timeline import TimelineEvent
+from app.services.model_manager import model_manager
+from sklearn.feature_extraction.text import TfidfVectorizer
+import numpy as np
 
 
 class ReportingService:
+    def __init__(self) -> None:
+        self.case_graph = CaseGraphService()
+
     def persist_summary(
         self,
         case_id: str,
@@ -19,8 +26,10 @@ class ReportingService:
         inconsistencies: List[dict[str, str]],
         missing: List[str],
         extracted_data: List[dict] = None,
+        system_warnings: List[str] | None = None,
     ) -> ReportSummary:
         # Build detailed report with all extracted content
+        warnings = list(system_warnings or [])
         detailed_report = {
             "case_id": case_id,
             "generated_at": datetime.utcnow().isoformat(),
@@ -35,6 +44,7 @@ class ReportingService:
             "inconsistencies": inconsistencies,
             "missing_evidence": missing,
             "extracted_content": [],
+            "warnings": warnings,
         }
         
         # Add all extracted data (text, entities, objects, OCR, etc.)
@@ -59,6 +69,7 @@ class ReportingService:
                     content_item["timestamps"] = data.get("time_mentions", [])
                     content_item["dates"] = data.get("dates", [])
                     content_item["events"] = data.get("events", [])
+                    content_item["legal_entities"] = data.get("legal_entities", {})
                     content_item["summary"] = data.get("summary", "")
                 
                 # Image content
@@ -74,9 +85,19 @@ class ReportingService:
         
         # Generate structured timeline with source and notes
         structured_timeline = self._build_structured_timeline(events, inconsistencies, extracted_data)
-        
-        # Generate case summary
-        case_summary = self._generate_case_summary(events, inconsistencies, extracted_data)
+
+        # Build evidence map and add to the detailed report
+        evidence_map = self._build_evidence_map(extracted_data)
+        detailed_report["evidence_map"] = evidence_map
+
+        # Generate case summary - prefer LLM summarizer, fallback to rule-based
+        case_summary_text, summary_warning = self._summarize_case(case_id, evidence_map, detailed_report)
+        if summary_warning:
+            warnings.append(summary_warning)
+        detailed_report["case_summary"] = case_summary_text
+        detailed_report["relationships"] = self.case_graph.compute_relationships_for_case(
+            case_id, detailed_report
+        )
         
         summary = ReportSummary(
             case_id=case_id,
@@ -88,8 +109,11 @@ class ReportingService:
             preview={
                 "timeline": structured_timeline,
                 "inconsistencies": inconsistencies,
-                "extracted_content": detailed_report.get("extracted_content", []),
-                "case_summary": case_summary,
+                "generated_at": datetime.utcnow().isoformat(),
+                "evidence_map": detailed_report.get("evidence_map", {}),
+                "case_summary": case_summary_text,
+                "relationships": detailed_report.get("relationships", []),
+                "warnings": warnings,
             },
         )
         
@@ -97,6 +121,8 @@ class ReportingService:
         self._json_path(case_id).write_text(
             json.dumps(detailed_report, indent=2, ensure_ascii=False), encoding="utf-8"
         )
+        # Ensure reciprocal case files include the current relationships
+        self.case_graph.refresh_relationship_references(case_id, detailed_report.get("relationships", []))
         
         # Save basic summary for API response
         summary_path = settings.reports_dir / f"{case_id}_summary.json"
@@ -108,11 +134,237 @@ class ReportingService:
         )
         return summary
 
+    def _build_evidence_map(self, extracted_data: List[dict]) -> dict:
+        """Build a consolidated evidence map aggregating key entities across all artifacts."""
+        evidence_map = {
+            "case_persons": [],
+            "case_locations": [],
+            "case_timestamps": [],
+            "case_injuries": [],
+            "case_weapons": [],
+            "ipc_sections": [],
+            "fir_numbers": [],
+            "mlc_numbers": [],
+            "hospital_names": [],
+            "vehicle_numbers": [],
+            "files": [],
+            "consolidated_text": "",
+        }
+
+        persons = set()
+        locations = set()
+        timestamps = set()
+        injuries = set()
+        weapons = set()
+        ipc_sections = set()
+        fir_numbers = set()
+        mlc_numbers = set()
+        hospitals = set()
+        vehicles = set()
+        consolidated_texts = []
+
+        weapon_keywords = ["Knife", "knife", "gun", "firearm", "pistol", "revolver", "weapon", "blade"]
+
+        # entity -> files mapping
+        entity_files = {
+            "persons": {},
+            "locations": {},
+            "timestamps": {},
+            "injuries": {},
+            "weapons": {},
+        }
+
+        for data in extracted_data:
+            entry = {
+                "file": data.get("filename") or data.get("file") or data.get("source") or "unknown",
+                "type": data.get("type", "unknown"),
+                "classification": data.get("classification", {}),
+                "summary": data.get("summary", "")[:500],
+                "persons": data.get("persons", []),
+                "locations": data.get("locations", []),
+                "timestamps": data.get("timestamps", []) or data.get("time_mentions", []),
+                "injuries": data.get("injuries", []),
+                "weapons": data.get("weapons", []),
+                "legal_entities": data.get("legal_entities", {}),
+            }
+            evidence_map["files"].append(entry)
+
+            # Consolidate document text
+            if data.get("type") == "document":
+                raw_text = data.get("raw_text", "")
+                if raw_text:
+                    consolidated_texts.append(raw_text)
+                # Gather normalized lists from extraction output
+                doc_persons = data.get("persons", []) or []
+                doc_locations = data.get("locations", []) or []
+                doc_timestamps = data.get("timestamps", []) or []
+                doc_injuries = data.get("injuries", []) or []
+                doc_weapons = data.get("weapons", []) or []
+
+                for p in doc_persons:
+                    persons.add(p)
+                    entity_files["persons"].setdefault(p, []).append(entry["file"])
+                for l in doc_locations:
+                    locations.add(l)
+                    entity_files["locations"].setdefault(l, []).append(entry["file"])
+                for t in doc_timestamps:
+                    timestamps.add(t)
+                    entity_files["timestamps"].setdefault(t, []).append(entry["file"])
+                for inj in doc_injuries:
+                    injuries.add(inj)
+                    entity_files["injuries"].setdefault(inj, []).append(entry["file"])
+                for w in doc_weapons:
+                    weapons.add(w)
+                    entity_files["weapons"].setdefault(w, []).append(entry["file"])
+
+            # Legal entities
+            legal = data.get("legal_entities") or {}
+            for k, v in (legal or {}).items():
+                if not v:
+                    continue
+                if k == "ipc_sections":
+                    for _ in v:
+                        ipc_sections.add(_)
+                if k == "fir_numbers":
+                    for _ in v:
+                        fir_numbers.add(_)
+                if k == "mlc_numbers":
+                    for _ in v:
+                        mlc_numbers.add(_)
+                if k == "hospital_names":
+                    for _ in v:
+                        hospitals.add(_)
+                if k == "vehicle_numbers":
+                    for _ in v:
+                        vehicles.add(_)
+                if k == "injury_terms":
+                    for _ in v:
+                        injuries.add(_)
+
+            # From image data
+            if data.get("type") == "image":
+                # OCR timestamps
+                for t in data.get("ocr_timestamps", []) or []:
+                    timestamps.add(t)
+                # EXIF timestamp
+                if data.get("timestamp"):
+                    timestamps.add(data.get("timestamp"))
+                # GPS locations
+                if data.get("gps_coordinates"):
+                    loc = data.get("gps_coordinates")
+                    locations.add(f"GPS({loc.get('latitude')},{loc.get('longitude')})")
+                # Objects detected
+                for obj in data.get("objects", []) or []:
+                    class_name = obj.get("class")
+                    if not class_name:
+                        continue
+                    if class_name.lower() in [w.lower() for w in weapon_keywords]:
+                        weapons.add(class_name)
+                    if class_name.lower() == "person":
+                        # optional face id mapping
+                        persons.add(obj.get("label") or obj.get("class") or "person")
+                # Also read normalized fields from image extraction
+                for p in data.get("persons", []) or []:
+                    persons.add(p)
+                    entity_files["persons"].setdefault(p, []).append(entry["file"])
+                for w in data.get("weapons", []) or []:
+                    weapons.add(w)
+                    entity_files["weapons"].setdefault(w, []).append(entry["file"])
+                for l in data.get("ocr_locations", []) or []:
+                    locations.add(l)
+                    entity_files["locations"].setdefault(l, []).append(entry["file"])
+                for t in data.get("timestamps", []) or []:
+                    timestamps.add(t)
+                    entity_files["timestamps"].setdefault(t, []).append(entry["file"])
+            # Injuries and weapons mention in doc text
+            try:
+                raw_text = data.get("raw_text", "") or data.get("ocr_text", "")
+                if raw_text:
+                    for kw in weapon_keywords:
+                        if kw.lower() in raw_text.lower():
+                            weapons.add(kw)
+                    # look for timestamp patterns
+                    for pat in [r"\b\d{1,2}:\d{2}:\d{2}\b", r"\b\d{1,2}:\d{2}\s?(am|pm)\b"]:
+                        matches = re.findall(pat, raw_text, flags=re.IGNORECASE)
+                        for m in matches:
+                            timestamps.add(m if isinstance(m, str) else str(m))
+            except Exception:
+                pass
+
+        # Build consolidated_text
+        evidence_map["consolidated_text"] = "\n---\n".join(consolidated_texts)[:20000]
+
+        # Populate final lists
+        evidence_map["case_persons"] = sorted(list(persons))
+        evidence_map["case_locations"] = sorted(list(locations))
+        evidence_map["case_timestamps"] = sorted(list(timestamps))
+        evidence_map["case_injuries"] = sorted(list(injuries))
+        evidence_map["case_weapons"] = sorted(list(weapons))
+        evidence_map["ipc_sections"] = sorted(list(ipc_sections))
+        evidence_map["fir_numbers"] = sorted(list(fir_numbers))
+        evidence_map["mlc_numbers"] = sorted(list(mlc_numbers))
+        evidence_map["hospital_names"] = sorted(list(hospitals))
+        evidence_map["vehicle_numbers"] = sorted(list(vehicles))
+        evidence_map["entity_files"] = entity_files
+
+        return evidence_map
+
+    def _summarize_case(self, case_id: str, evidence_map: dict, detailed_report: dict) -> tuple[str, Optional[str]]:
+        """Summarize a case using local TF-IDF or LLM when available."""
+        # Use OpenAI LLM if available with model_manager.llm_reasoning
+        if settings.enable_real_ai and settings.openai_api_key:
+            prompt = (
+                "Create a concise case summary from the following evidence map and extracted content. "
+                "Include top persons, locations, timestamps, injuries, weapons and missing evidence suggestions. \n\n"
+                f"Evidence map: {json.dumps(evidence_map)[:5000]}\n\n"
+                "Provide the summary in 4-6 bullet points."
+            )
+            try:
+                resp = model_manager.llm_reasoning(prompt, model=settings.openai_model)
+                if resp.lower().startswith("llm reasoning error"):
+                    warning = self._humanize_llm_error(resp)
+                else:
+                    return resp, None
+            except Exception as e:
+                print(f"LLM summarization failed: {e}")
+                warning = self._humanize_llm_error(str(e))
+        else:
+            warning = None
+
+        # Fallback: extractive summary using TFIDF
+        try:
+            text = evidence_map.get("consolidated_text", "")
+            if not text:
+                return "No textual content available to summarize.", warning
+            # Split to sentences
+            import re
+            sentences = re.split(r'(?<=[.!?]) +', text)
+            if len(sentences) <= 6:
+                return "\n".join([s.strip() for s in sentences[:6]]), warning
+
+            vectorizer = TfidfVectorizer(stop_words='english')
+            X = vectorizer.fit_transform(sentences)
+            scores = np.array(X.sum(axis=1)).ravel()
+            top_idxs = (-scores).argsort()[:5]
+            summary = "\n".join([sentences[i].strip() for i in sorted(top_idxs)])
+            return summary, warning
+        except Exception as e:
+            print(f"Extractive summary failed: {e}")
+            return "Summary generation failed.", warning
+
     def _json_path(self, case_id: str) -> Path:
         return settings.reports_dir / f"{case_id}.json"
 
     def _pdf_path(self, case_id: str) -> Path:
         return settings.reports_dir / f"{case_id}.pdf"
+
+    def _humanize_llm_error(self, raw_error: str) -> str:
+        lower = raw_error.lower()
+        if "429" in lower or "insufficient_quota" in lower:
+            return "LLM summary skipped: OpenAI quota exceeded."
+        if "api key" in lower:
+            return "LLM summary skipped: OpenAI API key missing or invalid."
+        return "LLM summary skipped due to upstream error."
     
     def _build_structured_timeline(self, events: List[TimelineEvent], inconsistencies: List[dict], extracted_data: List[dict]) -> List[dict]:
         """Build a structured timeline with source, event, and conflict notes."""

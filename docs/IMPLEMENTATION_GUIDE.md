@@ -157,6 +157,8 @@ objects = model_manager.detect_objects_yolo(image_path)
 - Weapons (knife, gun)
 - Items (bottle, backpack, handbag)
 
+**Note:** Detecting blood stains, injured body areas, or subtle forensic cues requires a fine-tuned or custom YOLO dataset trained on labeled crime scene imagery. For high accuracy, create a small annotated dataset and retrain YOLO with the specific classes (e.g., `blood`, `injured_limb`, `stab_wound`) and increase the model size from `yolov8n` to `yolov8m` or larger.
+
 **Customization**:
 - Use larger model: Change `"yolov8n.pt"` to `"yolov8m.pt"` or `"yolov8l.pt"`
 - Train custom model: Fine-tune on crime-specific objects
@@ -196,6 +198,20 @@ response = model_manager.llm_reasoning(
     model="gpt-4o-mini"
 )
 ```
+
+### Folder Upload & Case Processing
+
+The server supports uploading a complete folder of mixed evidence as either a ZIP archive or multiple files in a single multipart request. The folder is stored under `storage/case_data/{case_id}/raw_files/` and processed with a single case-level pipeline run.
+
+API endpoints:
+- `POST /evidence/upload_folder` — Accepts multiple files or a zip archive. Returns a `case_id` and stored paths.
+- `POST /evidence/process_case` — Triggers the AI pipeline for an entire case (case-level aggregated timeline and report). Accepts `case_id` and optional `artifact_paths` to process a subset.
+- `GET /evidence/cases/{case_id}/files` — Returns a list of files stored for a case.
+
+Notes:
+- Upload zone: `storage/case_data/{case_id}/raw_files/`.
+- The processing flow aggregates data across all artifacts and produces one consolidated report for the case.
+- For single-file uploads, use `POST /evidence/upload` followed by `POST /evidence/process` (backwards-compatible).
 
 **How it works**:
 1. Sends prompt to OpenAI API
@@ -421,6 +437,34 @@ from ultralytics import YOLO
 model = YOLO("yolov8n.pt")
 model.train(data="custom_dataset.yaml", epochs=100)
 ```
+
+### Legal entity extraction
+
+The pipeline extracts legal entities from document text using a combination of spaCy/BERT NER and regex heuristics. Entities include:
+- IPC sections (e.g., IPC 302)
+- FIR numbers (e.g., FIR 123/2025)
+- MLC numbers
+- Hospital, clinic, or medical center names
+- Vehicle registration numbers
+- Injury descriptions (e.g., 'stab wound', 'deep laceration', 'laceration 7 cm')
+
+These entities are added to the `legal_entities` field in the JSON report. You can view them in the frontend under 'Extracted Content'.
+
+
+### Image handling configuration (document-first pipeline)
+
+If the project must rely primarily on documents and OCR (not object detection), use the following environment toggles to disable YOLO & CLIP and let the pipeline prioritize documents:
+
+Environment settings (backend/.env):
+```bash
+# Use `true` or `false` to enable or disable features
+EVIDENCE_ENABLE_REAL_AI=true  # keep BERT/LLM models active
+EVIDENCE_ENABLE_OBJECT_DETECTION=false  # skip YOLO detections
+EVIDENCE_ENABLE_IMAGE_CLASSIFICATION=false  # skip CLIP image classification
+```
+
+When these toggles are set to `false`, images will still be processed for EXIF and OCR text (timestamps and labels), but will **not** run YOLO or CLIP. This ensures the pipeline is document-first and avoids noisy or unreliable object detections when images are low quality.
+
 
 ### 3. Custom NER Model
 

@@ -1,0 +1,1313 @@
+{
+  "case_id": "dcbb258ce4f44b53992f268bbc077d61",
+  "generated_at": "2025-11-28T11:05:44.724087",
+  "timeline_events": [
+    {
+      "timestamp": "2025-11-28T20:50:00",
+      "source": "document_0",
+      "description": "01, Sai Apartment, Lane 3, Shivaji Nagar, Pune\nIncident Details:\nOn 18 March 2025, at approximately 20:50 hrs, I heard loud shouting and noises consis"
+    },
+    {
+      "timestamp": "2025-11-28T21:00:00",
+      "source": "document_0",
+      "description": "and noises consistent with a\nphysical fight coming from Flat 302 (residence of Arun Patil)"
+    },
+    {
+      "timestamp": "2025-11-28T21:00:00",
+      "source": "document_2",
+      "description": "s falling coming\nfrom Flat 302"
+    },
+    {
+      "timestamp": "2025-11-28T21:40:00",
+      "source": "document_0",
+      "description": "(Flat 303)\n3"
+    },
+    {
+      "timestamp": "2025-11-28T22:15:00",
+      "source": "document_1",
+      "description": "x: Male\nAddress: Flat 302, Sai Apartment, Shivaji Nagar, Pune\nDate of Examination: 18/03/2025\nTime: 22:15 hrs\nInjury Report:\n1"
+    },
+    {
+      "timestamp": "2025-11-28T23:10:00",
+      "source": "document_0",
+      "description": "RT (FIR)\nPolice Station: Shivaji Nagar Police Station, Pune\nFIR No: 423/2025\nDate: 18/03/2025\nTime: 23:10 hrs\nComplainant:\nName: Ramesh Kulkarni\nAge: "
+    },
+    {
+      "timestamp": "2025-11-28T23:45:00",
+      "source": "document_2",
+      "description": "Age: 36\nAddress: Flat 301, Sai Apartment, Shivaji Nagar, Pune\nStatement Given On: 18/03/2025\nTime: 23:45 hrs\nI was inside my flat when I heard continu"
+    }
+  ],
+  "inconsistencies": [],
+  "missing_evidence": [
+    "Obtain statements from neighbors and nearby residents.",
+    "Collect phone records and call logs if applicable.",
+    "Check for forensic reports (fingerprints, DNA analysis, blood spatter analysis).",
+    "Verify alibis and cross-check with CCTV timestamps."
+  ],
+  "extracted_content": [
+    {
+      "file_type": "document",
+      "classification": {
+        "label": "general_document",
+        "confidence": 0.5,
+        "method": "fallback"
+      },
+      "extracted_text": "FIRST INFORMATION REPORT (FIR)\nPolice Station: Shivaji Nagar Police Station, Pune\nFIR No: 423/2025\nDate: 18/03/2025\nTime: 23:10 hrs\nComplainant:\nName: Ramesh Kulkarni\nAge: 36\nOccupation: Accountant\nAddress: Flat 301, Sai Apartment, Lane 3, Shivaji Nagar, Pune\nIncident Details:\nOn 18 March 2025, at approximately 20:50 hrs, I heard loud shouting and noises consistent with a\nphysical fight coming from Flat 302 (residence of Arun Patil). Around 21:00 hrs, I observed an unknown\nmale, approximately 5’10”, wearing a black shirt and blue jeans, running down the staircase. The man\nappeared to be holding a metallic object in his right hand.\nUpon entering the flat with another neighbor, we found Arun Patil lying near the sofa with injuries on his\nleft arm and head. Blood was visible on the floor near the living room.\nSections Applied:\n- IPC Section 452 – House-trespass after preparation for hurt\n- IPC Section 324 – Voluntarily causing hurt by dangerous weapons\n- IPC Section 307 – Attempt to murder\nWitnesses Listed:\n1. Ramesh Kulkarni\n2. Sunita More (Flat 303)\n3. Sanjay Patil (Flat 301)\nAction Taken:\n- Victim shifted to Sassoon General Hospital at 21:40 hrs\n- Knife-like object recovered near staircase landing\n- CCTV footage collected from apartment main gate camera",
+      "entities": [
+        {
+          "entity": "Shivaji Nagar Police Station",
+          "label": "LOC",
+          "score": 0.9869654774665833,
+          "start": 47,
+          "end": 75
+        },
+        {
+          "entity": "Pune",
+          "label": "LOC",
+          "score": 0.9964324235916138,
+          "start": 77,
+          "end": 81
+        },
+        {
+          "entity": "Ram",
+          "label": "PER",
+          "score": 0.9994117021560669,
+          "start": 151,
+          "end": 154
+        },
+        {
+          "entity": "##esh Kulkar",
+          "label": "PER",
+          "score": 0.9573307037353516,
+          "start": 154,
+          "end": 164
+        },
+        {
+          "entity": "Sai Apartment",
+          "label": "LOC",
+          "score": 0.9714410901069641,
+          "start": 217,
+          "end": 230
+        },
+        {
+          "entity": "Lane 3",
+          "label": "LOC",
+          "score": 0.7049376368522644,
+          "start": 232,
+          "end": 238
+        },
+        {
+          "entity": "Shivaji Nagar",
+          "label": "LOC",
+          "score": 0.9960691332817078,
+          "start": 240,
+          "end": 253
+        },
+        {
+          "entity": "Pune",
+          "label": "LOC",
+          "score": 0.9927433729171753,
+          "start": 255,
+          "end": 259
+        },
+        {
+          "entity": "A",
+          "label": "PER",
+          "score": 0.9986075758934021,
+          "start": 425,
+          "end": 426
+        },
+        {
+          "entity": "##run Patil",
+          "label": "PER",
+          "score": 0.9183756709098816,
+          "start": 426,
+          "end": 435
+        },
+        {
+          "entity": "A",
+          "label": "PER",
+          "score": 0.9996378421783447,
+          "start": 694,
+          "end": 695
+        },
+        {
+          "entity": "##run Patil",
+          "label": "PER",
+          "score": 0.9970223903656006,
+          "start": 695,
+          "end": 704
+        },
+        {
+          "entity": "IP",
+          "label": "ORG",
+          "score": 0.9407806396484375,
+          "start": 838,
+          "end": 840
+        },
+        {
+          "entity": "IP",
+          "label": "ORG",
+          "score": 0.9530088901519775,
+          "start": 900,
+          "end": 902
+        },
+        {
+          "entity": "IP",
+          "label": "ORG",
+          "score": 0.9148234128952026,
+          "start": 966,
+          "end": 968
+        },
+        {
+          "entity": "Ram",
+          "label": "PER",
+          "score": 0.9996368885040283,
+          "start": 1023,
+          "end": 1026
+        },
+        {
+          "entity": "##esh Kulkar",
+          "label": "PER",
+          "score": 0.9866056442260742,
+          "start": 1026,
+          "end": 1036
+        },
+        {
+          "entity": "Sun",
+          "label": "PER",
+          "score": 0.9995716214179993,
+          "start": 1042,
+          "end": 1045
+        },
+        {
+          "entity": "##ita More",
+          "label": "PER",
+          "score": 0.9872570037841797,
+          "start": 1045,
+          "end": 1053
+        },
+        {
+          "entity": "San",
+          "label": "PER",
+          "score": 0.9996691942214966,
+          "start": 1068,
+          "end": 1071
+        },
+        {
+          "entity": "##jay Patil",
+          "label": "PER",
+          "score": 0.9431595206260681,
+          "start": 1071,
+          "end": 1080
+        },
+        {
+          "entity": "Sa",
+          "label": "LOC",
+          "score": 0.9976078271865845,
+          "start": 1126,
+          "end": 1128
+        },
+        {
+          "entity": "##ssoon General Hospital",
+          "label": "LOC",
+          "score": 0.988968014717102,
+          "start": 1128,
+          "end": 1150
+        },
+        {
+          "entity_type": "ipc_sections",
+          "values": [
+            "324",
+            "307",
+            "452"
+          ]
+        },
+        {
+          "entity_type": "hospital_names",
+          "values": [
+            "Victim shifted to Sassoon General Hospital"
+          ]
+        }
+      ],
+      "objects_detected": [],
+      "ocr_text": "",
+      "timestamps": [
+        "21:40",
+        "20:50",
+        "21:00",
+        "23:10"
+      ],
+      "locations": [],
+      "summary": "FIRST INFORMATION REPORT (FIR)\nPolice Station: Shivaji Nagar Police Station, Pune\nFIR No: 423/2025\nDate: 18/03/2025\nTime: 23:10 hrs\nComplainant:\nName: Ramesh Kulkarni\nAge: 36\nOccupation: Accountant\nAddress: Flat 301, Sai Apartment, Lane 3, Shivaji Nagar, Pune\nIncident Details:\nOn 18 March 2025, at approximately 20:50 hrs, I heard loud shouting and noises consistent with a\nphysical fight coming from Flat 302 (residence of Arun Patil). Around 21:00 hrs, I observed an unknown\nmale, approximately 5’...",
+      "dates": [
+        "18/03/2025"
+      ],
+      "events": [
+        {
+          "event": "heard loud shouting and noises consistent with a\nphysical fight coming from Flat",
+          "type": "observation",
+          "context": ":\nOn 18 March 2025, at approximately 20:50 hrs, I heard loud shouting and noises consistent with a\nphysical fight coming from Flat 302 (residence of Arun Patil). Around 21:00 hrs, "
+        },
+        {
+          "event": "observed an unknown\nmale",
+          "type": "observation",
+          "context": "02 (residence of Arun Patil). Around 21:00 hrs, I observed an unknown\nmale, approximately 5’10”, wearing a black shirt and b"
+        },
+        {
+          "event": "left arm and head",
+          "type": "location_exit",
+          "context": "un Patil lying near the sofa with injuries on his\nleft arm and head. Blood was visible on the floor near the living r"
+        }
+      ],
+      "legal_entities": {
+        "ipc_sections": [
+          "324",
+          "307",
+          "452"
+        ],
+        "fir_numbers": [],
+        "mlc_numbers": [],
+        "hospital_names": [
+          "Victim shifted to Sassoon General Hospital"
+        ],
+        "vehicle_numbers": [],
+        "injury_terms": []
+      }
+    },
+    {
+      "file_type": "document",
+      "classification": {
+        "label": "general_document",
+        "confidence": 0.5,
+        "method": "fallback"
+      },
+      "extracted_text": "MEDICO-LEGAL CASE REPORT (MLC)\nSassoon General Hospital, Pune\nMLC No: 1198/2025\nPatient Details:\nName: Arun Patil\nAge: 34\nSex: Male\nAddress: Flat 302, Sai Apartment, Shivaji Nagar, Pune\nDate of Examination: 18/03/2025\nTime: 22:15 hrs\nInjury Report:\n1. Sharp Weapon Injury:\n- Deep laceration approximately 7 cm on left forearm\n- Edges clean-cut, likely caused by sharp-edged weapon\n2. Blunt Force Trauma:\n- Contusion on left side of head\n- Swelling observed around temple region\n- Caused by impact with hard object\n3. Vital Assessment:\n- Pulse: 98/min\n- BP: 110/70\n- Consciousness: Semi-conscious on arrival\nDoctor’s Opinion:\n- The injury on the arm is consistent with a sharp-edged weapon like a knife.\n- Head injury may indicate struggle or assault.\n- Injuries could be life-threatening without timely medical assistance.\nDoctor:\nDr. Meera Deshpande\nMBBS, MD (Emergency Medicine)\nRegistration No: 88231",
+      "entities": [
+        {
+          "entity": "Sassoon General Hospital",
+          "label": "LOC",
+          "score": 0.9946527481079102,
+          "start": 31,
+          "end": 55
+        },
+        {
+          "entity": "Pune M",
+          "label": "LOC",
+          "score": 0.8800365328788757,
+          "start": 57,
+          "end": 63
+        },
+        {
+          "entity": "A",
+          "label": "PER",
+          "score": 0.9980257749557495,
+          "start": 103,
+          "end": 104
+        },
+        {
+          "entity": "##run Pat",
+          "label": "PER",
+          "score": 0.990868091583252,
+          "start": 104,
+          "end": 111
+        },
+        {
+          "entity": "Sai Apartment",
+          "label": "LOC",
+          "score": 0.976390540599823,
+          "start": 151,
+          "end": 164
+        },
+        {
+          "entity": "Shivaji Nagar",
+          "label": "LOC",
+          "score": 0.9963034987449646,
+          "start": 166,
+          "end": 179
+        },
+        {
+          "entity": "Pune",
+          "label": "LOC",
+          "score": 0.9974091649055481,
+          "start": 181,
+          "end": 185
+        },
+        {
+          "entity": "Me",
+          "label": "PER",
+          "score": 0.9984391331672668,
+          "start": 835,
+          "end": 837
+        },
+        {
+          "entity": "##era Deshpande",
+          "label": "PER",
+          "score": 0.9013258218765259,
+          "start": 837,
+          "end": 850
+        },
+        {
+          "entity": "MB",
+          "label": "MISC",
+          "score": 0.41330915689468384,
+          "start": 851,
+          "end": 853
+        },
+        {
+          "entity": "MD",
+          "label": "LOC",
+          "score": 0.5486782193183899,
+          "start": 857,
+          "end": 859
+        },
+        {
+          "entity_type": "hospital_names",
+          "values": [
+            "Sassoon General Hospital"
+          ]
+        },
+        {
+          "entity_type": "injury_terms",
+          "values": [
+            "laceration",
+            "Blunt Force",
+            "Deep laceration"
+          ]
+        }
+      ],
+      "objects_detected": [],
+      "ocr_text": "",
+      "timestamps": [
+        "22:15"
+      ],
+      "locations": [],
+      "summary": "MEDICO-LEGAL CASE REPORT (MLC)\nSassoon General Hospital, Pune\nMLC No: 1198/2025\nPatient Details:\nName: Arun Patil\nAge: 34\nSex: Male\nAddress: Flat 302, Sai Apartment, Shivaji Nagar, Pune\nDate of Examination: 18/03/2025\nTime: 22:15 hrs\nInjury Report:\n1. Sharp Weapon Injury:\n- Deep laceration approximately 7 cm on left forearm\n- Edges clean-cut, likely caused by sharp-edged weapon\n2. Blunt Force Trauma:\n- Contusion on left side of head\n- Swelling observed around temple region\n- Caused by impact wit...",
+      "dates": [
+        "18/03/2025"
+      ],
+      "events": [
+        {
+          "event": "observed around temple region",
+          "type": "observation",
+          "context": "auma:\n- Contusion on left side of head\n- Swelling observed around temple region\n- Caused by impact with hard object\n3. Vital Asse"
+        },
+        {
+          "event": "left forearm",
+          "type": "location_exit",
+          "context": "n Injury:\n- Deep laceration approximately 7 cm on left forearm\n- Edges clean-cut, likely caused by sharp-edged w"
+        },
+        {
+          "event": "left side of head",
+          "type": "location_exit",
+          "context": "dged weapon\n2. Blunt Force Trauma:\n- Contusion on left side of head\n- Swelling observed around temple region\n- Caused"
+        }
+      ],
+      "legal_entities": {
+        "ipc_sections": [],
+        "fir_numbers": [],
+        "mlc_numbers": [],
+        "hospital_names": [
+          "Sassoon General Hospital"
+        ],
+        "vehicle_numbers": [],
+        "injury_terms": [
+          "laceration",
+          "Blunt Force",
+          "Deep laceration"
+        ]
+      }
+    },
+    {
+      "file_type": "document",
+      "classification": {
+        "label": "general_document",
+        "confidence": 0.5,
+        "method": "fallback"
+      },
+      "extracted_text": "WITNESS STATEMENT\nStatement Recorded Under Section 161 CrPC\nName: Ramesh Kulkarni\nAge: 36\nAddress: Flat 301, Sai Apartment, Shivaji Nagar, Pune\nStatement Given On: 18/03/2025\nTime: 23:45 hrs\nI was inside my flat when I heard continuous shouting and sounds of household items falling coming\nfrom Flat 302. The noise continued for 5–10 minutes. When I came outside at around 21:00 hrs, I\nnoticed a man running down the stairs in a hurried manner. He appeared to be around 5'10\", medium\nbuild, wearing a black shirt and blue jeans.\nAlthough the corridor lighting was dim, I could see that he was holding something metallic in his right\nhand. I cannot confirm whether it was a knife, but it appeared sharp.\nWhen I, along with my neighbor Sanjay Patil, entered the flat, we found Arun Patil lying unconscious\nwith blood near his left forearm and head. We immediately called the police helpline number 100.\nThis statement is true to the best of my knowledge.\n(Signature)\nRamesh Kulkarni\n18/03/2025",
+      "entities": [
+        {
+          "entity": "Ramesh Kulkar",
+          "label": "PER",
+          "score": 0.8954960107803345,
+          "start": 66,
+          "end": 79
+        },
+        {
+          "entity": "Sai Apartment",
+          "label": "LOC",
+          "score": 0.9728843569755554,
+          "start": 109,
+          "end": 122
+        },
+        {
+          "entity": "Shivaji Nagar",
+          "label": "LOC",
+          "score": 0.9957335591316223,
+          "start": 124,
+          "end": 137
+        },
+        {
+          "entity": "Pune",
+          "label": "LOC",
+          "score": 0.9909793138504028,
+          "start": 139,
+          "end": 143
+        },
+        {
+          "entity": "San",
+          "label": "PER",
+          "score": 0.9996917247772217,
+          "start": 734,
+          "end": 737
+        },
+        {
+          "entity": "##jay Patil",
+          "label": "PER",
+          "score": 0.8964435458183289,
+          "start": 737,
+          "end": 746
+        },
+        {
+          "entity": "A",
+          "label": "PER",
+          "score": 0.9996986389160156,
+          "start": 775,
+          "end": 776
+        },
+        {
+          "entity": "##run Patil",
+          "label": "PER",
+          "score": 0.9912131428718567,
+          "start": 776,
+          "end": 785
+        },
+        {
+          "entity": "Ramesh Kulkar",
+          "label": "PER",
+          "score": 0.9260093569755554,
+          "start": 965,
+          "end": 978
+        }
+      ],
+      "objects_detected": [],
+      "ocr_text": "",
+      "timestamps": [
+        "23:45",
+        "21:00"
+      ],
+      "locations": [],
+      "summary": "WITNESS STATEMENT\nStatement Recorded Under Section 161 CrPC\nName: Ramesh Kulkarni\nAge: 36\nAddress: Flat 301, Sai Apartment, Shivaji Nagar, Pune\nStatement Given On: 18/03/2025\nTime: 23:45 hrs\nI was inside my flat when I heard continuous shouting and sounds of household items falling coming\nfrom Flat 302. The noise continued for 5–10 minutes. When I came outside at around 21:00 hrs, I\nnoticed a man running down the stairs in a hurried manner. He appeared to be around 5'10\", medium\nbuild, wearing a...",
+      "dates": [
+        "18/03/2025"
+      ],
+      "events": [
+        {
+          "event": "entered the flat",
+          "type": "location_entry",
+          "context": "arp.\nWhen I, along with my neighbor Sanjay Patil, entered the flat, we found Arun Patil lying unconscious\nwith blood"
+        },
+        {
+          "event": "heard continuous shouting and sounds of household items falling coming\nfrom Flat",
+          "type": "observation",
+          "context": "/2025\nTime: 23:45 hrs\nI was inside my flat when I heard continuous shouting and sounds of household items falling coming\nfrom Flat 302. The noise continued for 5–10 minutes. When I"
+        },
+        {
+          "event": "left forearm and head",
+          "type": "location_exit",
+          "context": " Arun Patil lying unconscious\nwith blood near his left forearm and head. We immediately called the police helpline number"
+        }
+      ],
+      "legal_entities": {
+        "ipc_sections": [],
+        "fir_numbers": [],
+        "mlc_numbers": [],
+        "hospital_names": [],
+        "vehicle_numbers": [],
+        "injury_terms": []
+      }
+    }
+  ],
+  "evidence_map": {
+    "case_persons": [
+      "Ramesh Kulkar"
+    ],
+    "case_locations": [
+      "##ssoon General Hospital",
+      "Lane 3",
+      "MD",
+      "Pune",
+      "Pune M",
+      "Sa",
+      "Sai Apartment",
+      "Sassoon General Hospital",
+      "Shivaji Nagar",
+      "Shivaji Nagar Police Station"
+    ],
+    "case_timestamps": [
+      "2025-03-18T00:00:00",
+      "2025-11-28T20:50:00",
+      "2025-11-28T21:00:00",
+      "2025-11-28T21:40:00",
+      "2025-11-28T22:15:00",
+      "2025-11-28T23:10:00",
+      "2025-11-28T23:45:00"
+    ],
+    "case_injuries": [
+      "Blunt Force",
+      "Deep laceration",
+      "laceration"
+    ],
+    "case_weapons": [
+      "Knife",
+      "knife",
+      "sharp",
+      "weapon"
+    ],
+    "ipc_sections": [
+      "307",
+      "324",
+      "452"
+    ],
+    "fir_numbers": [],
+    "mlc_numbers": [],
+    "hospital_names": [
+      "Sassoon General Hospital",
+      "Victim shifted to Sassoon General Hospital"
+    ],
+    "vehicle_numbers": [],
+    "files": [
+      {
+        "file": "FIR_Arun_Patil_Case.pdf",
+        "type": "document",
+        "classification": {
+          "label": "general_document",
+          "confidence": 0.5,
+          "method": "fallback"
+        },
+        "summary": "FIRST INFORMATION REPORT (FIR)\nPolice Station: Shivaji Nagar Police Station, Pune\nFIR No: 423/2025\nDate: 18/03/2025\nTime: 23:10 hrs\nComplainant:\nName: Ramesh Kulkarni\nAge: 36\nOccupation: Accountant\nAddress: Flat 301, Sai Apartment, Lane 3, Shivaji Nagar, Pune\nIncident Details:\nOn 18 March 2025, at approximately 20:50 hrs, I heard loud shouting and noises consistent with a\nphysical fight coming from Flat 302 (residence of Arun Patil). Around 21:00 hrs, I observed an unknown\nmale, approximately 5’",
+        "persons": [],
+        "locations": [
+          "Lane 3",
+          "Shivaji Nagar Police Station",
+          "Sa",
+          "Sai Apartment",
+          "Pune",
+          "##ssoon General Hospital",
+          "Shivaji Nagar"
+        ],
+        "timestamps": [
+          "2025-11-28T21:40:00",
+          "2025-11-28T20:50:00",
+          "2025-11-28T21:00:00",
+          "2025-11-28T23:10:00",
+          "2025-03-18T00:00:00"
+        ],
+        "injuries": [],
+        "weapons": [
+          "knife",
+          "weapon"
+        ],
+        "legal_entities": {
+          "ipc_sections": [
+            "324",
+            "307",
+            "452"
+          ],
+          "fir_numbers": [],
+          "mlc_numbers": [],
+          "hospital_names": [
+            "Victim shifted to Sassoon General Hospital"
+          ],
+          "vehicle_numbers": [],
+          "injury_terms": []
+        }
+      },
+      {
+        "file": "MLC_Report_Arun_Patil.pdf",
+        "type": "document",
+        "classification": {
+          "label": "general_document",
+          "confidence": 0.5,
+          "method": "fallback"
+        },
+        "summary": "MEDICO-LEGAL CASE REPORT (MLC)\nSassoon General Hospital, Pune\nMLC No: 1198/2025\nPatient Details:\nName: Arun Patil\nAge: 34\nSex: Male\nAddress: Flat 302, Sai Apartment, Shivaji Nagar, Pune\nDate of Examination: 18/03/2025\nTime: 22:15 hrs\nInjury Report:\n1. Sharp Weapon Injury:\n- Deep laceration approximately 7 cm on left forearm\n- Edges clean-cut, likely caused by sharp-edged weapon\n2. Blunt Force Trauma:\n- Contusion on left side of head\n- Swelling observed around temple region\n- Caused by impact wit",
+        "persons": [],
+        "locations": [
+          "Pune M",
+          "MD",
+          "Sai Apartment",
+          "Pune",
+          "Shivaji Nagar",
+          "Sassoon General Hospital"
+        ],
+        "timestamps": [
+          "2025-11-28T22:15:00",
+          "2025-03-18T00:00:00"
+        ],
+        "injuries": [
+          "laceration",
+          "Blunt Force",
+          "Deep laceration"
+        ],
+        "weapons": [
+          "knife",
+          "weapon",
+          "sharp"
+        ],
+        "legal_entities": {
+          "ipc_sections": [],
+          "fir_numbers": [],
+          "mlc_numbers": [],
+          "hospital_names": [
+            "Sassoon General Hospital"
+          ],
+          "vehicle_numbers": [],
+          "injury_terms": [
+            "laceration",
+            "Blunt Force",
+            "Deep laceration"
+          ]
+        }
+      },
+      {
+        "file": "Witness_Statement_Ramesh_Kulkarni.pdf",
+        "type": "document",
+        "classification": {
+          "label": "general_document",
+          "confidence": 0.5,
+          "method": "fallback"
+        },
+        "summary": "WITNESS STATEMENT\nStatement Recorded Under Section 161 CrPC\nName: Ramesh Kulkarni\nAge: 36\nAddress: Flat 301, Sai Apartment, Shivaji Nagar, Pune\nStatement Given On: 18/03/2025\nTime: 23:45 hrs\nI was inside my flat when I heard continuous shouting and sounds of household items falling coming\nfrom Flat 302. The noise continued for 5–10 minutes. When I came outside at around 21:00 hrs, I\nnoticed a man running down the stairs in a hurried manner. He appeared to be around 5'10\", medium\nbuild, wearing a",
+        "persons": [
+          "Ramesh Kulkar"
+        ],
+        "locations": [
+          "Sai Apartment",
+          "Shivaji Nagar",
+          "Pune"
+        ],
+        "timestamps": [
+          "2025-11-28T23:45:00",
+          "2025-11-28T21:00:00",
+          "2025-03-18T00:00:00"
+        ],
+        "injuries": [],
+        "weapons": [
+          "knife",
+          "sharp"
+        ],
+        "legal_entities": {
+          "ipc_sections": [],
+          "fir_numbers": [],
+          "mlc_numbers": [],
+          "hospital_names": [],
+          "vehicle_numbers": [],
+          "injury_terms": []
+        }
+      }
+    ],
+    "consolidated_text": "FIRST INFORMATION REPORT (FIR)\nPolice Station: Shivaji Nagar Police Station, Pune\nFIR No: 423/2025\nDate: 18/03/2025\nTime: 23:10 hrs\nComplainant:\nName: Ramesh Kulkarni\nAge: 36\nOccupation: Accountant\nAddress: Flat 301, Sai Apartment, Lane 3, Shivaji Nagar, Pune\nIncident Details:\nOn 18 March 2025, at approximately 20:50 hrs, I heard loud shouting and noises consistent with a\nphysical fight coming from Flat 302 (residence of Arun Patil). Around 21:00 hrs, I observed an unknown\nmale, approximately 5’10”, wearing a black shirt and blue jeans, running down the staircase. The man\nappeared to be holding a metallic object in his right hand.\nUpon entering the flat with another neighbor, we found Arun Patil lying near the sofa with injuries on his\nleft arm and head. Blood was visible on the floor near the living room.\nSections Applied:\n- IPC Section 452 – House-trespass after preparation for hurt\n- IPC Section 324 – Voluntarily causing hurt by dangerous weapons\n- IPC Section 307 – Attempt to murder\nWitnesses Listed:\n1. Ramesh Kulkarni\n2. Sunita More (Flat 303)\n3. Sanjay Patil (Flat 301)\nAction Taken:\n- Victim shifted to Sassoon General Hospital at 21:40 hrs\n- Knife-like object recovered near staircase landing\n- CCTV footage collected from apartment main gate camera\n---\nMEDICO-LEGAL CASE REPORT (MLC)\nSassoon General Hospital, Pune\nMLC No: 1198/2025\nPatient Details:\nName: Arun Patil\nAge: 34\nSex: Male\nAddress: Flat 302, Sai Apartment, Shivaji Nagar, Pune\nDate of Examination: 18/03/2025\nTime: 22:15 hrs\nInjury Report:\n1. Sharp Weapon Injury:\n- Deep laceration approximately 7 cm on left forearm\n- Edges clean-cut, likely caused by sharp-edged weapon\n2. Blunt Force Trauma:\n- Contusion on left side of head\n- Swelling observed around temple region\n- Caused by impact with hard object\n3. Vital Assessment:\n- Pulse: 98/min\n- BP: 110/70\n- Consciousness: Semi-conscious on arrival\nDoctor’s Opinion:\n- The injury on the arm is consistent with a sharp-edged weapon like a knife.\n- Head injury may indicate struggle or assault.\n- Injuries could be life-threatening without timely medical assistance.\nDoctor:\nDr. Meera Deshpande\nMBBS, MD (Emergency Medicine)\nRegistration No: 88231\n---\nWITNESS STATEMENT\nStatement Recorded Under Section 161 CrPC\nName: Ramesh Kulkarni\nAge: 36\nAddress: Flat 301, Sai Apartment, Shivaji Nagar, Pune\nStatement Given On: 18/03/2025\nTime: 23:45 hrs\nI was inside my flat when I heard continuous shouting and sounds of household items falling coming\nfrom Flat 302. The noise continued for 5–10 minutes. When I came outside at around 21:00 hrs, I\nnoticed a man running down the stairs in a hurried manner. He appeared to be around 5'10\", medium\nbuild, wearing a black shirt and blue jeans.\nAlthough the corridor lighting was dim, I could see that he was holding something metallic in his right\nhand. I cannot confirm whether it was a knife, but it appeared sharp.\nWhen I, along with my neighbor Sanjay Patil, entered the flat, we found Arun Patil lying unconscious\nwith blood near his left forearm and head. We immediately called the police helpline number 100.\nThis statement is true to the best of my knowledge.\n(Signature)\nRamesh Kulkarni\n18/03/2025",
+    "entity_files": {
+      "persons": {
+        "Ramesh Kulkar": [
+          "Witness_Statement_Ramesh_Kulkarni.pdf"
+        ]
+      },
+      "locations": {
+        "Lane 3": [
+          "FIR_Arun_Patil_Case.pdf"
+        ],
+        "Shivaji Nagar Police Station": [
+          "FIR_Arun_Patil_Case.pdf"
+        ],
+        "Sa": [
+          "FIR_Arun_Patil_Case.pdf"
+        ],
+        "Sai Apartment": [
+          "FIR_Arun_Patil_Case.pdf",
+          "MLC_Report_Arun_Patil.pdf",
+          "Witness_Statement_Ramesh_Kulkarni.pdf"
+        ],
+        "Pune": [
+          "FIR_Arun_Patil_Case.pdf",
+          "MLC_Report_Arun_Patil.pdf",
+          "Witness_Statement_Ramesh_Kulkarni.pdf"
+        ],
+        "##ssoon General Hospital": [
+          "FIR_Arun_Patil_Case.pdf"
+        ],
+        "Shivaji Nagar": [
+          "FIR_Arun_Patil_Case.pdf",
+          "MLC_Report_Arun_Patil.pdf",
+          "Witness_Statement_Ramesh_Kulkarni.pdf"
+        ],
+        "Pune M": [
+          "MLC_Report_Arun_Patil.pdf"
+        ],
+        "MD": [
+          "MLC_Report_Arun_Patil.pdf"
+        ],
+        "Sassoon General Hospital": [
+          "MLC_Report_Arun_Patil.pdf"
+        ]
+      },
+      "timestamps": {
+        "2025-11-28T21:40:00": [
+          "FIR_Arun_Patil_Case.pdf"
+        ],
+        "2025-11-28T20:50:00": [
+          "FIR_Arun_Patil_Case.pdf"
+        ],
+        "2025-11-28T21:00:00": [
+          "FIR_Arun_Patil_Case.pdf",
+          "Witness_Statement_Ramesh_Kulkarni.pdf"
+        ],
+        "2025-11-28T23:10:00": [
+          "FIR_Arun_Patil_Case.pdf"
+        ],
+        "2025-03-18T00:00:00": [
+          "FIR_Arun_Patil_Case.pdf",
+          "MLC_Report_Arun_Patil.pdf",
+          "Witness_Statement_Ramesh_Kulkarni.pdf"
+        ],
+        "2025-11-28T22:15:00": [
+          "MLC_Report_Arun_Patil.pdf"
+        ],
+        "2025-11-28T23:45:00": [
+          "Witness_Statement_Ramesh_Kulkarni.pdf"
+        ]
+      },
+      "injuries": {
+        "laceration": [
+          "MLC_Report_Arun_Patil.pdf"
+        ],
+        "Blunt Force": [
+          "MLC_Report_Arun_Patil.pdf"
+        ],
+        "Deep laceration": [
+          "MLC_Report_Arun_Patil.pdf"
+        ]
+      },
+      "weapons": {
+        "knife": [
+          "FIR_Arun_Patil_Case.pdf",
+          "MLC_Report_Arun_Patil.pdf",
+          "Witness_Statement_Ramesh_Kulkarni.pdf"
+        ],
+        "weapon": [
+          "FIR_Arun_Patil_Case.pdf",
+          "MLC_Report_Arun_Patil.pdf"
+        ],
+        "sharp": [
+          "MLC_Report_Arun_Patil.pdf",
+          "Witness_Statement_Ramesh_Kulkarni.pdf"
+        ]
+      }
+    }
+  },
+  "case_summary": "LLM reasoning error: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+  "relationships": [
+    {
+      "source": "dcbb258ce4f44b53992f268bbc077d61",
+      "target": "117347727ad546efb234773dc3a4264d",
+      "reasons": [
+        "👤 Same person: Ramesh Kulkar",
+        "📍 Same location: ##ssoon General Hospital, Lane 3, MD, Pune, Pune M",
+        "🗡️ Same weapon type: Knife, knife, sharp",
+        "🩺 Similar injuries: Blunt Force, Deep laceration, laceration",
+        "⚡ Matching event types: location_entry, location_exit, observation",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 6,
+      "similarity": 0.0,
+      "shared_entities": {
+        "persons": [
+          "Ramesh Kulkar"
+        ],
+        "locations": [
+          "##ssoon General Hospital",
+          "Lane 3",
+          "MD",
+          "Pune",
+          "Pune M",
+          "Sa",
+          "Sai Apartment",
+          "Sassoon General Hospital",
+          "Shivaji Nagar",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "knife",
+          "sharp",
+          "weapon"
+        ],
+        "injuries": [
+          "Blunt Force",
+          "Deep laceration",
+          "laceration"
+        ],
+        "events": [
+          "location_entry",
+          "location_exit",
+          "observation"
+        ],
+        "dates": [
+          "2025-03-18",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "dcbb258ce4f44b53992f268bbc077d61",
+      "target": "ae64a58fae574e64a1a9d005f29075ee",
+      "reasons": [
+        "👤 Same person: Ramesh Kulkar",
+        "📍 Same location: ##ssoon General Hospital, Lane 3, MD, Pune, Pune M",
+        "🗡️ Same weapon type: Knife, knife, sharp",
+        "🩺 Similar injuries: Blunt Force, Deep laceration, laceration",
+        "⚡ Matching event types: location_entry, location_exit, observation",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 6,
+      "similarity": 0.0,
+      "shared_entities": {
+        "persons": [
+          "Ramesh Kulkar"
+        ],
+        "locations": [
+          "##ssoon General Hospital",
+          "Lane 3",
+          "MD",
+          "Pune",
+          "Pune M",
+          "Sa",
+          "Sai Apartment",
+          "Sassoon General Hospital",
+          "Shivaji Nagar",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "knife",
+          "sharp",
+          "weapon"
+        ],
+        "injuries": [
+          "Blunt Force",
+          "Deep laceration",
+          "laceration"
+        ],
+        "events": [
+          "location_entry",
+          "location_exit",
+          "observation"
+        ],
+        "dates": [
+          "2025-03-18",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "dcbb258ce4f44b53992f268bbc077d61",
+      "target": "9bc6495f1a3a4f53bbcb8238b64b928d",
+      "reasons": [
+        "📍 Same location: Sassoon General Hospital",
+        "🗡️ Same weapon type: Knife, knife, sharp",
+        "🩺 Similar injuries: Blunt Force, Deep laceration, laceration",
+        "⚡ Matching event types: location_entry, location_exit, observation",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 5,
+      "similarity": 0.0,
+      "shared_entities": {
+        "locations": [
+          "Sassoon General Hospital"
+        ],
+        "weapons": [
+          "Knife",
+          "knife",
+          "sharp",
+          "weapon"
+        ],
+        "injuries": [
+          "Blunt Force",
+          "Deep laceration",
+          "laceration"
+        ],
+        "events": [
+          "location_entry",
+          "location_exit",
+          "observation"
+        ],
+        "dates": [
+          "2025-03-18",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "dcbb258ce4f44b53992f268bbc077d61",
+      "target": "11f483d2360e4fb8bf9e36c15262f899",
+      "reasons": [
+        "📍 Same location: PUNE, Sai Apartment, Shivaji Nagar",
+        "🗡️ Same weapon type: Knife, weapon",
+        "⚡ Matching event types: location_exit, observation",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4,
+      "similarity": 0.0,
+      "shared_entities": {
+        "locations": [
+          "PUNE",
+          "Sai Apartment",
+          "Shivaji Nagar"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "events": [
+          "location_exit",
+          "observation"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "dcbb258ce4f44b53992f268bbc077d61",
+      "target": "43efee19bae440f782902f33559bdd90",
+      "reasons": [
+        "📍 Same location: Pune, Sai Apartment, Shivaji Nagar Police Station",
+        "🗡️ Same weapon type: Knife, knife, sharp",
+        "⚡ Matching event types: location_exit, observation",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4,
+      "similarity": 0.0,
+      "shared_entities": {
+        "locations": [
+          "Pune",
+          "Sai Apartment",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "knife",
+          "sharp",
+          "weapon"
+        ],
+        "events": [
+          "location_exit",
+          "observation"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "dcbb258ce4f44b53992f268bbc077d61",
+      "target": "a5451944f62844469bf185052abb6215",
+      "reasons": [
+        "📍 Same location: Pune, Sai Apartment, Shivaji Nagar Police Station",
+        "🗡️ Same weapon type: Knife, knife, sharp",
+        "⚡ Matching event types: location_exit, observation",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4,
+      "similarity": 0.0,
+      "shared_entities": {
+        "locations": [
+          "Pune",
+          "Sai Apartment",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "knife",
+          "sharp",
+          "weapon"
+        ],
+        "events": [
+          "location_exit",
+          "observation"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "dcbb258ce4f44b53992f268bbc077d61",
+      "target": "cafac347ceb242ca91b8be019da1bb52",
+      "reasons": [
+        "📍 Same location: PUNE, Sai Apartment, Shivaji Nagar",
+        "🗡️ Same weapon type: Knife, weapon",
+        "⚡ Matching event types: location_exit, observation",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4,
+      "similarity": 0.0,
+      "shared_entities": {
+        "locations": [
+          "PUNE",
+          "Sai Apartment",
+          "Shivaji Nagar"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "events": [
+          "location_exit",
+          "observation"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "dcbb258ce4f44b53992f268bbc077d61",
+      "target": "096863c0eb3e41e4ab7df15714e6492b",
+      "reasons": [
+        "🗡️ Same weapon type: Knife, knife, weapon",
+        "🩺 Similar injuries: Blunt Force, Deep laceration, laceration",
+        "⚡ Matching event types: location_entry, location_exit, observation"
+      ],
+      "weight": 3,
+      "similarity": 0.0,
+      "shared_entities": {
+        "weapons": [
+          "Knife",
+          "knife",
+          "weapon"
+        ],
+        "injuries": [
+          "Blunt Force",
+          "Deep laceration",
+          "laceration"
+        ],
+        "events": [
+          "location_entry",
+          "location_exit",
+          "observation"
+        ]
+      }
+    },
+    {
+      "source": "dcbb258ce4f44b53992f268bbc077d61",
+      "target": "09635edcec2646bb914f231a00a5117f",
+      "reasons": [
+        "⚡ Matching event types: location_entry, location_exit, observation"
+      ],
+      "weight": 1,
+      "similarity": 0.0,
+      "shared_entities": {
+        "events": [
+          "location_entry",
+          "location_exit",
+          "observation"
+        ]
+      }
+    },
+    {
+      "source": "dcbb258ce4f44b53992f268bbc077d61",
+      "target": "33e7eb6fe7e04853a20c57e85793b767",
+      "reasons": [
+        "⚡ Matching event types: location_entry, location_exit, observation"
+      ],
+      "weight": 1,
+      "similarity": 0.0,
+      "shared_entities": {
+        "events": [
+          "location_entry",
+          "location_exit",
+          "observation"
+        ]
+      }
+    },
+    {
+      "source": "dcbb258ce4f44b53992f268bbc077d61",
+      "target": "6e12b21dfadc44deaf9f16da2b4afd81",
+      "reasons": [
+        "⚡ Matching event types: location_entry, location_exit, observation"
+      ],
+      "weight": 1,
+      "similarity": 0.0,
+      "shared_entities": {
+        "events": [
+          "location_entry",
+          "location_exit",
+          "observation"
+        ]
+      }
+    },
+    {
+      "source": "dcbb258ce4f44b53992f268bbc077d61",
+      "target": "780dca54a38144d7a258bae9819597a7",
+      "reasons": [
+        "⚡ Matching event types: location_exit, observation"
+      ],
+      "weight": 1,
+      "similarity": 0.0,
+      "shared_entities": {
+        "events": [
+          "location_exit",
+          "observation"
+        ]
+      }
+    },
+    {
+      "source": "dcbb258ce4f44b53992f268bbc077d61",
+      "target": "7efbc9289b074e9c8c930a8a3530f780",
+      "reasons": [
+        "⚡ Matching event types: location_entry, location_exit, observation"
+      ],
+      "weight": 1,
+      "similarity": 0.0,
+      "shared_entities": {
+        "events": [
+          "location_entry",
+          "location_exit",
+          "observation"
+        ]
+      }
+    },
+    {
+      "source": "dcbb258ce4f44b53992f268bbc077d61",
+      "target": "8209bc8b5f9b4eb2838cd09e655646e0",
+      "reasons": [
+        "⚡ Matching event types: location_entry, location_exit, observation"
+      ],
+      "weight": 1,
+      "similarity": 0.0,
+      "shared_entities": {
+        "events": [
+          "location_entry",
+          "location_exit",
+          "observation"
+        ]
+      }
+    },
+    {
+      "source": "dcbb258ce4f44b53992f268bbc077d61",
+      "target": "9f3f39fef2f0483ca05a626c9098f2ab",
+      "reasons": [
+        "⚡ Matching event types: location_entry, location_exit, observation"
+      ],
+      "weight": 1,
+      "similarity": 0.0,
+      "shared_entities": {
+        "events": [
+          "location_entry",
+          "location_exit",
+          "observation"
+        ]
+      }
+    },
+    {
+      "source": "dcbb258ce4f44b53992f268bbc077d61",
+      "target": "a805ca5d1d014b85a1425c0357f4169f",
+      "reasons": [
+        "⚡ Matching event types: location_entry, location_exit, observation"
+      ],
+      "weight": 1,
+      "similarity": 0.0,
+      "shared_entities": {
+        "events": [
+          "location_entry",
+          "location_exit",
+          "observation"
+        ]
+      }
+    },
+    {
+      "source": "dcbb258ce4f44b53992f268bbc077d61",
+      "target": "c6f9b0711d4e4ad9b29cf86cf4eeb85d",
+      "reasons": [
+        "⚡ Matching event types: location_entry, location_exit, observation"
+      ],
+      "weight": 1,
+      "similarity": 0.0,
+      "shared_entities": {
+        "events": [
+          "location_entry",
+          "location_exit",
+          "observation"
+        ]
+      }
+    },
+    {
+      "source": "dcbb258ce4f44b53992f268bbc077d61",
+      "target": "f13d349f120a4ed89f2929ef0a6cb026",
+      "reasons": [
+        "⚡ Matching event types: location_entry, location_exit, observation"
+      ],
+      "weight": 1,
+      "similarity": 0.0,
+      "shared_entities": {
+        "events": [
+          "location_entry",
+          "location_exit",
+          "observation"
+        ]
+      }
+    },
+    {
+      "source": "dcbb258ce4f44b53992f268bbc077d61",
+      "target": "f5498e4efffa46f481b81c68c65f52c3",
+      "reasons": [
+        "⚡ Matching event types: location_entry, location_exit, observation"
+      ],
+      "weight": 1,
+      "similarity": 0.0,
+      "shared_entities": {
+        "events": [
+          "location_entry",
+          "location_exit",
+          "observation"
+        ]
+      }
+    },
+    {
+      "source": "dcbb258ce4f44b53992f268bbc077d61",
+      "target": "fd351a9f5dcb4b94aa46a623f1100f89",
+      "reasons": [
+        "⚡ Matching event types: location_entry, location_exit, observation"
+      ],
+      "weight": 1,
+      "similarity": 0.0,
+      "shared_entities": {
+        "events": [
+          "location_entry",
+          "location_exit",
+          "observation"
+        ]
+      }
+    },
+    {
+      "source": "dcbb258ce4f44b53992f268bbc077d61",
+      "target": "fe87bfa096d94d0782090c89e839f77c",
+      "reasons": [
+        "⚡ Matching event types: location_entry, location_exit, observation"
+      ],
+      "weight": 1,
+      "similarity": 0.0,
+      "shared_entities": {
+        "events": [
+          "location_entry",
+          "location_exit",
+          "observation"
+        ]
+      }
+    }
+  ]
+}

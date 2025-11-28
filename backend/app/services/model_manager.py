@@ -10,17 +10,25 @@ This service handles:
 """
 
 import os
+import re
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
 import numpy as np
 import torch
 from PIL import Image
+# Prevent transformers from loading TensorFlow/Flax stacks (only PyTorch is needed)
+os.environ.setdefault("TRANSFORMERS_NO_TF", "1")
+os.environ.setdefault("TRANSFORMERS_NO_FLAX", "1")
+os.environ.setdefault("SENTENCE_TRANSFORMERS_NO_TF", "1")
+
 from transformers import (
     AutoModel,
+    AutoModelForTokenClassification,
     AutoTokenizer,
     CLIPModel,
     CLIPProcessor,
+    pipeline,
 )
 
 # YOLO imports
@@ -51,6 +59,8 @@ class ModelManager:
     _bert_model: Optional[Any] = None
     _yolo_model: Optional[Any] = None
     _device: str = "cuda" if torch.cuda.is_available() else "cpu"
+    _ner_pipeline: Optional[Any] = None
+    _sbert_model: Optional[Any] = None
 
     # Image classification prompts for CLIP
     IMAGE_CLASS_PROMPTS = [
@@ -79,8 +89,10 @@ class ModelManager:
         """Lazy load CLIP model for image classification."""
         if self._clip_model is None:
             print(f"Loading CLIP model on {self._device}...")
-            self._clip_model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32")
-            self._clip_processor = CLIPProcessor.from_pretrained("openai/clip-vit-base-patch32")
+            from app.config import settings
+            clip_name = getattr(settings, 'clip_model_path', 'openai/clip-vit-base-patch32') or 'openai/clip-vit-base-patch32'
+            self._clip_model = CLIPModel.from_pretrained(clip_name)
+            self._clip_processor = CLIPProcessor.from_pretrained(clip_name)
             self._clip_model.to(self._device)
             self._clip_model.eval()
             print("CLIP model loaded successfully.")
@@ -90,15 +102,35 @@ class ModelManager:
         """Lazy load BERT model for document classification and NER."""
         if self._bert_model is None:
             print(f"Loading BERT model on {self._device}...")
-            # Using a general-purpose BERT model
-            # For production, use a fine-tuned model on legal/crime documents
-            model_name = "bert-base-uncased"
+            # Using a general-purpose or legal-BERT model depending on config
+            # For best results, set `settings.bert_model_path` to 'nlpaueb/legal-bert-base-uncased'
+            from app.config import settings
+            model_name = getattr(settings, 'bert_model_path', 'bert-base-uncased') or 'bert-base-uncased'
             self._bert_tokenizer = AutoTokenizer.from_pretrained(model_name)
             self._bert_model = AutoModel.from_pretrained(model_name)
             self._bert_model.to(self._device)
             self._bert_model.eval()
             print("BERT model loaded successfully.")
         return self._bert_model, self._bert_tokenizer
+
+    def get_ner_pipeline(self):
+        """Lazy load a transformer-based NER pipeline."""
+        if self._ner_pipeline is None:
+            from app.config import settings
+            model_name = getattr(settings, "ner_model_path", "dslim/bert-base-NER") or "dslim/bert-base-NER"
+            print(f"Loading NER pipeline '{model_name}' on {self._device}...")
+            tokenizer = AutoTokenizer.from_pretrained(model_name)
+            model = AutoModelForTokenClassification.from_pretrained(model_name)
+            device_index = 0 if self._device == "cuda" else -1
+            self._ner_pipeline = pipeline(
+                "token-classification",
+                model=model,
+                tokenizer=tokenizer,
+                aggregation_strategy="simple",
+                device=device_index,
+            )
+            print("NER pipeline loaded successfully.")
+        return self._ner_pipeline
 
     def get_yolo_model(self) -> Optional[Any]:
         """Lazy load YOLO model for object detection."""
@@ -111,7 +143,9 @@ class ModelManager:
             # Using YOLOv8n (nano) for faster inference
             # For production, use YOLOv8m or YOLOv8l for better accuracy
             try:
-                self._yolo_model = YOLO("yolov8n.pt")
+                from app.config import settings
+                yolo_name = getattr(settings, 'yolo_model_path', 'yolov8n.pt') or 'yolov8n.pt'
+                self._yolo_model = YOLO(yolo_name)
                 print("YOLO model loaded successfully.")
             except Exception as e:
                 print(f"Warning: Could not load YOLO model: {e}")
@@ -233,15 +267,53 @@ class ModelManager:
 
     def extract_entities_bert(self, text: str) -> List[Dict[str, str]]:
         """
-        Extract named entities using BERT-based NER.
-        For production, use a fine-tuned NER model like spaCy's en_core_web_lg
-        or a custom BERT-NER model trained on legal documents.
+        Extract named entities using a transformer-based NER pipeline with spaCy/regex fallbacks.
         """
-        # Using spaCy as a fallback (more reliable for NER)
+        if not text:
+            return []
+
+        # Preferred: transformer pipeline (dslim/bert-base-NER by default)
+        try:
+            ner_pipeline = self.get_ner_pipeline()
+            raw_entities = ner_pipeline(text[:10000])
+            entities: List[Dict[str, Any]] = []
+            for ent in raw_entities:
+                entity_text = ent.get("word") or ent.get("text", "")
+                # Filter out tokenization artifacts
+                if not entity_text or len(entity_text) < 2:
+                    continue
+                # Skip single letters and tokenization artifacts
+                if len(entity_text.strip()) == 1 or entity_text.startswith("##"):
+                    continue
+                # Clean entity text - remove formatting characters
+                entity_text = re.sub(r'^##+', '', entity_text)
+                entity_text = re.sub(r'[═║╔╗╚╝╠╣╦╩╬─│┼┴┬├┤└┘┌┐]', '', entity_text).strip()
+                # Skip formatting artifacts
+                if not entity_text or len(entity_text) < 2:
+                    continue
+                # Skip if it's just formatting characters
+                if all(c in '═║─│•\-\*' for c in entity_text):
+                    continue
+                # Skip bullet points
+                if entity_text.startswith("•") or entity_text.startswith("-") or entity_text.startswith("*"):
+                    continue
+                entities.append({
+                    "entity": entity_text,
+                    "label": ent.get("entity_group") or ent.get("entity"),
+                    "score": float(ent.get("score", 0)),
+                    "start": int(ent.get("start", 0)),
+                    "end": int(ent.get("end", 0)),
+                })
+            if entities:
+                return entities
+        except Exception as e:
+            print(f"Transformer NER extraction error: {e}")
+
+        # Fallback: spaCy model if available
         try:
             import spacy
             nlp = spacy.load("en_core_web_sm")
-            doc = nlp(text[:10000])  # Process first 10k chars
+            doc = nlp(text[:10000])
 
             entities = []
             for ent in doc.ents:
@@ -251,18 +323,58 @@ class ModelManager:
                     "start": ent.start_char,
                     "end": ent.end_char,
                 })
-            return entities
+            if entities:
+                return entities
         except Exception as e:
-            print(f"Entity extraction error: {e}")
-            # Fallback to simple regex-based extraction
-            import re
-            entities = []
-            for match in re.finditer(r"\b([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*)\b", text[:2000]):
-                entities.append({
-                    "entity": match.group(1),
-                    "label": "PERSON_OR_LOCATION",
-                })
-            return entities[:50]
+            print(f"spaCy NER extraction error: {e}")
+
+        # Last resort: regex heuristic
+        import re
+        entities = []
+        for match in re.finditer(r"\b([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*)\b", text[:2000]):
+            entities.append({
+                "entity": match.group(1),
+                "label": "PERSON_OR_LOCATION",
+            })
+            if len(entities) >= 50:
+                break
+        return entities
+
+    def get_sentence_transformer(self):
+        """Lazy load sentence-transformer model for semantic similarity."""
+        if self._sbert_model is None:
+            from app.config import settings
+            from sentence_transformers import SentenceTransformer
+
+            model_name = getattr(
+                settings,
+                "sentence_transformer_model_path",
+                "sentence-transformers/all-MiniLM-L6-v2",
+            ) or "sentence-transformers/all-MiniLM-L6-v2"
+            print(f"Loading SentenceTransformer '{model_name}' on {self._device}...")
+            device = self._device if self._device == "cuda" else "cpu"
+            self._sbert_model = SentenceTransformer(model_name, device=device)
+            print("SentenceTransformer loaded successfully.")
+        return self._sbert_model
+
+    def compute_text_similarity(self, text_a: str, text_b: str) -> float:
+        """Compute cosine similarity between two texts using sentence-transformer embeddings."""
+        if not text_a or not text_b:
+            return 0.0
+        try:
+            model = self.get_sentence_transformer()
+            embeddings = model.encode(
+                [text_a, text_b],
+                convert_to_tensor=True,
+                normalize_embeddings=True,
+            )
+            score = float(
+                torch.nn.functional.cosine_similarity(embeddings[0], embeddings[1], dim=0).item()
+            )
+            return score
+        except Exception as e:
+            print(f"Sentence similarity error: {e}")
+            return 0.0
 
     def detect_objects_yolo(self, image_path: Path) -> List[Dict[str, Any]]:
         """

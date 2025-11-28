@@ -55,6 +55,11 @@ Edit `.env` and set:
 OPENAI_API_KEY=sk-your-key-here
 EVIDENCE_ENABLE_REAL_AI=true
 ```
+Add optional toggles to disable object detection and image classification (document-first processing):
+```
+EVIDENCE_ENABLE_OBJECT_DETECTION=true
+EVIDENCE_ENABLE_IMAGE_CLASSIFICATION=true
+```
 
 #### 3. Run Server
 
@@ -84,6 +89,8 @@ Models download automatically on first use (~600MB total):
 
 - `POST /evidence/upload` - Upload evidence file
 - `POST /evidence/process` - Process evidence through AI pipeline
+ - `POST /evidence/upload_folder` - Upload a folder (multiple files or a zip) into a new case
+ - `POST /evidence/process_case` - Process a full case (all files in `storage/case_data/{case_id}/raw_files/`)
 - `GET /reports/{case_id}` - Get analysis report (JSON)
 - `GET /reports/{case_id}/pdf` - Download PDF report
 
