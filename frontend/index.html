@@ -4,105 +4,263 @@
     <meta charset="UTF-8" />
     <title>AI Crime Evidence Organizer</title>
     <style>
+      * {
+        box-sizing: border-box;
+      }
+      
       body {
-        font-family: Arial, sans-serif;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        color: #e8e8e8;
+        min-height: 100vh;
+        line-height: 1.6;
+      }
+      
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
         padding: 2rem;
-        background: #0f172a;
-        color: #f8fafc;
       }
+      
+      header {
+        text-align: center;
+        margin-bottom: 3rem;
+        padding: 2rem 0;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+      }
+      
       h1 {
-        margin-bottom: 0.5rem;
+        margin: 0 0 0.5rem 0;
+        font-size: 2.5rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
       }
+      
+      header p {
+        margin: 0;
+        font-size: 1.1rem;
+        color: #b8b8b8;
+        font-weight: 300;
+      }
+      
       section {
-        background: #1e293b;
-        border-radius: 12px;
-        padding: 1.5rem;
-        margin-bottom: 1.5rem;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border-radius: 16px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+                    0 0 0 1px rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
-      label,
-      input,
-      button,
-      textarea {
+      
+      section:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4),
+                    0 0 0 1px rgba(255, 255, 255, 0.15);
+      }
+      
+      h2 {
+        margin: 0 0 1.5rem 0;
+        font-size: 1.75rem;
+        font-weight: 600;
+        color: #ffffff;
+        border-bottom: 2px solid rgba(102, 126, 234, 0.3);
+        padding-bottom: 0.75rem;
+      }
+      
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: #d0d0d0;
+        font-size: 0.95rem;
+      }
+      
+      input[type="file"] {
         width: 100%;
-        margin-top: 0.5rem;
-        margin-bottom: 1rem;
-      }
-      button {
         padding: 0.75rem;
-        border: none;
-        border-radius: 6px;
-        background: #38bdf8;
-        color: #0f172a;
-        font-weight: bold;
+        margin-bottom: 1rem;
+        background: rgba(255, 255, 255, 0.05);
+        border: 2px dashed rgba(102, 126, 234, 0.4);
+        border-radius: 8px;
+        color: #e8e8e8;
+        font-size: 0.95rem;
         cursor: pointer;
+        transition: all 0.3s ease;
       }
+      
+      input[type="file"]:hover {
+        border-color: rgba(102, 126, 234, 0.6);
+        background: rgba(255, 255, 255, 0.08);
+      }
+      
+      button {
+        width: 100%;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 8px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      
       button:hover {
-        background: #0ea5e9;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
       }
+      
+      button:active {
+        transform: translateY(0);
+      }
+      
       .grid {
         display: grid;
         gap: 1rem;
       }
+      
       @media (min-width: 768px) {
         .grid {
           grid-template-columns: repeat(2, 1fr);
         }
       }
+      
       textarea {
-        min-height: 300px;
-        background: #0f172a;
-        color: #f8fafc;
-        border: 1px solid #334155;
-        border-radius: 6px;
-        padding: 0.75rem;
-        font-family: 'Courier New', monospace;
+        width: 100%;
+        min-height: 400px;
+        background: rgba(15, 15, 30, 0.6);
+        color: #e8e8e8;
+        border: 2px solid rgba(102, 126, 234, 0.3);
+        border-radius: 12px;
+        padding: 1.25rem;
+        font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
         font-size: 0.9rem;
         white-space: pre-wrap;
         word-wrap: break-word;
+        line-height: 1.7;
+        resize: vertical;
+        transition: all 0.3s ease;
       }
+      
+      textarea:focus {
+        outline: none;
+        border-color: rgba(102, 126, 234, 0.6);
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+      }
+      
+      #status-message {
+        margin-top: 1rem;
+        padding: 1.25rem;
+        background: rgba(102, 126, 234, 0.1);
+        border-radius: 10px;
+        border: 1px solid rgba(102, 126, 234, 0.3);
+        backdrop-filter: blur(10px);
+      }
+      
+      #status-text {
+        color: #ffffff;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+      }
+      
+      #progress-bar {
+        margin-top: 0.75rem;
+        height: 6px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 3px;
+        overflow: hidden;
+      }
+      
+      #progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        width: 0%;
+        transition: width 0.3s ease;
+        box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+      }
+      
       .content-section {
         margin-top: 1rem;
-        padding: 1rem;
-        background: #0f172a;
-        border-radius: 6px;
-        border: 1px solid #334155;
+        padding: 1.25rem;
+        background: rgba(15, 15, 30, 0.4);
+        border-radius: 10px;
+        border: 1px solid rgba(102, 126, 234, 0.2);
       }
+      
       .content-section h3 {
         margin-top: 0;
-        color: #38bdf8;
+        color: #b8a9ff;
+        font-weight: 600;
       }
+      
       .entity-tag {
         display: inline-block;
-        background: #1e40af;
-        color: #fff;
-        padding: 0.2rem 0.5rem;
-        border-radius: 4px;
-        margin: 0.2rem;
-        font-size: 0.85rem;
-      }
-      #graph-container {
-        width: 100%;
-        height: 420px;
-        background: #0f172a;
-        border: 1px solid #334155;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #ffffff;
+        padding: 0.35rem 0.75rem;
         border-radius: 6px;
-        margin-top: 1rem;
+        margin: 0.25rem;
+        font-size: 0.85rem;
+        font-weight: 500;
+        box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
       }
-      #graph-status {
-        margin-top: 0.5rem;
-        font-size: 0.9rem;
-        color: #94a3b8;
+      
+      /* Scrollbar styling */
+      textarea::-webkit-scrollbar {
+        width: 10px;
+      }
+      
+      textarea::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 5px;
+      }
+      
+      textarea::-webkit-scrollbar-thumb {
+        background: rgba(102, 126, 234, 0.5);
+        border-radius: 5px;
+      }
+      
+      textarea::-webkit-scrollbar-thumb:hover {
+        background: rgba(102, 126, 234, 0.7);
+      }
+      
+      #graph-container {
+        min-height: 600px;
+        width: 100%;
+      }
+      
+      #graph-info {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      
+      #graph-section {
+        margin-top: 2rem;
       }
     </style>
-    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <script src="https://unpkg.com/vis-network@latest/standalone/umd/vis-network.min.js"></script>
   </head>
   <body>
-    <h1>AI Crime Evidence Organizer</h1>
-    <p>Upload evidence, trigger AI processing, and review reports.</p>
+    <div class="container">
+      <header>
+        <h1>AI Crime Evidence Organizer</h1>
+        <p>Upload evidence, trigger AI processing, and review reports.</p>
+      </header>
 
-    <section>
+      <section>
       <h2>Upload & Process Evidence</h2>
       <form id="upload-form">
         <input type="file" id="file-input" accept=".pdf,.txt,.jpg,.jpeg,.png,.bmp,.tiff,.zip" multiple />
@@ -121,21 +279,14 @@
       <textarea id="report-output" readonly placeholder="Upload a file to see the analysis report. The system will automatically process it and display results here."></textarea>
     </section>
 
-    <section>
-      <h2>Load Case by ID</h2>
-      <p>Paste any processed case identifier (e.g., copied from the graph) to instantly view its full report.</p>
-      <div class="grid">
-        <input type="text" id="manual-case-id" placeholder="Enter case ID (like 9bc6495f1a3a4f53bbcb8238b64b928d)" />
-        <button type="button" id="manual-case-button">Load Case</button>
+    <section id="graph-section" style="display: none;">
+      <h2>Case Relationship Graph</h2>
+      <div id="graph-container" style="width: 100%; height: 600px; min-height: 600px; background: rgba(15, 15, 30, 0.6); border: 2px solid rgba(102, 126, 234, 0.3); border-radius: 12px; position: relative; overflow: hidden;"></div>
+      <div id="graph-info" style="margin-top: 1rem; padding: 1rem; background: rgba(102, 126, 234, 0.1); border-radius: 8px; border: 1px solid rgba(102, 126, 234, 0.3); font-size: 0.9rem; color: #d0d0d0;">
+        <em>Loading graph data...</em>
       </div>
     </section>
 
-    <section>
-      <h2>Crime Case Graph</h2>
-      <p>Each node represents a processed case. Click a node to load its report and evidence context. Edges explain why two cases are linked (same person, location, weapon, date overlap, or semantic similarity).</p>
-      <div id="graph-status">Graph will update after cases are processed.</div>
-      <div id="graph-container"></div>
-    </section>
 
     <script>
       const API = "http://localhost:8000";
@@ -162,9 +313,6 @@
         progressFill.style.width = percent + "%";
       }
 
-      let caseNetwork = null;
-      let graphNodeMap = new Map();
-      let graphEdgeMap = new Map();
 
       function formatReport(data) {
         // Validate data structure
@@ -172,8 +320,16 @@
           return "Error: No data received from server.";
         }
         
-        let formattedReport = "=== AI CRIME EVIDENCE ORGANIZER REPORT ===\n\n";
-        formattedReport += `Case ID: ${data.case_id || 'N/A'}\n`;
+        let formattedReport = "═══════════════════════════════════════════════════════════════\n";
+        formattedReport += "        AI CRIME EVIDENCE ORGANIZER - ANALYSIS REPORT\n";
+        formattedReport += "═══════════════════════════════════════════════════════════════\n\n";
+        
+        // Case Information Header
+        formattedReport += "┌─────────────────────────────────────────────────────────────┐\n";
+        formattedReport += "│ CASE INFORMATION                                            │\n";
+        formattedReport += "└─────────────────────────────────────────────────────────────┘\n\n";
+        
+        formattedReport += `  • Case ID:        ${data.case_id || 'N/A'}\n`;
         
         // Handle generated_at - could be string or Date object
         let generatedDate = 'N/A';
@@ -184,202 +340,284 @@
             generatedDate = String(data.generated_at);
           }
         }
-        formattedReport += `Generated: ${generatedDate}\n`;
-        formattedReport += `Timeline Events: ${data.timeline_events !== undefined ? data.timeline_events : 'N/A'}\n`;
-        formattedReport += `Inconsistencies Found: ${data.inconsistencies !== undefined ? data.inconsistencies : 'N/A'}\n\n`;
+        formattedReport += `  • Generated:      ${generatedDate}\n`;
+        formattedReport += `  • Timeline Events: ${data.timeline_events !== undefined ? data.timeline_events : 'N/A'}\n`;
+        formattedReport += `  • Inconsistencies: ${data.inconsistencies !== undefined ? data.inconsistencies : 'N/A'}\n\n`;
         
         // Extracted Content
         if (data.preview && data.preview.extracted_content) {
-          formattedReport += "=== EXTRACTED CONTENT ===\n\n";
+          formattedReport += "┌─────────────────────────────────────────────────────────────┐\n";
+          formattedReport += "│ EXTRACTED CONTENT FROM EVIDENCE FILES                       │\n";
+          formattedReport += "└─────────────────────────────────────────────────────────────┘\n\n";
+          
           data.preview.extracted_content.forEach((content, idx) => {
-            formattedReport += `--- Evidence Item ${idx + 1} ---\n`;
-            formattedReport += `Type: ${content.file_type}\n`;
-            formattedReport += `Classification: ${content.classification?.label || 'Unknown'} (${(content.classification?.confidence * 100 || 0).toFixed(1)}%)\n\n`;
+            formattedReport += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
+            formattedReport += `  EVIDENCE ITEM ${idx + 1}\n`;
+            formattedReport += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n`;
             
-            // Document Text
+            formattedReport += `  📄 File Type:        ${content.file_type || 'N/A'}\n`;
+            formattedReport += `  🏷️  Classification:   ${content.classification?.label || 'Unknown'} (${(content.classification?.confidence * 100 || 0).toFixed(1)}% confidence)\n\n`;
+            
+            // Document Text - Full text, no truncation
             if (content.extracted_text) {
-              formattedReport += "EXTRACTED TEXT:\n";
-              formattedReport += content.extracted_text.substring(0, 2000);
-              if (content.extracted_text.length > 2000) {
-                formattedReport += "\n... (truncated)";
-              }
-              formattedReport += "\n\n";
-            }
-            
-            // OCR Text (from images)
-            if (content.ocr_text) {
-              formattedReport += "OCR TEXT (from image):\n";
-              formattedReport += content.ocr_text.substring(0, 1000);
-              if (content.ocr_text.length > 1000) {
-                formattedReport += "\n... (truncated)";
-              }
-              formattedReport += "\n\n";
-            }
-            
-            // Entities
-            if (content.entities && content.entities.length > 0) {
-              formattedReport += "ENTITIES FOUND:\n";
-              content.entities.forEach(entity => {
-                formattedReport += `  - ${entity.entity} (${entity.label})\n`;
+              formattedReport += `  ┌─ EXTRACTED TEXT ─────────────────────────────────────────────┐\n`;
+              formattedReport += `  │\n`;
+              const textLines = content.extracted_text.split('\n');
+              textLines.forEach(line => {
+                formattedReport += `  │ ${line}\n`;
               });
-              formattedReport += "\n";
+              formattedReport += `  │\n`;
+              formattedReport += `  └──────────────────────────────────────────────────────────────┘\n\n`;
             }
-
-            // Legal Entities
-            if (content.legal_entities) {
-              formattedReport += "LEGAL ENTITIES:\n";
-              for (const [k,v] of Object.entries(content.legal_entities)) {
-                if (Array.isArray(v) && v.length > 0) {
-                  formattedReport += `  - ${k}: ${v.join(', ')}\n`;
+            
+            // OCR Text (from images) - Full text
+            if (content.ocr_text) {
+              formattedReport += `  ┌─ OCR TEXT (from image) ──────────────────────────────────────┐\n`;
+              formattedReport += `  │\n`;
+              const ocrLines = content.ocr_text.split('\n');
+              ocrLines.forEach(line => {
+                formattedReport += `  │ ${line}\n`;
+              });
+              formattedReport += `  │\n`;
+              formattedReport += `  └──────────────────────────────────────────────────────────────┘\n\n`;
+            }
+            
+            // Entities - Use structured data from backend as primary source
+            const hasEntities = (content.persons && content.persons.length > 0) ||
+                               (content.locations && content.locations.length > 0) ||
+                               (content.timestamps && content.timestamps.length > 0) ||
+                               (content.weapons && content.weapons.length > 0) ||
+                               (content.legal_entities && Object.keys(content.legal_entities).length > 0);
+            
+            if (hasEntities) {
+              formattedReport += `  ┌─ EXTRACTED ENTITIES ────────────────────────────────────────┐\n`;
+              formattedReport += `  │\n`;
+              
+              // Extract Camera ID from text or locations
+              const cameraIdMatch = content.extracted_text?.match(/Camera ID:\s*([^\n]+)/i) || 
+                                   content.locations?.find(l => /cam-?\d+/i.test(l));
+              if (cameraIdMatch) {
+                const camId = cameraIdMatch[1]?.trim() || cameraIdMatch;
+                formattedReport += `  │ 📹 Camera ID:     ${camId}\n`;
+              }
+              
+              // Locations
+              if (content.locations && content.locations.length > 0) {
+                const locations = [...new Set(content.locations)];
+                // Separate police stations and hospitals
+                const policeStations = locations.filter(l => /police\s+station/i.test(l));
+                const hospitals = locations.filter(l => /hospital/i.test(l));
+                const otherLocations = locations.filter(l => !/police\s+station|hospital/i.test(l));
+                
+                if (policeStations.length > 0) {
+                  formattedReport += `  │ 🏛️  Police Station: ${policeStations.join(', ')}\n`;
+                }
+                if (hospitals.length > 0) {
+                  formattedReport += `  │ 🏥 Hospital:        ${hospitals.join(', ')}\n`;
+                }
+                if (otherLocations.length > 0) {
+                  formattedReport += `  │ 📍 Locations:       ${otherLocations.join(', ')}\n`;
                 }
               }
-              formattedReport += "\n";
+              
+              // Persons - categorize by role
+              if (content.persons && content.persons.length > 0) {
+                const persons = [...new Set(content.persons)];
+                const complainants = persons.filter(p => /complainant/i.test(p) || /rohan/i.test(p));
+                const accused = persons.filter(p => /accused/i.test(p) || /akash/i.test(p));
+                const witnesses = persons.filter(p => /witness|priya|security/i.test(p));
+                const patients = persons.filter(p => /patient/i.test(p));
+                const otherPersons = persons.filter(p => 
+                  !complainants.includes(p) && !accused.includes(p) && 
+                  !witnesses.includes(p) && !patients.includes(p)
+                );
+                
+                if (complainants.length > 0) {
+                  formattedReport += `  │ 👤 Complainant:     ${complainants.join(', ')}\n`;
+                }
+                if (accused.length > 0) {
+                  formattedReport += `  │ ⚖️  Accused:         ${accused.join(', ')}\n`;
+                }
+                if (witnesses.length > 0) {
+                  formattedReport += `  │ 👥 Witnesses:       ${witnesses.join(', ')}\n`;
+                }
+                if (patients.length > 0) {
+                  formattedReport += `  │ 🏥 Patient:         ${patients.join(', ')}\n`;
+                }
+                if (otherPersons.length > 0) {
+                  formattedReport += `  │ 👤 Persons:         ${otherPersons.join(', ')}\n`;
+                }
+              }
+              
+              // Timestamps - separate times and dates
+              if (content.timestamps && content.timestamps.length > 0) {
+                const timestamps = [...new Set(content.timestamps)];
+                // Filter out ISO format timestamps, keep original formats
+                const times = timestamps.filter(t => {
+                  const tStr = String(t);
+                  // Keep if it looks like a time (has : and AM/PM or just time format)
+                  return (/\d{1,2}:\d{2}/.test(tStr) && /(am|pm|AM|PM)/i.test(tStr)) || 
+                         (/\d{1,2}:\d{2}/.test(tStr) && !tStr.includes('T') && !tStr.includes('-'));
+                });
+                const dates = timestamps.filter(t => {
+                  const tStr = String(t);
+                  // Keep if it looks like a date (has month name or date format) and not ISO
+                  return !times.includes(t) && !tStr.includes('T') && 
+                         (/\d{1,2}\s+(january|february|march|april|may|june|july|august|september|october|november|december)/i.test(tStr) ||
+                          /\d{1,2}\/\d{1,2}\/\d{4}/.test(tStr) || /\d{4}-\d{2}-\d{2}/.test(tStr));
+                });
+                const otherTimes = timestamps.filter(t => {
+                  const tStr = String(t);
+                  return !times.includes(t) && !dates.includes(t) && 
+                         (tStr.toLowerCase().includes('around') || tStr.toLowerCase().includes('about'));
+                });
+                
+                if (times.length > 0) {
+                  formattedReport += `  │ 🕐 Times:           ${times.join(', ')}\n`;
+                }
+                if (otherTimes.length > 0) {
+                  formattedReport += `  │ 🕐 Times:           ${otherTimes.join(', ')}\n`;
+                }
+                if (dates.length > 0) {
+                  formattedReport += `  │ 📅 Date:            ${dates.join(', ')}\n`;
+                }
+              }
+              
+              // Weapons
+              if (content.weapons && content.weapons.length > 0) {
+                const weapons = [...new Set(content.weapons)];
+                formattedReport += `  │ 🔪 Weapon${weapons.length > 1 ? 's' : ''}:          ${weapons.join(', ')}\n`;
+              }
+              
+              // IPC Sections
+              if (content.legal_entities && content.legal_entities.ipc_sections) {
+                const ipcSections = Array.isArray(content.legal_entities.ipc_sections) 
+                  ? content.legal_entities.ipc_sections 
+                  : [content.legal_entities.ipc_sections];
+                formattedReport += `  │ ⚖️  IPC Sections:     ${ipcSections.join(', ')}\n`;
+              }
+              
+              // Injuries
+              if (content.injuries && content.injuries.length > 0) {
+                const injuries = [...new Set(content.injuries)];
+                formattedReport += `  │ 🩹 Injuries:         ${injuries.join(', ')}\n`;
+              }
+              
+              formattedReport += `  │\n`;
+              formattedReport += `  └──────────────────────────────────────────────────────────────┘\n\n`;
             }
-            
-            // Objects Detected (from images)
-            if (content.objects_detected && content.objects_detected.length > 0) {
-              formattedReport += "OBJECTS DETECTED:\n";
-              content.objects_detected.forEach(obj => {
-                formattedReport += `  - ${obj.class} (confidence: ${(obj.confidence * 100).toFixed(1)}%)\n`;
-              });
-              formattedReport += "\n";
-            }
-            
-            // Timestamps
-            if (content.timestamps && content.timestamps.length > 0) {
-              formattedReport += "TIMESTAMPS FOUND:\n";
-              content.timestamps.forEach(ts => {
-                formattedReport += `  - ${ts}\n`;
-              });
-              formattedReport += "\n";
-            }
-            
-            // Locations
-            if (content.locations && content.locations.length > 0) {
-              formattedReport += "LOCATIONS FOUND:\n";
-              content.locations.forEach(loc => {
-                formattedReport += `  - ${loc}\n`;
-              });
-              formattedReport += "\n";
-            }
-            
+
             formattedReport += "\n";
           });
         }
         
         // Case Summary (if available)
         if (data.preview && data.preview.case_summary) {
-          formattedReport += "=== CASE SUMMARY ===\n\n";
-          formattedReport += data.preview.case_summary;
-          formattedReport += "\n\n";
+          formattedReport += "┌─────────────────────────────────────────────────────────────┐\n";
+          formattedReport += "│ CASE SUMMARY                                                  │\n";
+          formattedReport += "└─────────────────────────────────────────────────────────────┘\n\n";
+          formattedReport += `  ${data.preview.case_summary.split('\n').join('\n  ')}\n\n`;
         }
 
-        // Evidence Map
-        if (data.preview && data.preview.evidence_map) {
+        // FILE DETAILS section (from evidence_map)
+        if (data.preview && data.preview.evidence_map && data.preview.evidence_map.files && data.preview.evidence_map.files.length) {
           const ev = data.preview.evidence_map;
-          formattedReport += "=== EVIDENCE MAP ===\n\n";
-          formattedReport += `Persons: ${ev.case_persons ? ev.case_persons.join(', ') : 'N/A'}\n`;
-          formattedReport += `Locations: ${ev.case_locations ? ev.case_locations.join(', ') : 'N/A'}\n`;
-          formattedReport += `Timestamps: ${ev.case_timestamps ? ev.case_timestamps.join(', ') : 'N/A'}\n`;
-          formattedReport += `Injuries: ${ev.case_injuries ? ev.case_injuries.join(', ') : 'N/A'}\n`;
-          formattedReport += `Weapons: ${ev.case_weapons ? ev.case_weapons.join(', ') : 'N/A'}\n`;
-          formattedReport += `IPC: ${ev.ipc_sections ? ev.ipc_sections.join(', ') : 'N/A'}\n`;
-          formattedReport += `FIR Numbers: ${ev.fir_numbers ? ev.fir_numbers.join(', ') : 'N/A'}\n`;
-          formattedReport += `MLC Numbers: ${ev.mlc_numbers ? ev.mlc_numbers.join(', ') : 'N/A'}\n`;
-          formattedReport += `Hospital Names: ${ev.hospital_names ? ev.hospital_names.join(', ') : 'N/A'}\n`;
-          formattedReport += `Vehicle Numbers: ${ev.vehicle_numbers ? ev.vehicle_numbers.join(', ') : 'N/A'}\n\n`;
           // Per-file details
           if (ev.files && ev.files.length) {
-            formattedReport += "=== FILE DETAILS ===\n\n";
-            ev.files.forEach((f) => {
-              formattedReport += `File: ${f.file} | Type: ${f.type}\n`;
-              formattedReport += `  Persons: ${f.persons && f.persons.length ? f.persons.join(', ') : 'N/A'}\n`;
-              formattedReport += `  Locations: ${f.locations && f.locations.length ? f.locations.join(', ') : 'N/A'}\n`;
-              formattedReport += `  Timestamps: ${f.timestamps && f.timestamps.length ? f.timestamps.join(', ') : 'N/A'}\n`;
-              formattedReport += `  Injuries: ${f.injuries && f.injuries.length ? f.injuries.join(', ') : 'N/A'}\n`;
-              formattedReport += `  Weapons: ${f.weapons && f.weapons.length ? f.weapons.join(', ') : 'N/A'}\n\n`;
+            formattedReport += "┌─────────────────────────────────────────────────────────────┐\n";
+            formattedReport += "│ FILE DETAILS SUMMARY                                         │\n";
+            formattedReport += "└─────────────────────────────────────────────────────────────┘\n\n";
+            
+            ev.files.forEach((f, idx) => {
+              const fileName = f.file || f.filename || 'unknown';
+              formattedReport += `  [${idx + 1}] ${fileName}\n`;
+              formattedReport += `      Type: ${f.type || 'N/A'}\n`;
+              
+              // Clean persons
+              const cleanFilePersons = (f.persons || []).filter(p => {
+                const pStr = String(p).toLowerCase();
+                return !pStr.includes('action taken') && !pStr.includes('time visible') && pStr.length > 2;
+              });
+              formattedReport += `      Persons: ${cleanFilePersons.length ? cleanFilePersons.join(', ') : 'N/A'}\n`;
+              
+              // Clean locations
+              const cleanFileLocations = (f.locations || []).filter(l => {
+                const lStr = String(l).toLowerCase();
+                return !lStr.includes('sections applied') && lStr.length > 2;
+              });
+              formattedReport += `      Locations: ${cleanFileLocations.length ? cleanFileLocations.join(', ') : 'N/A'}\n`;
+              
+              // Clean timestamps - preserve original format
+              const cleanFileTimestamps = (f.timestamps || []).filter(t => {
+                const tStr = String(t);
+                return !tStr.match(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}$/) || /\d{1,2}:\d{2}/.test(tStr);
+              }).map(t => {
+                const tStr = String(t);
+                // If ISO format, try to extract readable time
+                if (tStr.includes('T') && /\d{1,2}:\d{2}/.test(tStr)) {
+                  const match = tStr.match(/(\d{1,2}:\d{2}(?::\d{2})?)\s*(AM|PM|am|pm)?/i);
+                  return match ? `${match[1]}${match[2] ? ' ' + match[2] : ''}` : tStr;
+                }
+                return tStr;
+              });
+              formattedReport += `      Timestamps: ${cleanFileTimestamps.length ? cleanFileTimestamps.join(', ') : 'N/A'}\n`;
+              
+              formattedReport += `      Injuries: ${f.injuries && f.injuries.length ? f.injuries.join(', ') : 'N/A'}\n`;
+              formattedReport += `      Weapons: ${f.weapons && f.weapons.length ? f.weapons.join(', ') : 'N/A'}\n\n`;
             });
           }
           // Entity -> files mapping (if present)
           if (ev.entity_files) {
-            formattedReport += "=== ENTITY -> FILES ===\n";
+            formattedReport += "┌─────────────────────────────────────────────────────────────┐\n";
+            formattedReport += "│ ENTITY TO FILE MAPPING                                       │\n";
+            formattedReport += "└─────────────────────────────────────────────────────────────┘\n\n";
+            
             for (const [cat, map] of Object.entries(ev.entity_files)) {
-              formattedReport += `${cat.toUpperCase()}:\n`;
+              formattedReport += `  ${cat.toUpperCase()}:\n`;
               for (const [entity, files] of Object.entries(map)) {
-                formattedReport += `  - ${entity}: ${files.join(', ')}\n`;
+                // Filter out non-entity entities
+                const entityStr = String(entity).toLowerCase();
+                if (entityStr.includes('action taken') || entityStr.includes('time visible') || 
+                    entityStr.includes('sections applied') || entityStr.length < 3) {
+                  continue;
+                }
+                const uniqueFiles = [...new Set(files)];
+                formattedReport += `    • ${entity} → ${uniqueFiles.join(', ')}\n`;
               }
               formattedReport += "\n";
             }
           }
         }
         
-        // Relationships / Linked Cases
-        if (data.preview && data.preview.relationships && data.preview.relationships.length > 0) {
-          formattedReport += "\n=== RELATIONSHIPS ===\n\n";
-          data.preview.relationships.forEach((rel, idx) => {
-            const otherCase = rel.target || rel.case_id || 'Unknown';
-            formattedReport += `${idx + 1}. Linked Case: ${otherCase}\n`;
-            if (Array.isArray(rel.reasons) && rel.reasons.length) {
-              rel.reasons.forEach(reason => {
-                formattedReport += `   - ${reason}\n`;
+        // Evidence-to-Evidence Relationships
+        if (data.preview && data.preview.evidence_relationships && data.preview.evidence_relationships.length > 0) {
+          formattedReport += "┌─────────────────────────────────────────────────────────────┐\n";
+          formattedReport += "│ EVIDENCE RELATIONSHIPS                                       │\n";
+          formattedReport += "└─────────────────────────────────────────────────────────────┘\n\n";
+          
+          data.preview.evidence_relationships.forEach((rel, idx) => {
+            formattedReport += `  [${idx + 1}] ${rel.source} → ${rel.target}\n`;
+            if (Array.isArray(rel.matches) && rel.matches.length) {
+              rel.matches.forEach(match => {
+                formattedReport += `      • ${match}\n`;
               });
-            }
-            if (rel.similarity) {
-              formattedReport += `   Similarity: ${(rel.similarity * 100).toFixed(1)}%\n`;
-            }
-            if (rel.shared_entities) {
-              const sharedEntries = [];
-              for (const [key, values] of Object.entries(rel.shared_entities)) {
-                if (Array.isArray(values) && values.length) {
-                  sharedEntries.push(`${key}: ${values.slice(0, 3).join(', ')}`);
-                }
-              }
-              if (sharedEntries.length) {
-                formattedReport += `   Shared: ${sharedEntries.join(' | ')}\n`;
-              }
             }
             formattedReport += "\n";
           });
         }
         
-        // Structured Timeline
-        if (data.preview && data.preview.timeline && Array.isArray(data.preview.timeline)) {
-          formattedReport += "=== STRUCTURED TIMELINE ===\n\n";
-          formattedReport += "Time          | Source      | Event                                    | Notes/Conflicts\n";
-          formattedReport += "--------------|-------------|------------------------------------------|----------------\n";
-          
-          data.preview.timeline.forEach((item, idx) => {
-            const time = item.time || item.timestamp || "N/A";
-            const source = item.source || "Unknown";
-            const event = item.event || item.description || "N/A";
-            const notes = item.notes || "";
-            
-            // Format for table-like display
-            const timeCol = (time + "          ").substring(0, 13);
-            const sourceCol = (source + "           ").substring(0, 11);
-            const eventCol = (event + "                                        ").substring(0, 40);
-            const notesCol = notes.substring(0, 50);
-            
-            formattedReport += `${timeCol}| ${sourceCol}| ${eventCol}| ${notesCol}\n`;
-          });
-          formattedReport += "\n";
-        } else if (data.preview && data.preview.timeline) {
-          // Fallback to old format
-          formattedReport += "=== TIMELINE ===\n\n";
-          data.preview.timeline.forEach((event, idx) => {
-            formattedReport += `${idx + 1}. ${event}\n`;
-          });
-          formattedReport += "\n";
-        }
         
         // Inconsistencies
         if (data.preview && data.preview.inconsistencies && data.preview.inconsistencies.length > 0) {
-          formattedReport += "=== INCONSISTENCIES DETECTED ===\n\n";
+          formattedReport += "┌─────────────────────────────────────────────────────────────┐\n";
+          formattedReport += "│ ⚠️  INCONSISTENCIES DETECTED                                 │\n";
+          formattedReport += "└─────────────────────────────────────────────────────────────┘\n\n";
+          
           data.preview.inconsistencies.forEach((inc, idx) => {
-            formattedReport += `${idx + 1}. Type: ${inc.type || 'Unknown'}\n`;
-            formattedReport += `   Details: ${inc.details || 'N/A'}\n`;
+            formattedReport += `  [${idx + 1}] ${inc.type || 'Unknown'}\n`;
+            formattedReport += `      Details: ${inc.details || 'N/A'}\n`;
             if (inc.severity) {
-              formattedReport += `   Severity: ${inc.severity}\n`;
+              formattedReport += `      Severity: ${inc.severity}\n`;
             }
             formattedReport += "\n";
           });
@@ -387,245 +625,330 @@
         
         // Missing Evidence
         if (data.missing_evidence && data.missing_evidence.length > 0) {
-          formattedReport += "=== MISSING EVIDENCE SUGGESTIONS ===\n\n";
+          formattedReport += "┌─────────────────────────────────────────────────────────────┐\n";
+          formattedReport += "│ 💡 MISSING EVIDENCE SUGGESTIONS                             │\n";
+          formattedReport += "└─────────────────────────────────────────────────────────────┘\n\n";
+          
           data.missing_evidence.forEach((item, idx) => {
-            formattedReport += `${idx + 1}. ${item}\n`;
+            formattedReport += `  [${idx + 1}] ${item}\n`;
           });
+          formattedReport += "\n";
         }
         
-        formattedReport += "\n=== END OF REPORT ===";
+        formattedReport += "═══════════════════════════════════════════════════════════════\n";
+        formattedReport += "                          END OF REPORT\n";
+        formattedReport += "═══════════════════════════════════════════════════════════════\n";
         return formattedReport;
       }
 
-      async function loadCaseGraph(focusCaseId = null) {
-        const statusEl = document.getElementById("graph-status");
-        if (!statusEl) return;
+      async function loadAndDisplayGraph(reportData) {
+        // Get graph section element at function level for scope
+        const graphSectionEl = document.getElementById('graph-section');
+        
         try {
-          statusEl.textContent = "Loading case graph...";
-          const res = await fetch(`${API}/reports/graph`);
-          if (!res.ok) {
-            statusEl.textContent = `Unable to load graph: ${res.statusText}`;
-            return;
+          // Wait for vis-network to load if not already loaded
+          let retries = 0;
+          while ((typeof vis === 'undefined' || !vis.Network) && retries < 10) {
+            await new Promise(resolve => setTimeout(resolve, 100));
+            retries++;
           }
-          const graphData = await res.json();
-          if (!graphData.nodes || graphData.nodes.length === 0) {
-            statusEl.textContent = "Process at least one case to see the crime network.";
-            document.getElementById("graph-container").innerHTML = "";
-            return;
-          }
-          statusEl.textContent = `Graph updated ${new Date(graphData.generated_at).toLocaleString()}`;
-          renderCaseGraph(graphData, focusCaseId);
-        } catch (error) {
-          console.error("Graph load error:", error);
-          statusEl.textContent = `Graph load failed: ${error.message}`;
-        }
-      }
-
-      function renderCaseGraph(graphData, focusCaseId = null) {
-        const container = document.getElementById("graph-container");
-        if (!container || typeof vis === "undefined") {
-          return;
-        }
-
-        graphNodeMap = new Map();
-        graphEdgeMap = new Map();
-
-        const nodes = new vis.DataSet(
-          (graphData.nodes || []).map((node) => {
-            const color = node.type === "person" ? "#38bdf8" : "#f97316";
-            const shape = node.type === "person" ? "dot" : "square";
-            const titleLines = [
-              `<strong>${node.label}</strong>`,
-              `Type: ${node.type}`,
-              `Linked cases: ${node.cases ? node.cases.length : 0}`,
-            ];
-            if (node.cases && node.cases.length) {
-              titleLines.push(`Cases: ${node.cases.slice(0, 5).join(", ")}`);
-            }
-            const datasetNode = {
-              id: node.id,
-              label: node.label,
-              title: titleLines.join("<br/>"),
-              value: Math.max(1, node.count || 1),
-              color,
-              shape,
-            };
-            graphNodeMap.set(node.id, node);
-            return datasetNode;
-          })
-        );
-
-        const edges = new vis.DataSet(
-          (graphData.edges || []).map((edgeRaw) => {
-            const edgeId = edgeRaw.id || `${edgeRaw.source}-${edgeRaw.target}`;
-            const caseCount = edgeRaw.cases ? edgeRaw.cases.length : 0;
-            const label = `${caseCount} case${caseCount === 1 ? "" : "s"}`;
-            const titleLines = [
-              `<strong>Person:</strong> ${edgeRaw.person}`,
-              `<strong>Location:</strong> ${edgeRaw.location}`,
-              `<strong>Cases:</strong> ${edgeRaw.cases ? edgeRaw.cases.join(", ") : "N/A"}`,
-            ];
-            graphEdgeMap.set(edgeId, { ...edgeRaw, id: edgeId });
-            return {
-              id: edgeId,
-              from: edgeRaw.source,
-              to: edgeRaw.target,
-              width: Math.max(1, edgeRaw.weight || caseCount || 1),
-              color: { color: "#94a3b8" },
-              arrows: "",
-              label,
-              title: titleLines.join("<br/>"),
-            };
-          })
-        );
-
-        const networkOptions = {
-          layout: {
-            improvedLayout: true,
-            randomSeed: 42,
-          },
-          nodes: {
-            shape: "dot",
-            font: { color: "#0f172a", face: "Arial" },
-            scaling: { min: 10, max: 40 },
-          },
-          edges: {
-            font: { color: "#f8fafc", size: 10, align: "horizontal" },
-            selectionWidth: 2,
-            hoverWidth: 0,
-            smooth: {
-              enabled: true,
-              type: "dynamic",
-            },
-          },
-          interaction: {
-            hover: true,
-            tooltipDelay: 120,
-            zoomView: true,
-            dragView: true,
-          },
-          physics: {
-            solver: "forceAtlas2Based",
-            stabilization: {
-              enabled: true,
-              iterations: 800,
-              fit: true,
-            },
-            forceAtlas2Based: {
-              gravitationalConstant: -35,
-              centralGravity: 0.01,
-              springConstant: 0.1,
-              damping: 0.4,
-              avoidOverlap: 0.6,
-            },
-            minVelocity: 0.75,
-          },
-        };
-
-        caseNetwork = new vis.Network(
-          container,
-          { nodes, edges },
-          networkOptions
-        );
-
-        caseNetwork.once("stabilizationIterationsDone", () => {
-          caseNetwork.setOptions({ physics: { enabled: false } });
-        });
-
-        caseNetwork.on("click", (params) => {
-          if (params.nodes && params.nodes.length > 0) {
-            const node = graphNodeMap.get(params.nodes[0]);
-            if (node) {
-              showNodeDetails(node);
+          
+          // Check if vis-network is loaded
+          if (typeof vis === 'undefined' || !vis.Network) {
+            console.error("vis-network library not loaded after waiting");
+            const graphInfo = document.getElementById('graph-info');
+            if (graphInfo && graphSectionEl) {
+              graphInfo.innerHTML = '<strong style="color: #ef4444;">Error:</strong> Graph visualization library failed to load. Please refresh the page or check your internet connection.';
+              graphSectionEl.style.display = 'block';
             }
             return;
           }
-          if (params.edges && params.edges.length > 0) {
-            const edge = graphEdgeMap.get(params.edges[0]);
-            if (edge) {
-              showEdgeDetails(edge);
-            }
+          
+          console.log("vis-network library loaded successfully");
+          
+          // Extract persons and locations from current case files
+          if (!reportData || !reportData.preview || !reportData.preview.extracted_content) {
+            console.log("No report data available for graph");
+            return;
           }
-        });
-      }
-
-      function showNodeDetails(node) {
-        const entityType = node.type === "person" ? "PERSON" : "LOCATION";
-        const lines = [
-          `=== ${entityType} NODE ===`,
-          `Value: ${node.label}`,
-          `Linked cases (${node.cases ? node.cases.length : 0}):`,
-        ];
-        if (node.cases && node.cases.length) {
-          node.cases.forEach((id, idx) => {
-            lines.push(`  ${idx + 1}. ${id}`);
+          
+          const extractedContent = reportData.preview.extracted_content;
+          
+          // Collect all unique persons and locations from all files
+          const allPersons = new Set();
+          const allLocations = new Set();
+          const personLocationMap = new Map(); // person -> Set of locations they appear with
+          
+          extractedContent.forEach(content => {
+            const persons = content.persons || [];
+            const locations = content.locations || [];
+            
+            persons.forEach(person => {
+              if (person && typeof person === 'string' && person.trim().length > 0) {
+                allPersons.add(person.trim());
+                // Track which locations this person appears with
+                if (!personLocationMap.has(person.trim())) {
+                  personLocationMap.set(person.trim(), new Set());
+                }
+                locations.forEach(loc => {
+                  if (loc && typeof loc === 'string' && loc.trim().length > 0) {
+                    allLocations.add(loc.trim());
+                    personLocationMap.get(person.trim()).add(loc.trim());
+                  }
+                });
+              }
+            });
+            
+            locations.forEach(loc => {
+              if (loc && typeof loc === 'string' && loc.trim().length > 0) {
+                allLocations.add(loc.trim());
+              }
+            });
           });
-        } else {
-          lines.push("  (No cases recorded for this entity)");
-        }
-        lines.push(
-          "\nCopy a case ID above and use the 'Load Case by ID' section to open its full report."
-        );
-        document.getElementById("report-output").value = lines.join("\n");
-      }
-
-      function showEdgeDetails(edge) {
-        const lines = [
-          "=== PERSON ↔ LOCATION LINK ===",
-          `Person: ${edge.person}`,
-          `Location: ${edge.location}`,
-          `Shared cases (${edge.cases ? edge.cases.length : 0}):`,
-        ];
-        if (edge.case_details && edge.case_details.length) {
-          edge.case_details.forEach((detail) => {
-            const summary = (detail.summary || "").replace(/\s+/g, " ").trim();
-            lines.push(`  - ${detail.case_id}${summary ? `: ${summary}` : ""}`);
-          });
-        } else if (edge.cases && edge.cases.length) {
-          edge.cases.forEach((caseId) => lines.push(`  - ${caseId}`));
-        } else {
-          lines.push("  (No case summaries available)");
-        }
-        lines.push(
-          "\nTip: copy one of the case IDs above and load it with the 'Load Case by ID' form."
-        );
-        document.getElementById("report-output").value = lines.join("\n");
-      }
-
-      async function fetchReportById(caseId) {
-        if (!caseId) return;
-        try {
-          showStatus(`Loading case ${caseId}...`, true);
-          const res = await fetch(`${API}/reports/${caseId}`);
-          if (!res.ok) {
-            const msg = await res.text();
-            throw new Error(msg || `Unable to load case ${caseId}`);
+          
+          // Always show graph section
+          if (graphSectionEl) {
+            graphSectionEl.style.display = 'block';
           }
-          const data = await res.json();
-          document.getElementById("report-output").value = formatReport(data);
-          showStatus(`📁 Viewing report for ${caseId}`, false);
+          
+          if (allPersons.size === 0 && allLocations.size === 0) {
+            console.log("No persons or locations found in current case");
+            const graphInfo = document.getElementById('graph-info');
+            const graphContainer = document.getElementById('graph-container');
+            if (graphInfo) {
+              graphInfo.innerHTML = '<strong>No entities found.</strong> No persons or locations were extracted from the uploaded files.';
+            }
+            if (graphContainer) {
+              graphContainer.innerHTML = '<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #9ca3af; font-size: 1.1rem;">No persons or locations found in this case.</div>';
+            }
+            return;
+          }
+          
+          console.log("Found", allPersons.size, "persons and", allLocations.size, "locations");
+          
+          // Create nodes - simple person and location nodes
+          const nodes = [];
+          
+          // Add person nodes
+          Array.from(allPersons).forEach((person, idx) => {
+            nodes.push({
+              id: `person-${idx}`,
+              label: person,
+              title: `Person: ${person}`,
+              color: { 
+                background: '#667eea', 
+                border: '#764ba2', 
+                highlight: { background: '#8b5cf6', border: '#a78bfa' } 
+              },
+              shape: 'ellipse',
+              font: { color: '#ffffff', size: 14, face: 'Segoe UI', bold: true },
+              borderWidth: 2,
+              size: 25
+            });
+          });
+          
+          // Add location nodes
+          Array.from(allLocations).forEach((location, idx) => {
+            nodes.push({
+              id: `location-${idx}`,
+              label: location,
+              title: `Location: ${location}`,
+              color: { 
+                background: '#10b981', 
+                border: '#059669', 
+                highlight: { background: '#34d399', border: '#6ee7b7' } 
+              },
+              shape: 'box',
+              font: { color: '#ffffff', size: 14, face: 'Segoe UI', bold: true },
+              borderWidth: 2,
+              size: 25
+            });
+          });
+          
+          // Create edges - connect persons to locations they appear with
+          const edges = [];
+          const personNodes = nodes.filter(n => n.shape === 'ellipse');
+          const locationNodes = nodes.filter(n => n.shape === 'box');
+          
+          personLocationMap.forEach((locations, person) => {
+            const personNode = personNodes.find(n => n.label === person);
+            if (personNode) {
+              locations.forEach(location => {
+                const locationNode = locationNodes.find(n => n.label === location);
+                if (locationNode) {
+                  edges.push({
+                    id: `edge-${personNode.id}-${locationNode.id}`,
+                    from: personNode.id,
+                    to: locationNode.id,
+                    color: { color: '#667eea', highlight: '#8b5cf6' },
+                    width: 2,
+                    arrows: { to: { enabled: false } }
+                  });
+                }
+              });
+            }
+          });
+          
+          console.log("Created", nodes.length, "nodes and", edges.length, "edges");
+          
+          const data = { nodes: nodes, edges: edges };
+          
+          const options = {
+            nodes: {
+              borderWidth: 2,
+              shadow: false,
+              font: {
+                size: 16,
+                face: 'Segoe UI',
+                color: '#ffffff',
+                bold: true
+              },
+              margin: 10,
+              widthConstraint: {
+                maximum: 150
+              }
+            },
+            edges: {
+              shadow: false,
+              smooth: {
+                type: 'straight',
+                roundness: 0
+              },
+              font: {
+                size: 12,
+                face: 'Segoe UI',
+                color: '#ffffff',
+                background: 'rgba(0,0,0,0.7)',
+                strokeWidth: 2,
+                strokeColor: '#000000'
+              },
+              arrows: {
+                to: {
+                  enabled: false
+                }
+              },
+              color: {
+                color: '#667eea',
+                highlight: '#8b5cf6'
+              },
+              width: 2
+            },
+            physics: {
+              enabled: true,
+              stabilization: {
+                enabled: true,
+                iterations: 100,
+                fit: true
+              },
+              barnesHut: {
+                gravitationalConstant: -3000,
+                centralGravity: 0.3,
+                springLength: 200,
+                springConstant: 0.05,
+                damping: 0.1
+              }
+            },
+            interaction: {
+              hover: true,
+              tooltipDelay: 100,
+              zoomView: true,
+              dragView: true,
+              selectConnectedEdges: true
+            },
+            layout: {
+              improvedLayout: true,
+              hierarchical: {
+                enabled: false
+              }
+            }
+          };
+          
+          const container = document.getElementById('graph-container');
+          if (!container) {
+            console.error("Graph container element not found");
+            return;
+          }
+          
+          // Clear container first and show loading
+          container.innerHTML = '<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #9ca3af;">Rendering graph...</div>';
+          
+          // Ensure graph section is visible
+          if (graphSectionEl) {
+            graphSectionEl.style.display = 'block';
+          }
+          
+          // Small delay to ensure container is ready
+          await new Promise(resolve => setTimeout(resolve, 100));
+          
+          // Clear container again before rendering
+          container.innerHTML = '';
+          
+          // Create network
+          try {
+            const network = new vis.Network(container, data, options);
+            console.log("Graph network created successfully with", nodes.length, "nodes and", edges.length, "edges");
+          
+          // Update graph info
+          const graphInfo = document.getElementById('graph-info');
+          if (graphInfo) {
+            const personCount = nodes.filter(n => n.shape === 'ellipse').length;
+            const locationCount = nodes.filter(n => n.shape === 'box').length;
+            graphInfo.innerHTML = `
+              <div style="display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;">
+                <div><strong style="color: #667eea;">Persons:</strong> <span style="color: #e2e8f0;">${personCount}</span></div>
+                <div><strong style="color: #10b981;">Locations:</strong> <span style="color: #e2e8f0;">${locationCount}</span></div>
+                <div><strong style="color: #9ca3af;">Connections:</strong> <span style="color: #e2e8f0;">${edges.length}</span></div>
+              </div>
+              <div style="margin-top: 0.5rem; font-size: 0.85rem; color: #9ca3af;">
+                <span style="display: inline-block; width: 12px; height: 12px; background: #667eea; border-radius: 50%; margin-right: 5px;"></span>Person
+                <span style="display: inline-block; width: 12px; height: 12px; background: #10b981; margin-left: 15px; margin-right: 5px;"></span>Location
+                <span style="margin-left: 15px;">• Drag nodes to rearrange • Scroll to zoom • Hover for details</span>
+              </div>
+            `;
+          }
+          
+            // Handle node click events
+            network.on("click", function (params) {
+              if (params.nodes.length > 0) {
+                const nodeId = params.nodes[0];
+                const node = nodes.find(n => n.id === nodeId);
+                if (node) {
+                  console.log("Selected node:", node);
+                }
+              }
+            });
+            
+            // Handle errors during rendering
+            network.on("stabilizationEnd", function() {
+              console.log("Graph stabilization complete");
+            });
+            
+            network.on("stabilizationProgress", function(params) {
+              console.log("Graph stabilization progress:", params.iterations, "/", params.total);
+            });
+            
+          } catch (renderError) {
+            console.error("Error rendering graph network:", renderError);
+            container.innerHTML = `<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #ef4444; padding: 2rem;">Error rendering graph: ${renderError.message}</div>`;
+            throw renderError;
+          }
+          
         } catch (error) {
-          console.error("Fetch report error:", error);
-          showStatus(`Failed to load case ${caseId}: ${error.message}`, false);
+          console.error("Error loading graph:", error);
+          const graphInfo = document.getElementById('graph-info');
+          const graphSectionErr = document.getElementById('graph-section');
+          const graphContainer = document.getElementById('graph-container');
+          if (graphInfo) {
+            graphInfo.innerHTML = `<strong style="color: #ef4444;">Error loading graph:</strong> ${error.message}`;
+          }
+          if (graphSectionErr) {
+            graphSectionErr.style.display = 'block';
+          }
+          if (graphContainer) {
+            graphContainer.innerHTML = `<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #ef4444; padding: 2rem;">Error: ${error.message}</div>`;
+          }
         }
       }
-
-      document.getElementById("manual-case-button").addEventListener("click", () => {
-        const input = document.getElementById("manual-case-id");
-        const caseId = input.value.trim();
-        if (!caseId) {
-          alert("Please enter a case ID.");
-          return;
-        }
-        fetchReportById(caseId);
-      });
-
-      document.getElementById("manual-case-id").addEventListener("keypress", (event) => {
-        if (event.key === "Enter") {
-          event.preventDefault();
-          document.getElementById("manual-case-button").click();
-        }
-      });
 
       document.getElementById("upload-form").addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -790,9 +1113,13 @@
           console.log("Formatting report with data:", reportData);
           const formattedReport = formatReport(reportData);
           document.getElementById("report-output").value = formattedReport;
-          loadCaseGraph(reportData.case_id);
 
           showStatus("✅ Analysis complete! Report generated below.", false);
+          
+          // Load and display graph (with delay to ensure vis-network is loaded)
+          setTimeout(async () => {
+            await loadAndDisplayGraph(jsonData);
+          }, 500);
           
           // Hide progress after 3 seconds
           setTimeout(() => {
@@ -806,10 +1133,9 @@
           document.getElementById("report-output").value = errorDetails;
         }
       });
-
-      // Initial graph render on page load
-      loadCaseGraph();
     </script>
+    </div>
   </body>
 </html>
+
 

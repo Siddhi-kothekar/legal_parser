@@ -1,0 +1,1249 @@
+{
+  "case_id": "debb88929f3b410285adf76100b52249",
+  "generated_at": "2025-11-28T18:21:40.896904",
+  "timeline_events": [
+    {
+      "timestamp": "2025-02-28T03:10:00",
+      "source": "Medical",
+      "description": "LOTUS MULTI-SPECIALTY HOSPITAL – MEDICAL REPORT Patient: Aarohi Deshmukh Date: 23 February 2025, 03:10 AM Injuries: - Multiple abrasions on wrists and upper arms - 1.5 cm superficial cut on left elbow"
+    },
+    {
+      "timestamp": "2025-02-28T18:21:40.895639",
+      "source": "witness_statement_2:scene_01.txt",
+      "description": "CRIME SCENE REPORT\n\nLocation: Gate 1, GreenNest Residency\nDate: 23 February 2025 Morning\n\nEvidence:\n- Trace blood near security cabin (victim's cut)\n- Skid marks consistent with Honda City tires leadi"
+    },
+    {
+      "timestamp": "2025-02-28T22:00:00",
+      "source": "CCTV",
+      "description": "February 2025 Time: 11:30 PM Complainant: Name: Neelima Deshmukh Relation: Mother of Aarohi Deshmukh Incident Description: Mrs"
+    },
+    {
+      "timestamp": "2025-02-28T23:30:00",
+      "source": "Police",
+      "description": "FIRST INFORMATION REPORT (FIR) Police Station: Chaturshringi Police Station, Pune FIR No: 77/2025 Date: 22 February 2025 Time: 11:30 PM Complainant: Name: Neelima Deshmukh Relation: Mother of Aarohi D"
+    }
+  ],
+  "inconsistencies": [],
+  "missing_evidence": [
+    "Check for forensic reports (fingerprints, DNA analysis, blood spatter analysis).",
+    "Obtain statements from neighbors and nearby residents.",
+    "Verify alibis and cross-check with CCTV timestamps.",
+    "Collect phone records and call logs if applicable."
+  ],
+  "extracted_content": [
+    {
+      "file_type": "document",
+      "classification": {
+        "label": "fir_document",
+        "confidence": 0.9,
+        "method": "BERT"
+      },
+      "extracted_text": "FIRST INFORMATION REPORT (FIR)\n\nPolice Station: Chaturshringi Police Station, Pune\nFIR No: 77/2025\nDate: 22 February 2025\nTime: 11:30 PM\n\nComplainant:\nName: Neelima Deshmukh\nRelation: Mother of Aarohi Deshmukh\n\nIncident Description:\nMrs. Neelima Deshmukh reported her daughter Aarohi Deshmukh missing around 10:00 PM on 22 February 2025 after leaving home. The security guard at GreenNest Residency noted a disturbance involving a white Honda City. CCTV footage showed Raghav Patil forcibly restraining Aarohi. IPC sections 354, 323, 363, and 506 applied. Police ongoing technical analysis of vehicle movement.",
+      "entities": [
+        {
+          "entity": "Police Station",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Chaturshringi Police Station",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Pune",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "February",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Time",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Complainant",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Neelima Deshmukh\nRelation",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Mother",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Aarohi Deshmukh\n\nIncident Description",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Mrs",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Neelima Deshmukh",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Aarohi Deshmukh",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "February",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Residency",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Honda City",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Raghav Patil",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Aarohi",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Police",
+          "label": "PERSON_OR_LOCATION"
+        }
+      ],
+      "objects_detected": [],
+      "ocr_text": "",
+      "timestamps": [
+        "11:30 PM",
+        "10:00 PM",
+        "February"
+      ],
+      "locations": [
+        "Chaturshringi Police Station",
+        "Honda City",
+        "Pune",
+        "Residency"
+      ],
+      "summary": "FIRST INFORMATION REPORT (FIR)\n\nPolice Station: Chaturshringi Police Station, Pune\nFIR No: 77/2025\nDate: 22 February 2025\nTime: 11:30 PM\n\nComplainant:\nName: Neelima Deshmukh\nRelation: Mother of Aarohi Deshmukh\n\nIncident Description:\nMrs. Neelima Deshmukh reported her daughter Aarohi Deshmukh missing around 10:00 PM on 22 February 2025 after leaving home. The security guard at GreenNest Residency noted a disturbance involving a white Honda City. CCTV footage showed Raghav Patil forcibly restraini...",
+      "filename": "fir_01.txt",
+      "dates": [
+        "February"
+      ],
+      "events": [
+        {
+          "event": "hit",
+          "type": "violence",
+          "context": "enNest Residency noted a disturbance involving a white Honda City. CCTV footage showed Raghav Patil for"
+        }
+      ],
+      "legal_entities": {
+        "ipc_sections": [],
+        "fir_numbers": [],
+        "mlc_numbers": [],
+        "hospital_names": [],
+        "vehicle_numbers": [],
+        "injury_terms": []
+      },
+      "persons": [
+        "Aarohi Deshmukh",
+        "Neelima Deshmukh",
+        "Neelima Deshmukh\nRelation",
+        "Raghav Patil"
+      ],
+      "injuries": [],
+      "weapons": [],
+      "camera_id": null
+    },
+    {
+      "file_type": "document",
+      "classification": {
+        "label": "medical_report",
+        "confidence": 0.9111335575580597,
+        "method": "BERT"
+      },
+      "extracted_text": "LOTUS MULTI-SPECIALTY HOSPITAL – MEDICAL REPORT\n\nPatient: Aarohi Deshmukh\nDate: 23 February 2025, 03:10 AM\n\nInjuries:\n- Multiple abrasions on wrists and upper arms\n- 1.5 cm superficial cut on left elbow\n- Psychological acute stress reaction and panic\n- No signs of sexual assault\n\nComments:\nInjuries consistent with physical struggle and restraint. Alcohol negative; high cortisol indicating distress. Report forwarded for investigation.",
+      "entities": [
+        {
+          "entity": "Patient",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Aarohi Deshmukh\nDate",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "February",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Injuries",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Multiple",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Psychological",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Comments",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Injuries",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Alcohol",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Report",
+          "label": "PERSON_OR_LOCATION"
+        }
+      ],
+      "objects_detected": [],
+      "ocr_text": "",
+      "timestamps": [
+        "03:10 AM",
+        "February"
+      ],
+      "locations": [],
+      "summary": "LOTUS MULTI-SPECIALTY HOSPITAL – MEDICAL REPORT\n\nPatient: Aarohi Deshmukh\nDate: 23 February 2025, 03:10 AM\n\nInjuries:\n- Multiple abrasions on wrists and upper arms\n- 1.5 cm superficial cut on left elbow\n- Psychological acute stress reaction and panic\n- No signs of sexual assault\n\nComments:\nInjuries consistent with physical struggle and restraint. Alcohol negative; high cortisol indicating distress. Report forwarded for investigation.",
+      "filename": "medical_01.txt",
+      "dates": [
+        "February"
+      ],
+      "events": [
+        {
+          "event": "left elbow",
+          "type": "location_exit",
+          "context": "wrists and upper arms\n- 1.5 cm superficial cut on left elbow\n- Psychological acute stress reaction and panic\n-"
+        }
+      ],
+      "legal_entities": {
+        "ipc_sections": [],
+        "fir_numbers": [],
+        "mlc_numbers": [],
+        "hospital_names": [],
+        "vehicle_numbers": [],
+        "injury_terms": []
+      },
+      "persons": [
+        "Aarohi Deshmukh\nDate"
+      ],
+      "injuries": [],
+      "weapons": [],
+      "camera_id": null
+    },
+    {
+      "file_type": "document",
+      "classification": {
+        "label": "witness_statement",
+        "confidence": 0.9,
+        "method": "BERT"
+      },
+      "extracted_text": "CRIME SCENE REPORT\n\nLocation: Gate 1, GreenNest Residency\nDate: 23 February 2025 Morning\n\nEvidence:\n- Trace blood near security cabin (victim's cut)\n- Skid marks consistent with Honda City tires leading to Baner Main Road\n- Footprints: 2 individuals, one heavier build\n- Black cloth mask recovered near garden bushes, likely linked to car occupant\n\nNearby shop CCTV confirms vehicle moving rapidly toward Sus Road, matching witness statements.",
+      "entities": [
+        {
+          "entity": "Location",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Gate",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Residency\nDate",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "February",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Morning\n\nEvidence",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Trace",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Skid",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Honda City",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Baner Main Road",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Footprints",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Black",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Nearby",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Sus Road",
+          "label": "PERSON_OR_LOCATION"
+        }
+      ],
+      "objects_detected": [],
+      "ocr_text": "",
+      "timestamps": [
+        "February"
+      ],
+      "locations": [
+        "Baner Main Road",
+        "Honda City",
+        "Residency\nDate",
+        "Sus Road"
+      ],
+      "summary": "CRIME SCENE REPORT\n\nLocation: Gate 1, GreenNest Residency\nDate: 23 February 2025 Morning\n\nEvidence:\n- Trace blood near security cabin (victim's cut)\n- Skid marks consistent with Honda City tires leading to Baner Main Road\n- Footprints: 2 individuals, one heavier build\n- Black cloth mask recovered near garden bushes, likely linked to car occupant\n\nNearby shop CCTV confirms vehicle moving rapidly toward Sus Road, matching witness statements.",
+      "filename": "scene_01.txt",
+      "dates": [
+        "February"
+      ],
+      "events": [],
+      "legal_entities": {
+        "ipc_sections": [],
+        "fir_numbers": [],
+        "mlc_numbers": [],
+        "hospital_names": [],
+        "vehicle_numbers": [],
+        "injury_terms": []
+      },
+      "persons": [
+        "Morning\n\nEvidence"
+      ],
+      "injuries": [],
+      "weapons": [],
+      "camera_id": null
+    }
+  ],
+  "warnings": [
+    "LLM inconsistency detection skipped: OpenAI key missing or disabled."
+  ],
+  "evidence_map": {
+    "case_persons": [
+      "Aarohi Deshmukh",
+      "Aarohi Deshmukh\nDate",
+      "Morning\n\nEvidence",
+      "Neelima Deshmukh",
+      "Neelima Deshmukh\nRelation",
+      "Raghav Patil"
+    ],
+    "case_locations": [
+      "Baner Main Road",
+      "Chaturshringi Police Station",
+      "Honda City",
+      "Pune",
+      "Residency",
+      "Residency\nDate",
+      "Sus Road"
+    ],
+    "case_timestamps": [
+      "03:10 AM",
+      "10:00 PM",
+      "11:30 PM",
+      "AM",
+      "February",
+      "PM"
+    ],
+    "case_injuries": [],
+    "case_weapons": [],
+    "ipc_sections": [],
+    "fir_numbers": [],
+    "mlc_numbers": [],
+    "hospital_names": [],
+    "vehicle_numbers": [],
+    "files": [
+      {
+        "file": "fir_01.txt",
+        "type": "document",
+        "classification": {
+          "label": "fir_document",
+          "confidence": 0.9,
+          "method": "BERT"
+        },
+        "summary": "FIRST INFORMATION REPORT (FIR)\n\nPolice Station: Chaturshringi Police Station, Pune\nFIR No: 77/2025\nDate: 22 February 2025\nTime: 11:30 PM\n\nComplainant:\nName: Neelima Deshmukh\nRelation: Mother of Aarohi Deshmukh\n\nIncident Description:\nMrs. Neelima Deshmukh reported her daughter Aarohi Deshmukh missing around 10:00 PM on 22 February 2025 after leaving home. The security guard at GreenNest Residency noted a disturbance involving a white Honda City. CCTV footage showed Raghav Patil forcibly restraini",
+        "persons": [
+          "Aarohi Deshmukh",
+          "Neelima Deshmukh",
+          "Neelima Deshmukh\nRelation",
+          "Raghav Patil"
+        ],
+        "locations": [
+          "Chaturshringi Police Station",
+          "Honda City",
+          "Pune",
+          "Residency"
+        ],
+        "timestamps": [
+          "11:30 PM",
+          "10:00 PM",
+          "February"
+        ],
+        "injuries": [],
+        "weapons": [],
+        "legal_entities": {
+          "ipc_sections": [],
+          "fir_numbers": [],
+          "mlc_numbers": [],
+          "hospital_names": [],
+          "vehicle_numbers": [],
+          "injury_terms": []
+        }
+      },
+      {
+        "file": "medical_01.txt",
+        "type": "document",
+        "classification": {
+          "label": "medical_report",
+          "confidence": 0.9111335575580597,
+          "method": "BERT"
+        },
+        "summary": "LOTUS MULTI-SPECIALTY HOSPITAL – MEDICAL REPORT\n\nPatient: Aarohi Deshmukh\nDate: 23 February 2025, 03:10 AM\n\nInjuries:\n- Multiple abrasions on wrists and upper arms\n- 1.5 cm superficial cut on left elbow\n- Psychological acute stress reaction and panic\n- No signs of sexual assault\n\nComments:\nInjuries consistent with physical struggle and restraint. Alcohol negative; high cortisol indicating distress. Report forwarded for investigation.",
+        "persons": [
+          "Aarohi Deshmukh\nDate"
+        ],
+        "locations": [],
+        "timestamps": [
+          "03:10 AM",
+          "February"
+        ],
+        "injuries": [],
+        "weapons": [],
+        "legal_entities": {
+          "ipc_sections": [],
+          "fir_numbers": [],
+          "mlc_numbers": [],
+          "hospital_names": [],
+          "vehicle_numbers": [],
+          "injury_terms": []
+        }
+      },
+      {
+        "file": "scene_01.txt",
+        "type": "document",
+        "classification": {
+          "label": "witness_statement",
+          "confidence": 0.9,
+          "method": "BERT"
+        },
+        "summary": "CRIME SCENE REPORT\n\nLocation: Gate 1, GreenNest Residency\nDate: 23 February 2025 Morning\n\nEvidence:\n- Trace blood near security cabin (victim's cut)\n- Skid marks consistent with Honda City tires leading to Baner Main Road\n- Footprints: 2 individuals, one heavier build\n- Black cloth mask recovered near garden bushes, likely linked to car occupant\n\nNearby shop CCTV confirms vehicle moving rapidly toward Sus Road, matching witness statements.",
+        "persons": [
+          "Morning\n\nEvidence"
+        ],
+        "locations": [
+          "Baner Main Road",
+          "Honda City",
+          "Residency\nDate",
+          "Sus Road"
+        ],
+        "timestamps": [
+          "February"
+        ],
+        "injuries": [],
+        "weapons": [],
+        "legal_entities": {
+          "ipc_sections": [],
+          "fir_numbers": [],
+          "mlc_numbers": [],
+          "hospital_names": [],
+          "vehicle_numbers": [],
+          "injury_terms": []
+        }
+      }
+    ],
+    "consolidated_text": "FIRST INFORMATION REPORT (FIR)\n\nPolice Station: Chaturshringi Police Station, Pune\nFIR No: 77/2025\nDate: 22 February 2025\nTime: 11:30 PM\n\nComplainant:\nName: Neelima Deshmukh\nRelation: Mother of Aarohi Deshmukh\n\nIncident Description:\nMrs. Neelima Deshmukh reported her daughter Aarohi Deshmukh missing around 10:00 PM on 22 February 2025 after leaving home. The security guard at GreenNest Residency noted a disturbance involving a white Honda City. CCTV footage showed Raghav Patil forcibly restraining Aarohi. IPC sections 354, 323, 363, and 506 applied. Police ongoing technical analysis of vehicle movement.\n---\nLOTUS MULTI-SPECIALTY HOSPITAL – MEDICAL REPORT\n\nPatient: Aarohi Deshmukh\nDate: 23 February 2025, 03:10 AM\n\nInjuries:\n- Multiple abrasions on wrists and upper arms\n- 1.5 cm superficial cut on left elbow\n- Psychological acute stress reaction and panic\n- No signs of sexual assault\n\nComments:\nInjuries consistent with physical struggle and restraint. Alcohol negative; high cortisol indicating distress. Report forwarded for investigation.\n---\nCRIME SCENE REPORT\n\nLocation: Gate 1, GreenNest Residency\nDate: 23 February 2025 Morning\n\nEvidence:\n- Trace blood near security cabin (victim's cut)\n- Skid marks consistent with Honda City tires leading to Baner Main Road\n- Footprints: 2 individuals, one heavier build\n- Black cloth mask recovered near garden bushes, likely linked to car occupant\n\nNearby shop CCTV confirms vehicle moving rapidly toward Sus Road, matching witness statements.",
+    "entity_files": {
+      "persons": {
+        "Aarohi Deshmukh": [
+          "fir_01.txt"
+        ],
+        "Neelima Deshmukh": [
+          "fir_01.txt"
+        ],
+        "Neelima Deshmukh\nRelation": [
+          "fir_01.txt"
+        ],
+        "Raghav Patil": [
+          "fir_01.txt"
+        ],
+        "Aarohi Deshmukh\nDate": [
+          "medical_01.txt"
+        ],
+        "Morning\n\nEvidence": [
+          "scene_01.txt"
+        ]
+      },
+      "locations": {
+        "Chaturshringi Police Station": [
+          "fir_01.txt"
+        ],
+        "Honda City": [
+          "fir_01.txt",
+          "scene_01.txt"
+        ],
+        "Pune": [
+          "fir_01.txt"
+        ],
+        "Residency": [
+          "fir_01.txt"
+        ],
+        "Baner Main Road": [
+          "scene_01.txt"
+        ],
+        "Residency\nDate": [
+          "scene_01.txt"
+        ],
+        "Sus Road": [
+          "scene_01.txt"
+        ]
+      },
+      "timestamps": {
+        "11:30 PM": [
+          "fir_01.txt"
+        ],
+        "10:00 PM": [
+          "fir_01.txt"
+        ],
+        "February": [
+          "fir_01.txt",
+          "medical_01.txt",
+          "scene_01.txt"
+        ],
+        "03:10 AM": [
+          "medical_01.txt"
+        ]
+      },
+      "injuries": {},
+      "weapons": {}
+    }
+  },
+  "case_summary": "FIRST INFORMATION REPORT (FIR)\n\nPolice Station: Chaturshringi Police Station, Pune\nFIR No: 77/2025\nDate: 22 February 2025\nTime: 11:30 PM\n\nComplainant:\nName: Neelima Deshmukh\nRelation: Mother of Aarohi Deshmukh\n\nIncident Description:\nMrs.\nNeelima Deshmukh reported her daughter Aarohi Deshmukh missing around 10:00 PM on 22 February 2025 after leaving home.\nThe security guard at GreenNest Residency noted a disturbance involving a white Honda City.\nPolice ongoing technical analysis of vehicle movement.\n---\nLOTUS MULTI-SPECIALTY HOSPITAL – MEDICAL REPORT\n\nPatient: Aarohi Deshmukh\nDate: 23 February 2025, 03:10 AM\n\nInjuries:\n- Multiple abrasions on wrists and upper arms\n- 1.5 cm superficial cut on left elbow\n- Psychological acute stress reaction and panic\n- No signs of sexual assault\n\nComments:\nInjuries consistent with physical struggle and restraint.\nReport forwarded for investigation.\n---\nCRIME SCENE REPORT\n\nLocation: Gate 1, GreenNest Residency\nDate: 23 February 2025 Morning\n\nEvidence:\n- Trace blood near security cabin (victim's cut)\n- Skid marks consistent with Honda City tires leading to Baner Main Road\n- Footprints: 2 individuals, one heavier build\n- Black cloth mask recovered near garden bushes, likely linked to car occupant\n\nNearby shop CCTV confirms vehicle moving rapidly toward Sus Road, matching witness statements.",
+  "relationships": [
+    {
+      "source": "debb88929f3b410285adf76100b52249",
+      "target": "013d906c35ba4770ad3d7f35d5fbce59",
+      "reasons": [
+        "👤 Same person: Aarohi Deshmukh, Aarohi Deshmukh Date, Morning Evidence, Neelima Deshmukh, Neelima Deshmukh Relation",
+        "📍 Same location: Baner Main Road, Chaturshringi Police Station, Honda City, Pune, Residency",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours",
+        "🤖 Narrative similarity 1.00"
+      ],
+      "weight": 6.0,
+      "similarity": 1.0,
+      "shared_entities": {
+        "persons": [
+          "Aarohi Deshmukh",
+          "Aarohi Deshmukh Date",
+          "Morning Evidence",
+          "Neelima Deshmukh",
+          "Neelima Deshmukh Relation",
+          "Raghav Patil"
+        ],
+        "locations": [
+          "Baner Main Road",
+          "Chaturshringi Police Station",
+          "Honda City",
+          "Pune",
+          "Residency",
+          "Residency Date",
+          "Sus Road"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-02-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "debb88929f3b410285adf76100b52249",
+      "target": "6a70dc446e2544ac8128950463fa46d3",
+      "reasons": [
+        "👤 Same person: Aarohi Deshmukh, Aarohi Deshmukh Date, Morning Evidence, Neelima Deshmukh, Neelima Deshmukh Relation",
+        "📍 Same location: Baner Main Road, Chaturshringi Police Station, Honda City, Pune, Residency",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours",
+        "🤖 Narrative similarity 1.00"
+      ],
+      "weight": 6.0,
+      "similarity": 1.0,
+      "shared_entities": {
+        "persons": [
+          "Aarohi Deshmukh",
+          "Aarohi Deshmukh Date",
+          "Morning Evidence",
+          "Neelima Deshmukh",
+          "Neelima Deshmukh Relation",
+          "Raghav Patil"
+        ],
+        "locations": [
+          "Baner Main Road",
+          "Chaturshringi Police Station",
+          "Honda City",
+          "Pune",
+          "Residency",
+          "Residency Date",
+          "Sus Road"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-02-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "debb88929f3b410285adf76100b52249",
+      "target": "e6d701fdc63e4860b2a1ddeed422f171",
+      "reasons": [
+        "👤 Same person: Aarohi Deshmukh, Aarohi Deshmukh Date, Morning Evidence, Neelima Deshmukh, Neelima Deshmukh Relation",
+        "📍 Same location: Baner Main Road, Chaturshringi Police Station, Honda City, Pune, Residency",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours",
+        "🤖 Narrative similarity 1.00"
+      ],
+      "weight": 6.0,
+      "similarity": 1.0,
+      "shared_entities": {
+        "persons": [
+          "Aarohi Deshmukh",
+          "Aarohi Deshmukh Date",
+          "Morning Evidence",
+          "Neelima Deshmukh",
+          "Neelima Deshmukh Relation",
+          "Raghav Patil"
+        ],
+        "locations": [
+          "Baner Main Road",
+          "Chaturshringi Police Station",
+          "Honda City",
+          "Pune",
+          "Residency",
+          "Residency Date",
+          "Sus Road"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-02-28",
+          "2025-11-29"
+        ]
+      }
+    },
+    {
+      "source": "debb88929f3b410285adf76100b52249",
+      "target": "421b20c40e1d4689a421366093175c31",
+      "reasons": [
+        "👤 Same person: Aarohi Deshmukh Date",
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.7,
+      "similarity": 0.695,
+      "shared_entities": {
+        "persons": [
+          "Aarohi Deshmukh Date"
+        ],
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-02-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "debb88929f3b410285adf76100b52249",
+      "target": "89a9965eabef4abc8cacfc87db8fd84f",
+      "reasons": [
+        "📍 Same location: Pune",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.67,
+      "similarity": 0.666,
+      "shared_entities": {
+        "locations": [
+          "Pune"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "debb88929f3b410285adf76100b52249",
+      "target": "2d645081c6dd426c8f794598cf9f2dab",
+      "reasons": [
+        "📍 Same location: Pune",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.64,
+      "similarity": 0.638,
+      "shared_entities": {
+        "locations": [
+          "Pune"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "debb88929f3b410285adf76100b52249",
+      "target": "60dada902f3b4ad794c770152f7bb3db",
+      "reasons": [
+        "📍 Same location: Pune",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.64,
+      "similarity": 0.638,
+      "shared_entities": {
+        "locations": [
+          "Pune"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "debb88929f3b410285adf76100b52249",
+      "target": "a2d7bfa13a2e40eda43e81d0ee08cb0f",
+      "reasons": [
+        "📍 Same location: Pune",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.64,
+      "similarity": 0.638,
+      "shared_entities": {
+        "locations": [
+          "Pune"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "debb88929f3b410285adf76100b52249",
+      "target": "bd2180c11a154f99b995b1f01951d221",
+      "reasons": [
+        "📍 Same location: Pune",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.64,
+      "similarity": 0.638,
+      "shared_entities": {
+        "locations": [
+          "Pune"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "debb88929f3b410285adf76100b52249",
+      "target": "d8f5b91c649e4e72a35c329af86fa387",
+      "reasons": [
+        "📍 Same location: Pune",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.64,
+      "similarity": 0.638,
+      "shared_entities": {
+        "locations": [
+          "Pune"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "debb88929f3b410285adf76100b52249",
+      "target": "ff45444f599c477ea1d459edd8662f66",
+      "reasons": [
+        "📍 Same location: Pune",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.64,
+      "similarity": 0.638,
+      "shared_entities": {
+        "locations": [
+          "Pune"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "debb88929f3b410285adf76100b52249",
+      "target": "e4d1315946fc44c1b133f604df51a8d0",
+      "reasons": [
+        "📍 Same location: Pune",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.61,
+      "similarity": 0.614,
+      "shared_entities": {
+        "locations": [
+          "Pune"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "debb88929f3b410285adf76100b52249",
+      "target": "c3097a3e223d41a0ad5ad233e2775be3",
+      "reasons": [
+        "📍 Same location: Pune",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.58,
+      "similarity": 0.579,
+      "shared_entities": {
+        "locations": [
+          "Pune"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "debb88929f3b410285adf76100b52249",
+      "target": "0fa864a92a084855a36d166010344266",
+      "reasons": [
+        "📍 Same location: Pune",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.57,
+      "similarity": 0.566,
+      "shared_entities": {
+        "locations": [
+          "Pune"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "debb88929f3b410285adf76100b52249",
+      "target": "2da656a093564c708be9d1bdd7d88469",
+      "reasons": [
+        "📍 Same location: Pune",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.57,
+      "similarity": 0.566,
+      "shared_entities": {
+        "locations": [
+          "Pune"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "debb88929f3b410285adf76100b52249",
+      "target": "953aed710060452ca4d28ab54fa3fa13",
+      "reasons": [
+        "📍 Same location: Pune",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.57,
+      "similarity": 0.566,
+      "shared_entities": {
+        "locations": [
+          "Pune"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "debb88929f3b410285adf76100b52249",
+      "target": "9af52f2fd96146099b42c941b12cc85e",
+      "reasons": [
+        "📍 Same location: Pune",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.57,
+      "similarity": 0.566,
+      "shared_entities": {
+        "locations": [
+          "Pune"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "debb88929f3b410285adf76100b52249",
+      "target": "f444f19078c74aa884df5db8e13dfb25",
+      "reasons": [
+        "📍 Same location: Pune",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.57,
+      "similarity": 0.566,
+      "shared_entities": {
+        "locations": [
+          "Pune"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "debb88929f3b410285adf76100b52249",
+      "target": "671b87b349b14e1582526bcb04e76911",
+      "reasons": [
+        "📍 Same location: Pune",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.54,
+      "similarity": 0.541,
+      "shared_entities": {
+        "locations": [
+          "Pune"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "debb88929f3b410285adf76100b52249",
+      "target": "11f483d2360e4fb8bf9e36c15262f899",
+      "reasons": [
+        "📍 Same location: Pune",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.32,
+      "similarity": 0.321,
+      "shared_entities": {
+        "locations": [
+          "Pune"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "debb88929f3b410285adf76100b52249",
+      "target": "cafac347ceb242ca91b8be019da1bb52",
+      "reasons": [
+        "📍 Same location: Pune",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.32,
+      "similarity": 0.321,
+      "shared_entities": {
+        "locations": [
+          "Pune"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "debb88929f3b410285adf76100b52249",
+      "target": "117347727ad546efb234773dc3a4264d",
+      "reasons": [
+        "📍 Same location: Pune",
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.08,
+      "similarity": 0.08,
+      "shared_entities": {
+        "locations": [
+          "Pune"
+        ],
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "debb88929f3b410285adf76100b52249",
+      "target": "43efee19bae440f782902f33559bdd90",
+      "reasons": [
+        "📍 Same location: Pune",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.08,
+      "similarity": 0.08,
+      "shared_entities": {
+        "locations": [
+          "Pune"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "debb88929f3b410285adf76100b52249",
+      "target": "a5451944f62844469bf185052abb6215",
+      "reasons": [
+        "📍 Same location: Pune",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.08,
+      "similarity": 0.08,
+      "shared_entities": {
+        "locations": [
+          "Pune"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "debb88929f3b410285adf76100b52249",
+      "target": "ae64a58fae574e64a1a9d005f29075ee",
+      "reasons": [
+        "📍 Same location: Pune",
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.08,
+      "similarity": 0.08,
+      "shared_entities": {
+        "locations": [
+          "Pune"
+        ],
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "debb88929f3b410285adf76100b52249",
+      "target": "dcbb258ce4f44b53992f268bbc077d61",
+      "reasons": [
+        "📍 Same location: Pune",
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.08,
+      "similarity": 0.08,
+      "shared_entities": {
+        "locations": [
+          "Pune"
+        ],
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "debb88929f3b410285adf76100b52249",
+      "target": "907fe4e2614e4a0cb7477da441454e2d",
+      "reasons": [
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 2.61,
+      "similarity": 0.614,
+      "shared_entities": {
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "debb88929f3b410285adf76100b52249",
+      "target": "9bc6495f1a3a4f53bbcb8238b64b928d",
+      "reasons": [
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 2.08,
+      "similarity": 0.08,
+      "shared_entities": {
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    }
+  ],
+  "evidence_relationships": [
+    {
+      "source": "FIR",
+      "target": "Medical Report",
+      "matches": [
+        "Matches timeline (February)"
+      ]
+    },
+    {
+      "source": "FIR",
+      "target": "scene_01.txt",
+      "matches": [
+        "Matches location: Honda City",
+        "Matches timeline (February)"
+      ]
+    },
+    {
+      "source": "Medical Report",
+      "target": "scene_01.txt",
+      "matches": [
+        "Matches timeline (February)"
+      ]
+    }
+  ]
+}

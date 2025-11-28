@@ -706,6 +706,330 @@
   "relationships": [
     {
       "source": "096863c0eb3e41e4ab7df15714e6492b",
+      "target": "0fa864a92a084855a36d166010344266",
+      "reasons": [
+        "👤 Same person: Action Taken",
+        "🗡️ Same weapon type: Knife, weapon",
+        "⚡ Matching event types: location_exit"
+      ],
+      "weight": 3.17,
+      "similarity": 0.17,
+      "shared_entities": {
+        "persons": [
+          "Action Taken"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "events": [
+          "location_exit"
+        ]
+      }
+    },
+    {
+      "source": "096863c0eb3e41e4ab7df15714e6492b",
+      "target": "2d645081c6dd426c8f794598cf9f2dab",
+      "reasons": [
+        "👤 Same person: complainant",
+        "🗡️ Same weapon type: Knife, weapon",
+        "⚡ Matching event types: location_exit"
+      ],
+      "weight": 3.17,
+      "similarity": 0.175,
+      "shared_entities": {
+        "persons": [
+          "complainant"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "events": [
+          "location_exit"
+        ]
+      }
+    },
+    {
+      "source": "096863c0eb3e41e4ab7df15714e6492b",
+      "target": "2da656a093564c708be9d1bdd7d88469",
+      "reasons": [
+        "👤 Same person: Action Taken",
+        "🗡️ Same weapon type: Knife, weapon",
+        "⚡ Matching event types: location_exit"
+      ],
+      "weight": 3.17,
+      "similarity": 0.17,
+      "shared_entities": {
+        "persons": [
+          "Action Taken"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "events": [
+          "location_exit"
+        ]
+      }
+    },
+    {
+      "source": "096863c0eb3e41e4ab7df15714e6492b",
+      "target": "60dada902f3b4ad794c770152f7bb3db",
+      "reasons": [
+        "👤 Same person: complainant",
+        "🗡️ Same weapon type: Knife, weapon",
+        "⚡ Matching event types: location_exit"
+      ],
+      "weight": 3.17,
+      "similarity": 0.175,
+      "shared_entities": {
+        "persons": [
+          "complainant"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "events": [
+          "location_exit"
+        ]
+      }
+    },
+    {
+      "source": "096863c0eb3e41e4ab7df15714e6492b",
+      "target": "953aed710060452ca4d28ab54fa3fa13",
+      "reasons": [
+        "👤 Same person: Action Taken",
+        "🗡️ Same weapon type: Knife, weapon",
+        "⚡ Matching event types: location_exit"
+      ],
+      "weight": 3.17,
+      "similarity": 0.17,
+      "shared_entities": {
+        "persons": [
+          "Action Taken"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "events": [
+          "location_exit"
+        ]
+      }
+    },
+    {
+      "source": "096863c0eb3e41e4ab7df15714e6492b",
+      "target": "9af52f2fd96146099b42c941b12cc85e",
+      "reasons": [
+        "👤 Same person: Action Taken",
+        "🗡️ Same weapon type: Knife, weapon",
+        "⚡ Matching event types: location_exit"
+      ],
+      "weight": 3.17,
+      "similarity": 0.17,
+      "shared_entities": {
+        "persons": [
+          "Action Taken"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "events": [
+          "location_exit"
+        ]
+      }
+    },
+    {
+      "source": "096863c0eb3e41e4ab7df15714e6492b",
+      "target": "a2d7bfa13a2e40eda43e81d0ee08cb0f",
+      "reasons": [
+        "👤 Same person: complainant",
+        "🗡️ Same weapon type: Knife, weapon",
+        "⚡ Matching event types: location_exit"
+      ],
+      "weight": 3.17,
+      "similarity": 0.175,
+      "shared_entities": {
+        "persons": [
+          "complainant"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "events": [
+          "location_exit"
+        ]
+      }
+    },
+    {
+      "source": "096863c0eb3e41e4ab7df15714e6492b",
+      "target": "bd2180c11a154f99b995b1f01951d221",
+      "reasons": [
+        "👤 Same person: complainant",
+        "🗡️ Same weapon type: Knife, weapon",
+        "⚡ Matching event types: location_exit"
+      ],
+      "weight": 3.17,
+      "similarity": 0.175,
+      "shared_entities": {
+        "persons": [
+          "complainant"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "events": [
+          "location_exit"
+        ]
+      }
+    },
+    {
+      "source": "096863c0eb3e41e4ab7df15714e6492b",
+      "target": "d8f5b91c649e4e72a35c329af86fa387",
+      "reasons": [
+        "👤 Same person: complainant",
+        "🗡️ Same weapon type: Knife, weapon",
+        "⚡ Matching event types: location_exit"
+      ],
+      "weight": 3.17,
+      "similarity": 0.175,
+      "shared_entities": {
+        "persons": [
+          "complainant"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "events": [
+          "location_exit"
+        ]
+      }
+    },
+    {
+      "source": "096863c0eb3e41e4ab7df15714e6492b",
+      "target": "f444f19078c74aa884df5db8e13dfb25",
+      "reasons": [
+        "👤 Same person: Action Taken",
+        "🗡️ Same weapon type: Knife, weapon",
+        "⚡ Matching event types: location_exit"
+      ],
+      "weight": 3.17,
+      "similarity": 0.17,
+      "shared_entities": {
+        "persons": [
+          "Action Taken"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "events": [
+          "location_exit"
+        ]
+      }
+    },
+    {
+      "source": "096863c0eb3e41e4ab7df15714e6492b",
+      "target": "ff45444f599c477ea1d459edd8662f66",
+      "reasons": [
+        "👤 Same person: complainant",
+        "🗡️ Same weapon type: Knife, weapon",
+        "⚡ Matching event types: location_exit"
+      ],
+      "weight": 3.17,
+      "similarity": 0.175,
+      "shared_entities": {
+        "persons": [
+          "complainant"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "events": [
+          "location_exit"
+        ]
+      }
+    },
+    {
+      "source": "096863c0eb3e41e4ab7df15714e6492b",
+      "target": "671b87b349b14e1582526bcb04e76911",
+      "reasons": [
+        "👤 Same person: Action Taken",
+        "🗡️ Same weapon type: Knife, weapon",
+        "⚡ Matching event types: location_exit, observation"
+      ],
+      "weight": 3.15,
+      "similarity": 0.154,
+      "shared_entities": {
+        "persons": [
+          "Action Taken"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "events": [
+          "location_exit",
+          "observation"
+        ]
+      }
+    },
+    {
+      "source": "096863c0eb3e41e4ab7df15714e6492b",
+      "target": "c3097a3e223d41a0ad5ad233e2775be3",
+      "reasons": [
+        "👤 Same person: complainant",
+        "🗡️ Same weapon type: Knife, weapon",
+        "⚡ Matching event types: location_exit"
+      ],
+      "weight": 3.11,
+      "similarity": 0.112,
+      "shared_entities": {
+        "persons": [
+          "complainant"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "events": [
+          "location_exit"
+        ]
+      }
+    },
+    {
+      "source": "096863c0eb3e41e4ab7df15714e6492b",
+      "target": "89a9965eabef4abc8cacfc87db8fd84f",
+      "reasons": [
+        "👤 Same person: complainant",
+        "🗡️ Same weapon type: Knife, weapon",
+        "⚡ Matching event types: location_exit, observation"
+      ],
+      "weight": 3.08,
+      "similarity": 0.082,
+      "shared_entities": {
+        "persons": [
+          "complainant"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "events": [
+          "location_exit",
+          "observation"
+        ]
+      }
+    },
+    {
+      "source": "096863c0eb3e41e4ab7df15714e6492b",
       "target": "117347727ad546efb234773dc3a4264d",
       "reasons": [
         "🗡️ Same weapon type: Knife, knife, weapon",
@@ -755,6 +1079,44 @@
         ],
         "events": [
           "location_entry",
+          "location_exit",
+          "observation"
+        ]
+      }
+    },
+    {
+      "source": "096863c0eb3e41e4ab7df15714e6492b",
+      "target": "907fe4e2614e4a0cb7477da441454e2d",
+      "reasons": [
+        "🗡️ Same weapon type: Knife",
+        "⚡ Matching event types: location_exit, observation"
+      ],
+      "weight": 2.13,
+      "similarity": 0.128,
+      "shared_entities": {
+        "weapons": [
+          "Knife"
+        ],
+        "events": [
+          "location_exit",
+          "observation"
+        ]
+      }
+    },
+    {
+      "source": "096863c0eb3e41e4ab7df15714e6492b",
+      "target": "e4d1315946fc44c1b133f604df51a8d0",
+      "reasons": [
+        "🗡️ Same weapon type: Knife",
+        "⚡ Matching event types: location_exit, observation"
+      ],
+      "weight": 2.13,
+      "similarity": 0.128,
+      "shared_entities": {
+        "weapons": [
+          "Knife"
+        ],
+        "events": [
           "location_exit",
           "observation"
         ]

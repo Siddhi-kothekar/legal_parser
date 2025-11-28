@@ -118,6 +118,13 @@ class ClassificationService:
         """Fallback heuristic-based classification."""
         name = artifact_path.name.lower()
         extension = artifact_path.suffix.lower()
+        
+        # Try to get text content for better classification
+        text_content = ""
+        try:
+            text_content = self._quick_text_extract(artifact_path).lower()
+        except Exception:
+            pass
 
         if extension in {".jpg", ".jpeg", ".png"}:
             if "cctv" in name or "cam" in name:
@@ -132,14 +139,61 @@ class ClassificationService:
                 label = "environment"
             return {"label": label, "confidence": 0.7, "method": "heuristic"}
         else:
-            if "witness" in name:
-                label = "witness_statement"
-            elif "med" in name or "injury" in name or "hospital" in name:
-                label = "medical_report"
-            elif "fir" in name or "chargesheet" in name:
-                label = "fir"
-            elif "memo" in name or "police" in name:
-                label = "police_memo"
+            # Use text content for better classification
+            if text_content:
+                # Check for witness statement keywords
+                if any(kw in text_content for kw in ["witness statement", "name of witness", "witness signature", "statement:"]):
+                    label = "witness_statement"
+                    confidence = 0.85
+                # Check for crime scene description
+                elif any(kw in text_content for kw in ["crime scene", "crime scene photo", "items visible", "time estimated", "blood drops"]):
+                    label = "crime_scene_description"
+                    confidence = 0.85
+                # Check for medical report
+                elif any(kw in text_content for kw in ["medical injury report", "hospital medical", "patient name", "date of examination", "findings:", "doctor's note"]):
+                    label = "medical_report"
+                    confidence = 0.85
+                # Check for FIR
+                elif any(kw in text_content for kw in ["first information report", "fir no", "police station:", "complainant:", "accused:"]):
+                    label = "fir_document"
+                    confidence = 0.85
+                # Check for police memo
+                elif any(kw in text_content for kw in ["police memo", "investigation memo", "officer's report"]):
+                    label = "police_memo"
+                    confidence = 0.85
+                else:
+                    # Fallback to filename-based
+                    if "witness" in name:
+                        label = "witness_statement"
+                        confidence = 0.7
+                    elif "med" in name or "injury" in name or "hospital" in name:
+                        label = "medical_report"
+                        confidence = 0.7
+                    elif "fir" in name or "chargesheet" in name:
+                        label = "fir_document"
+                        confidence = 0.7
+                    elif "memo" in name or "police" in name:
+                        label = "police_memo"
+                        confidence = 0.7
+                    elif "scene" in name or "crime" in name:
+                        label = "crime_scene_description"
+                        confidence = 0.7
+                    else:
+                        label = "general_document"
+                        confidence = 0.65
             else:
-                label = "general_document"
-            return {"label": label, "confidence": 0.65, "method": "heuristic"}
+                # Filename-based only
+                if "witness" in name:
+                    label = "witness_statement"
+                elif "med" in name or "injury" in name or "hospital" in name:
+                    label = "medical_report"
+                elif "fir" in name or "chargesheet" in name:
+                    label = "fir_document"
+                elif "memo" in name or "police" in name:
+                    label = "police_memo"
+                elif "scene" in name or "crime" in name:
+                    label = "crime_scene_description"
+                else:
+                    label = "general_document"
+                confidence = 0.65
+            return {"label": label, "confidence": confidence, "method": "heuristic"}

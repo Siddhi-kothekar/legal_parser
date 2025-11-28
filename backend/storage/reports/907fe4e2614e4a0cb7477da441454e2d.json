@@ -1,0 +1,1520 @@
+{
+  "case_id": "907fe4e2614e4a0cb7477da441454e2d",
+  "generated_at": "2025-11-28T16:06:38.183592",
+  "timeline_events": [
+    {
+      "timestamp": "2025-03-28T16:06:38.177980",
+      "source": "medical_report_0:med_01.txt",
+      "description": "HOSPITAL MEDICAL INJURY REPORT\n\nCase Reference: CR-5541/2025\nPatient Name: Rohan Kulkarni\nAge: 29\nDate of Examination: 14 March 2025\nHospital: CityCare Hospital, Pune\n\nFindings:\n- 3 cm deep cut wound "
+    },
+    {
+      "timestamp": "2025-11-28T20:15:00",
+      "source": "medical_report_1:scene_photo_01.txt",
+      "description": ") Location: Sai Apartment Main Gate Items Visible: - Blood drops near stair entrance - Knife lying near the left side of the gate - Security guard approaching from right side Time Estimated: Around 8:"
+    }
+  ],
+  "inconsistencies": [],
+  "missing_evidence": [
+    "No CCTV footage or surveillance images found. Consider collecting CCTV from nearby locations.",
+    "No FIR (First Information Report) found. Ensure FIR is included in case files.",
+    "Verify alibis and cross-check with CCTV timestamps.",
+    "Obtain statements from neighbors and nearby residents.",
+    "Check for forensic reports (fingerprints, DNA analysis, blood spatter analysis).",
+    "Collect phone records and call logs if applicable."
+  ],
+  "extracted_content": [
+    {
+      "file_type": "document",
+      "classification": {
+        "label": "medical_report",
+        "confidence": 0.9222418963909149,
+        "method": "BERT"
+      },
+      "extracted_text": "HOSPITAL MEDICAL INJURY REPORT\n\nCase Reference: CR-5541/2025\nPatient Name: Rohan Kulkarni\nAge: 29\nDate of Examination: 14 March 2025\nHospital: CityCare Hospital, Pune\n\nFindings:\n- 3 cm deep cut wound on left arm\n- Caused by: sharp object (likely knife)\n- Bleeding moderate\n- No fracture or major blood vessel injury\n\nDoctor's Note:\nInjury type consistent with assault involving a pointed sharp object.\n",
+      "entities": [
+        {
+          "entity": "Case Reference",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Patient Name",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Rohan Kulkarni\nAge",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Date",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Examination",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "March",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Hospital",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Hospital",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Pune\n\nFindings",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Caused",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Bleeding",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "No",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Doctor",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Note",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Injury",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity_type": "hospital_names",
+          "values": [
+            "CityCare Hospital"
+          ]
+        },
+        {
+          "entity_type": "injury_terms",
+          "values": [
+            "Bleeding",
+            "cut wound"
+          ]
+        }
+      ],
+      "objects_detected": [],
+      "ocr_text": "",
+      "timestamps": [],
+      "locations": [],
+      "summary": "HOSPITAL MEDICAL INJURY REPORT\n\nCase Reference: CR-5541/2025\nPatient Name: Rohan Kulkarni\nAge: 29\nDate of Examination: 14 March 2025\nHospital: CityCare Hospital, Pune\n\nFindings:\n- 3 cm deep cut wound on left arm\n- Caused by: sharp object (likely knife)\n- Bleeding moderate\n- No fracture or major blood vessel injury\n\nDoctor's Note:\nInjury type consistent with assault involving a pointed sharp object.\n",
+      "dates": [
+        "March"
+      ],
+      "events": [
+        {
+          "event": "left arm",
+          "type": "location_exit",
+          "context": "ospital, Pune\n\nFindings:\n- 3 cm deep cut wound on left arm\n- Caused by: sharp object (likely knife)\n- Bleedi"
+        }
+      ],
+      "legal_entities": {
+        "ipc_sections": [],
+        "fir_numbers": [],
+        "mlc_numbers": [],
+        "hospital_names": [
+          "CityCare Hospital"
+        ],
+        "vehicle_numbers": [],
+        "injury_terms": [
+          "Bleeding",
+          "cut wound"
+        ]
+      }
+    },
+    {
+      "file_type": "document",
+      "classification": {
+        "label": "medical_report",
+        "confidence": 0.8997083604335785,
+        "method": "BERT"
+      },
+      "extracted_text": "CRIME SCENE PHOTO (DESCRIPTION)\n\nLocation: Sai Apartment Main Gate\nItems Visible:\n- Blood drops near stair entrance\n- Knife lying near the left side of the gate\n- Security guard approaching from right side\n\nTime Estimated: Around 8:15 PM (based on light and crowd presence)\n",
+      "entities": [
+        {
+          "entity": "Location",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Sai Apartment Main Gate\nItems Visible",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Blood",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Knife",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Security",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Time Estimated",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Around",
+          "label": "PERSON_OR_LOCATION"
+        }
+      ],
+      "objects_detected": [],
+      "ocr_text": "",
+      "timestamps": [
+        "PM",
+        "8:15"
+      ],
+      "locations": [],
+      "summary": "CRIME SCENE PHOTO (DESCRIPTION)\n\nLocation: Sai Apartment Main Gate\nItems Visible:\n- Blood drops near stair entrance\n- Knife lying near the left side of the gate\n- Security guard approaching from right side\n\nTime Estimated: Around 8:15 PM (based on light and crowd presence)\n",
+      "dates": [],
+      "events": [
+        {
+          "event": "left side of the gate",
+          "type": "location_exit",
+          "context": " drops near stair entrance\n- Knife lying near the left side of the gate\n- Security guard approaching from right side\n\nTim"
+        }
+      ],
+      "legal_entities": {
+        "ipc_sections": [],
+        "fir_numbers": [],
+        "mlc_numbers": [],
+        "hospital_names": [],
+        "vehicle_numbers": [],
+        "injury_terms": []
+      }
+    },
+    {
+      "file_type": "document",
+      "classification": {
+        "label": "medical_report",
+        "confidence": 0.8819557428359985,
+        "method": "BERT"
+      },
+      "extracted_text": "WITNESS STATEMENT\n\nName of Witness: Priya Sharma\nAge: 32\nAddress: 2nd Floor, Sai Apartment, FC Road, Pune\n\nStatement:\nOn 14 March 2025 at around 8 PM, I heard loud arguing outside the apartment. When I came to my balcony, I saw Akash Verma pushing Rohan near the gate. After a few seconds, Akash pulled out something small from his pocket and hit Rohan on the hand. Rohan shouted in pain and the security guard ran towards them.\n\nWitness Signature\n",
+      "entities": [
+        {
+          "entity": "Name",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Witness",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Priya Sharma\nAge",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Address",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Floor",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Sai Apartment",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Road",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Pune\n\nStatement",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "On",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "March",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "When",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Akash Verma",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Rohan",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "After",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Akash",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Rohan",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Rohan",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Witness Signature",
+          "label": "PERSON_OR_LOCATION"
+        }
+      ],
+      "objects_detected": [],
+      "ocr_text": "",
+      "timestamps": [
+        "around PM"
+      ],
+      "locations": [],
+      "summary": "WITNESS STATEMENT\n\nName of Witness: Priya Sharma\nAge: 32\nAddress: 2nd Floor, Sai Apartment, FC Road, Pune\n\nStatement:\nOn 14 March 2025 at around 8 PM, I heard loud arguing outside the apartment. When I came to my balcony, I saw Akash Verma pushing Rohan near the gate. After a few seconds, Akash pulled out something small from his pocket and hit Rohan on the hand. Rohan shouted in pain and the security guard ran towards them.\n\nWitness Signature\n",
+      "dates": [
+        "March"
+      ],
+      "events": [
+        {
+          "event": "heard loud arguing outside the apartment",
+          "type": "observation",
+          "context": "ne\n\nStatement:\nOn 14 March 2025 at around 8 PM, I heard loud arguing outside the apartment. When I came to my balcony, I saw Akash Verma pus"
+        },
+        {
+          "event": "saw Akash Verma pushing Rohan near the gate",
+          "type": "observation",
+          "context": "tside the apartment. When I came to my balcony, I saw Akash Verma pushing Rohan near the gate. After a few seconds, Akash pulled out something "
+        },
+        {
+          "event": "hit",
+          "type": "violence",
+          "context": "sh pulled out something small from his pocket and hit Rohan on the hand. Rohan shouted in pain and the "
+        }
+      ],
+      "legal_entities": {
+        "ipc_sections": [],
+        "fir_numbers": [],
+        "mlc_numbers": [],
+        "hospital_names": [],
+        "vehicle_numbers": [],
+        "injury_terms": []
+      }
+    }
+  ],
+  "warnings": [
+    "LLM inconsistency detection skipped: OpenAI key missing or disabled."
+  ],
+  "evidence_map": {
+    "case_persons": [
+      "Akash Verma",
+      "Case Reference",
+      "Patient Name",
+      "Priya Sharma\nAge",
+      "Pune\n\nFindings",
+      "Pune\n\nStatement",
+      "Rohan Kulkarni\nAge",
+      "Time Estimated",
+      "Witness Signature"
+    ],
+    "case_locations": [
+      "Hospital",
+      "Road",
+      "Sai Apartment",
+      "Sai Apartment Main Gate\nItems Visible"
+    ],
+    "case_timestamps": [
+      "2025-03-28T00:00:00",
+      "2025-11-28T08:15:00",
+      "PM",
+      "around PM"
+    ],
+    "case_injuries": [
+      "Bleeding",
+      "cut wound"
+    ],
+    "case_weapons": [
+      "Knife",
+      "knife",
+      "sharp"
+    ],
+    "ipc_sections": [],
+    "fir_numbers": [],
+    "mlc_numbers": [],
+    "hospital_names": [
+      "CityCare Hospital"
+    ],
+    "vehicle_numbers": [],
+    "files": [
+      {
+        "file": "med_01.txt",
+        "type": "document",
+        "classification": {
+          "label": "medical_report",
+          "confidence": 0.9222418963909149,
+          "method": "BERT"
+        },
+        "summary": "HOSPITAL MEDICAL INJURY REPORT\n\nCase Reference: CR-5541/2025\nPatient Name: Rohan Kulkarni\nAge: 29\nDate of Examination: 14 March 2025\nHospital: CityCare Hospital, Pune\n\nFindings:\n- 3 cm deep cut wound on left arm\n- Caused by: sharp object (likely knife)\n- Bleeding moderate\n- No fracture or major blood vessel injury\n\nDoctor's Note:\nInjury type consistent with assault involving a pointed sharp object.\n",
+        "persons": [
+          "Rohan Kulkarni\nAge",
+          "Pune\n\nFindings",
+          "Patient Name",
+          "Case Reference"
+        ],
+        "locations": [
+          "Hospital"
+        ],
+        "timestamps": [
+          "2025-03-28T00:00:00"
+        ],
+        "injuries": [
+          "Bleeding",
+          "cut wound"
+        ],
+        "weapons": [
+          "sharp",
+          "knife"
+        ],
+        "legal_entities": {
+          "ipc_sections": [],
+          "fir_numbers": [],
+          "mlc_numbers": [],
+          "hospital_names": [
+            "CityCare Hospital"
+          ],
+          "vehicle_numbers": [],
+          "injury_terms": [
+            "Bleeding",
+            "cut wound"
+          ]
+        }
+      },
+      {
+        "file": "scene_photo_01.txt",
+        "type": "document",
+        "classification": {
+          "label": "medical_report",
+          "confidence": 0.8997083604335785,
+          "method": "BERT"
+        },
+        "summary": "CRIME SCENE PHOTO (DESCRIPTION)\n\nLocation: Sai Apartment Main Gate\nItems Visible:\n- Blood drops near stair entrance\n- Knife lying near the left side of the gate\n- Security guard approaching from right side\n\nTime Estimated: Around 8:15 PM (based on light and crowd presence)\n",
+        "persons": [
+          "Time Estimated"
+        ],
+        "locations": [
+          "Sai Apartment Main Gate\nItems Visible"
+        ],
+        "timestamps": [
+          "PM",
+          "2025-11-28T08:15:00"
+        ],
+        "injuries": [],
+        "weapons": [
+          "knife"
+        ],
+        "legal_entities": {
+          "ipc_sections": [],
+          "fir_numbers": [],
+          "mlc_numbers": [],
+          "hospital_names": [],
+          "vehicle_numbers": [],
+          "injury_terms": []
+        }
+      },
+      {
+        "file": "witness_01.txt",
+        "type": "document",
+        "classification": {
+          "label": "medical_report",
+          "confidence": 0.8819557428359985,
+          "method": "BERT"
+        },
+        "summary": "WITNESS STATEMENT\n\nName of Witness: Priya Sharma\nAge: 32\nAddress: 2nd Floor, Sai Apartment, FC Road, Pune\n\nStatement:\nOn 14 March 2025 at around 8 PM, I heard loud arguing outside the apartment. When I came to my balcony, I saw Akash Verma pushing Rohan near the gate. After a few seconds, Akash pulled out something small from his pocket and hit Rohan on the hand. Rohan shouted in pain and the security guard ran towards them.\n\nWitness Signature\n",
+        "persons": [
+          "Witness Signature",
+          "Priya Sharma\nAge",
+          "Pune\n\nStatement",
+          "Akash Verma"
+        ],
+        "locations": [
+          "Sai Apartment",
+          "Road"
+        ],
+        "timestamps": [
+          "around PM",
+          "2025-03-28T00:00:00"
+        ],
+        "injuries": [],
+        "weapons": [],
+        "legal_entities": {
+          "ipc_sections": [],
+          "fir_numbers": [],
+          "mlc_numbers": [],
+          "hospital_names": [],
+          "vehicle_numbers": [],
+          "injury_terms": []
+        }
+      }
+    ],
+    "consolidated_text": "HOSPITAL MEDICAL INJURY REPORT\n\nCase Reference: CR-5541/2025\nPatient Name: Rohan Kulkarni\nAge: 29\nDate of Examination: 14 March 2025\nHospital: CityCare Hospital, Pune\n\nFindings:\n- 3 cm deep cut wound on left arm\n- Caused by: sharp object (likely knife)\n- Bleeding moderate\n- No fracture or major blood vessel injury\n\nDoctor's Note:\nInjury type consistent with assault involving a pointed sharp object.\n\n---\nCRIME SCENE PHOTO (DESCRIPTION)\n\nLocation: Sai Apartment Main Gate\nItems Visible:\n- Blood drops near stair entrance\n- Knife lying near the left side of the gate\n- Security guard approaching from right side\n\nTime Estimated: Around 8:15 PM (based on light and crowd presence)\n\n---\nWITNESS STATEMENT\n\nName of Witness: Priya Sharma\nAge: 32\nAddress: 2nd Floor, Sai Apartment, FC Road, Pune\n\nStatement:\nOn 14 March 2025 at around 8 PM, I heard loud arguing outside the apartment. When I came to my balcony, I saw Akash Verma pushing Rohan near the gate. After a few seconds, Akash pulled out something small from his pocket and hit Rohan on the hand. Rohan shouted in pain and the security guard ran towards them.\n\nWitness Signature\n",
+    "entity_files": {
+      "persons": {
+        "Rohan Kulkarni\nAge": [
+          "med_01.txt"
+        ],
+        "Pune\n\nFindings": [
+          "med_01.txt"
+        ],
+        "Patient Name": [
+          "med_01.txt"
+        ],
+        "Case Reference": [
+          "med_01.txt"
+        ],
+        "Time Estimated": [
+          "scene_photo_01.txt"
+        ],
+        "Witness Signature": [
+          "witness_01.txt"
+        ],
+        "Priya Sharma\nAge": [
+          "witness_01.txt"
+        ],
+        "Pune\n\nStatement": [
+          "witness_01.txt"
+        ],
+        "Akash Verma": [
+          "witness_01.txt"
+        ]
+      },
+      "locations": {
+        "Hospital": [
+          "med_01.txt"
+        ],
+        "Sai Apartment Main Gate\nItems Visible": [
+          "scene_photo_01.txt"
+        ],
+        "Sai Apartment": [
+          "witness_01.txt"
+        ],
+        "Road": [
+          "witness_01.txt"
+        ]
+      },
+      "timestamps": {
+        "2025-03-28T00:00:00": [
+          "med_01.txt",
+          "witness_01.txt"
+        ],
+        "PM": [
+          "scene_photo_01.txt"
+        ],
+        "2025-11-28T08:15:00": [
+          "scene_photo_01.txt"
+        ],
+        "around PM": [
+          "witness_01.txt"
+        ]
+      },
+      "injuries": {
+        "Bleeding": [
+          "med_01.txt"
+        ],
+        "cut wound": [
+          "med_01.txt"
+        ]
+      },
+      "weapons": {
+        "sharp": [
+          "med_01.txt"
+        ],
+        "knife": [
+          "med_01.txt",
+          "scene_photo_01.txt"
+        ]
+      }
+    }
+  },
+  "case_summary": "HOSPITAL MEDICAL INJURY REPORT\n\nCase Reference: CR-5541/2025\nPatient Name: Rohan Kulkarni\nAge: 29\nDate of Examination: 14 March 2025\nHospital: CityCare Hospital, Pune\n\nFindings:\n- 3 cm deep cut wound on left arm\n- Caused by: sharp object (likely knife)\n- Bleeding moderate\n- No fracture or major blood vessel injury\n\nDoctor's Note:\nInjury type consistent with assault involving a pointed sharp object.\n\n---\nCRIME SCENE PHOTO (DESCRIPTION)\n\nLocation: Sai Apartment Main Gate\nItems Visible:\n- Blood drops near stair entrance\n- Knife lying near the left side of the gate\n- Security guard approaching from right side\n\nTime Estimated: Around 8:15 PM (based on light and crowd presence)\n\n---\nWITNESS STATEMENT\n\nName of Witness: Priya Sharma\nAge: 32\nAddress: 2nd Floor, Sai Apartment, FC Road, Pune\n\nStatement:\nOn 14 March 2025 at around 8 PM, I heard loud arguing outside the apartment.\nWhen I came to my balcony, I saw Akash Verma pushing Rohan near the gate.\nAfter a few seconds, Akash pulled out something small from his pocket and hit Rohan on the hand.\nRohan shouted in pain and the security guard ran towards them.\n\nWitness Signature",
+  "relationships": [
+    {
+      "source": "907fe4e2614e4a0cb7477da441454e2d",
+      "target": "e4d1315946fc44c1b133f604df51a8d0",
+      "reasons": [
+        "👤 Same person: Akash Verma, Patient Name, Priya Sharma Age, Pune Findings, Pune Statement",
+        "📍 Same location: Hospital, Sai Apartment, Sai Apartment Main Gate Items Visible",
+        "🗡️ Same weapon type: Knife",
+        "🩺 Similar injuries: Bleeding, cut wound",
+        "⚡ Matching event types: location_exit, observation, violence",
+        "🕒 Incidents within 48 hours",
+        "🤖 Narrative similarity 1.00"
+      ],
+      "weight": 8.0,
+      "similarity": 1.0,
+      "shared_entities": {
+        "persons": [
+          "Akash Verma",
+          "Patient Name",
+          "Priya Sharma Age",
+          "Pune Findings",
+          "Pune Statement",
+          "Rohan Kulkarni Age",
+          "Time Estimated",
+          "Witness Signature"
+        ],
+        "locations": [
+          "Hospital",
+          "Sai Apartment",
+          "Sai Apartment Main Gate Items Visible"
+        ],
+        "weapons": [
+          "Knife"
+        ],
+        "injuries": [
+          "Bleeding",
+          "cut wound"
+        ],
+        "events": [
+          "location_exit",
+          "observation",
+          "violence"
+        ],
+        "dates": [
+          "2025-03-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "907fe4e2614e4a0cb7477da441454e2d",
+      "target": "89a9965eabef4abc8cacfc87db8fd84f",
+      "reasons": [
+        "👤 Same person: Akash Verma",
+        "📍 Same location: Sai Apartment",
+        "🗡️ Same weapon type: Knife",
+        "🩺 Similar injuries: bleeding",
+        "⚡ Matching event types: location_exit, observation, violence",
+        "🕒 Incidents within 48 hours",
+        "🤖 Narrative similarity 0.84"
+      ],
+      "weight": 7.84,
+      "similarity": 0.841,
+      "shared_entities": {
+        "persons": [
+          "Akash Verma"
+        ],
+        "locations": [
+          "Sai Apartment"
+        ],
+        "weapons": [
+          "Knife"
+        ],
+        "injuries": [
+          "bleeding"
+        ],
+        "events": [
+          "location_exit",
+          "observation",
+          "violence"
+        ],
+        "dates": [
+          "2025-03-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "907fe4e2614e4a0cb7477da441454e2d",
+      "target": "2d645081c6dd426c8f794598cf9f2dab",
+      "reasons": [
+        "👤 Same person: Akash Verma",
+        "📍 Same location: Sai Apartment",
+        "🗡️ Same weapon type: Knife",
+        "🩺 Similar injuries: Bleeding, cut wound",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours",
+        "🤖 Narrative similarity 0.79"
+      ],
+      "weight": 7.79,
+      "similarity": 0.786,
+      "shared_entities": {
+        "persons": [
+          "Akash Verma"
+        ],
+        "locations": [
+          "Sai Apartment"
+        ],
+        "weapons": [
+          "Knife"
+        ],
+        "injuries": [
+          "Bleeding",
+          "cut wound"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-03-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "907fe4e2614e4a0cb7477da441454e2d",
+      "target": "60dada902f3b4ad794c770152f7bb3db",
+      "reasons": [
+        "👤 Same person: Akash Verma",
+        "📍 Same location: Sai Apartment",
+        "🗡️ Same weapon type: Knife",
+        "🩺 Similar injuries: Bleeding, cut wound",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours",
+        "🤖 Narrative similarity 0.79"
+      ],
+      "weight": 7.79,
+      "similarity": 0.786,
+      "shared_entities": {
+        "persons": [
+          "Akash Verma"
+        ],
+        "locations": [
+          "Sai Apartment"
+        ],
+        "weapons": [
+          "Knife"
+        ],
+        "injuries": [
+          "Bleeding",
+          "cut wound"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-03-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "907fe4e2614e4a0cb7477da441454e2d",
+      "target": "a2d7bfa13a2e40eda43e81d0ee08cb0f",
+      "reasons": [
+        "👤 Same person: Akash Verma",
+        "📍 Same location: Sai Apartment",
+        "🗡️ Same weapon type: Knife",
+        "🩺 Similar injuries: Bleeding, cut wound",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours",
+        "🤖 Narrative similarity 0.79"
+      ],
+      "weight": 7.79,
+      "similarity": 0.786,
+      "shared_entities": {
+        "persons": [
+          "Akash Verma"
+        ],
+        "locations": [
+          "Sai Apartment"
+        ],
+        "weapons": [
+          "Knife"
+        ],
+        "injuries": [
+          "Bleeding",
+          "cut wound"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-03-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "907fe4e2614e4a0cb7477da441454e2d",
+      "target": "bd2180c11a154f99b995b1f01951d221",
+      "reasons": [
+        "👤 Same person: Akash Verma",
+        "📍 Same location: Sai Apartment",
+        "🗡️ Same weapon type: Knife",
+        "🩺 Similar injuries: Bleeding, cut wound",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours",
+        "🤖 Narrative similarity 0.79"
+      ],
+      "weight": 7.79,
+      "similarity": 0.786,
+      "shared_entities": {
+        "persons": [
+          "Akash Verma"
+        ],
+        "locations": [
+          "Sai Apartment"
+        ],
+        "weapons": [
+          "Knife"
+        ],
+        "injuries": [
+          "Bleeding",
+          "cut wound"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-03-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "907fe4e2614e4a0cb7477da441454e2d",
+      "target": "c3097a3e223d41a0ad5ad233e2775be3",
+      "reasons": [
+        "👤 Same person: Akash Verma",
+        "📍 Same location: Sai Apartment",
+        "🗡️ Same weapon type: Knife",
+        "🩺 Similar injuries: bleeding",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours",
+        "🤖 Narrative similarity 0.79"
+      ],
+      "weight": 7.79,
+      "similarity": 0.793,
+      "shared_entities": {
+        "persons": [
+          "Akash Verma"
+        ],
+        "locations": [
+          "Sai Apartment"
+        ],
+        "weapons": [
+          "Knife"
+        ],
+        "injuries": [
+          "bleeding"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-03-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "907fe4e2614e4a0cb7477da441454e2d",
+      "target": "d8f5b91c649e4e72a35c329af86fa387",
+      "reasons": [
+        "👤 Same person: Akash Verma",
+        "📍 Same location: Sai Apartment",
+        "🗡️ Same weapon type: Knife",
+        "🩺 Similar injuries: Bleeding, cut wound",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours",
+        "🤖 Narrative similarity 0.79"
+      ],
+      "weight": 7.79,
+      "similarity": 0.786,
+      "shared_entities": {
+        "persons": [
+          "Akash Verma"
+        ],
+        "locations": [
+          "Sai Apartment"
+        ],
+        "weapons": [
+          "Knife"
+        ],
+        "injuries": [
+          "Bleeding",
+          "cut wound"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-03-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "907fe4e2614e4a0cb7477da441454e2d",
+      "target": "ff45444f599c477ea1d459edd8662f66",
+      "reasons": [
+        "👤 Same person: Akash Verma",
+        "📍 Same location: Sai Apartment",
+        "🗡️ Same weapon type: Knife",
+        "🩺 Similar injuries: Bleeding, cut wound",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours",
+        "🤖 Narrative similarity 0.79"
+      ],
+      "weight": 7.79,
+      "similarity": 0.786,
+      "shared_entities": {
+        "persons": [
+          "Akash Verma"
+        ],
+        "locations": [
+          "Sai Apartment"
+        ],
+        "weapons": [
+          "Knife"
+        ],
+        "injuries": [
+          "Bleeding",
+          "cut wound"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-03-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "907fe4e2614e4a0cb7477da441454e2d",
+      "target": "0fa864a92a084855a36d166010344266",
+      "reasons": [
+        "👤 Same person: Akash Verma, Case Reference, Patient Name, Pune Findings, Rohan Kulkarni Age",
+        "📍 Same location: Hospital, Road, Sai Apartment",
+        "🗡️ Same weapon type: Knife, sharp",
+        "🩺 Similar injuries: Bleeding, cut wound",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours",
+        "🤖 Narrative similarity 0.76"
+      ],
+      "weight": 7.76,
+      "similarity": 0.756,
+      "shared_entities": {
+        "persons": [
+          "Akash Verma",
+          "Case Reference",
+          "Patient Name",
+          "Pune Findings",
+          "Rohan Kulkarni Age"
+        ],
+        "locations": [
+          "Hospital",
+          "Road",
+          "Sai Apartment"
+        ],
+        "weapons": [
+          "Knife",
+          "sharp"
+        ],
+        "injuries": [
+          "Bleeding",
+          "cut wound"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-03-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "907fe4e2614e4a0cb7477da441454e2d",
+      "target": "2da656a093564c708be9d1bdd7d88469",
+      "reasons": [
+        "👤 Same person: Akash Verma, Case Reference, Patient Name, Pune Findings, Rohan Kulkarni Age",
+        "📍 Same location: Hospital, Road, Sai Apartment",
+        "🗡️ Same weapon type: Knife, sharp",
+        "🩺 Similar injuries: Bleeding, cut wound",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours",
+        "🤖 Narrative similarity 0.76"
+      ],
+      "weight": 7.76,
+      "similarity": 0.756,
+      "shared_entities": {
+        "persons": [
+          "Akash Verma",
+          "Case Reference",
+          "Patient Name",
+          "Pune Findings",
+          "Rohan Kulkarni Age"
+        ],
+        "locations": [
+          "Hospital",
+          "Road",
+          "Sai Apartment"
+        ],
+        "weapons": [
+          "Knife",
+          "sharp"
+        ],
+        "injuries": [
+          "Bleeding",
+          "cut wound"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-03-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "907fe4e2614e4a0cb7477da441454e2d",
+      "target": "953aed710060452ca4d28ab54fa3fa13",
+      "reasons": [
+        "👤 Same person: Akash Verma, Case Reference, Patient Name, Pune Findings, Rohan Kulkarni Age",
+        "📍 Same location: Hospital, Road, Sai Apartment",
+        "🗡️ Same weapon type: Knife, sharp",
+        "🩺 Similar injuries: Bleeding, cut wound",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours",
+        "🤖 Narrative similarity 0.76"
+      ],
+      "weight": 7.76,
+      "similarity": 0.756,
+      "shared_entities": {
+        "persons": [
+          "Akash Verma",
+          "Case Reference",
+          "Patient Name",
+          "Pune Findings",
+          "Rohan Kulkarni Age"
+        ],
+        "locations": [
+          "Hospital",
+          "Road",
+          "Sai Apartment"
+        ],
+        "weapons": [
+          "Knife",
+          "sharp"
+        ],
+        "injuries": [
+          "Bleeding",
+          "cut wound"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-03-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "907fe4e2614e4a0cb7477da441454e2d",
+      "target": "9af52f2fd96146099b42c941b12cc85e",
+      "reasons": [
+        "👤 Same person: Akash Verma, Case Reference, Patient Name, Pune Findings, Rohan Kulkarni Age",
+        "📍 Same location: Hospital, Road, Sai Apartment",
+        "🗡️ Same weapon type: Knife, sharp",
+        "🩺 Similar injuries: Bleeding, cut wound",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours",
+        "🤖 Narrative similarity 0.76"
+      ],
+      "weight": 7.76,
+      "similarity": 0.756,
+      "shared_entities": {
+        "persons": [
+          "Akash Verma",
+          "Case Reference",
+          "Patient Name",
+          "Pune Findings",
+          "Rohan Kulkarni Age"
+        ],
+        "locations": [
+          "Hospital",
+          "Road",
+          "Sai Apartment"
+        ],
+        "weapons": [
+          "Knife",
+          "sharp"
+        ],
+        "injuries": [
+          "Bleeding",
+          "cut wound"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-03-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "907fe4e2614e4a0cb7477da441454e2d",
+      "target": "f444f19078c74aa884df5db8e13dfb25",
+      "reasons": [
+        "👤 Same person: Akash Verma, Case Reference, Patient Name, Pune Findings, Rohan Kulkarni Age",
+        "📍 Same location: Hospital, Road, Sai Apartment",
+        "🗡️ Same weapon type: Knife, sharp",
+        "🩺 Similar injuries: Bleeding, cut wound",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours",
+        "🤖 Narrative similarity 0.76"
+      ],
+      "weight": 7.76,
+      "similarity": 0.756,
+      "shared_entities": {
+        "persons": [
+          "Akash Verma",
+          "Case Reference",
+          "Patient Name",
+          "Pune Findings",
+          "Rohan Kulkarni Age"
+        ],
+        "locations": [
+          "Hospital",
+          "Road",
+          "Sai Apartment"
+        ],
+        "weapons": [
+          "Knife",
+          "sharp"
+        ],
+        "injuries": [
+          "Bleeding",
+          "cut wound"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-03-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "907fe4e2614e4a0cb7477da441454e2d",
+      "target": "671b87b349b14e1582526bcb04e76911",
+      "reasons": [
+        "👤 Same person: Akash Verma, Case Reference, Patient Name, Priya Sharma Age, Pune Findings",
+        "📍 Same location: Hospital, Road, Sai Apartment, Sai Apartment Main Gate Items Visible",
+        "🗡️ Same weapon type: Knife, sharp",
+        "🩺 Similar injuries: Bleeding, cut wound",
+        "⚡ Matching event types: location_exit, observation, violence",
+        "🕒 Incidents within 48 hours",
+        "🤖 Narrative similarity 0.71"
+      ],
+      "weight": 7.71,
+      "similarity": 0.714,
+      "shared_entities": {
+        "persons": [
+          "Akash Verma",
+          "Case Reference",
+          "Patient Name",
+          "Priya Sharma Age",
+          "Pune Findings",
+          "Pune Statement",
+          "Rohan Kulkarni Age",
+          "Time Estimated",
+          "Witness Signature"
+        ],
+        "locations": [
+          "Hospital",
+          "Road",
+          "Sai Apartment",
+          "Sai Apartment Main Gate Items Visible"
+        ],
+        "weapons": [
+          "Knife",
+          "sharp"
+        ],
+        "injuries": [
+          "Bleeding",
+          "cut wound"
+        ],
+        "events": [
+          "location_exit",
+          "observation",
+          "violence"
+        ],
+        "dates": [
+          "2025-03-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "907fe4e2614e4a0cb7477da441454e2d",
+      "target": "11f483d2360e4fb8bf9e36c15262f899",
+      "reasons": [
+        "📍 Same location: Sai Apartment",
+        "🗡️ Same weapon type: Knife",
+        "⚡ Matching event types: location_exit, observation, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4.3,
+      "similarity": 0.298,
+      "shared_entities": {
+        "locations": [
+          "Sai Apartment"
+        ],
+        "weapons": [
+          "Knife"
+        ],
+        "events": [
+          "location_exit",
+          "observation",
+          "violence"
+        ],
+        "dates": [
+          "2025-03-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "907fe4e2614e4a0cb7477da441454e2d",
+      "target": "cafac347ceb242ca91b8be019da1bb52",
+      "reasons": [
+        "📍 Same location: Sai Apartment",
+        "🗡️ Same weapon type: Knife",
+        "⚡ Matching event types: location_exit, observation, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4.3,
+      "similarity": 0.298,
+      "shared_entities": {
+        "locations": [
+          "Sai Apartment"
+        ],
+        "weapons": [
+          "Knife"
+        ],
+        "events": [
+          "location_exit",
+          "observation",
+          "violence"
+        ],
+        "dates": [
+          "2025-03-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "907fe4e2614e4a0cb7477da441454e2d",
+      "target": "117347727ad546efb234773dc3a4264d",
+      "reasons": [
+        "📍 Same location: Sai Apartment",
+        "🗡️ Same weapon type: Knife, sharp",
+        "⚡ Matching event types: location_exit, observation",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4.13,
+      "similarity": 0.128,
+      "shared_entities": {
+        "locations": [
+          "Sai Apartment"
+        ],
+        "weapons": [
+          "Knife",
+          "sharp"
+        ],
+        "events": [
+          "location_exit",
+          "observation"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "907fe4e2614e4a0cb7477da441454e2d",
+      "target": "43efee19bae440f782902f33559bdd90",
+      "reasons": [
+        "📍 Same location: Sai Apartment",
+        "🗡️ Same weapon type: Knife, sharp",
+        "⚡ Matching event types: location_exit, observation, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4.13,
+      "similarity": 0.128,
+      "shared_entities": {
+        "locations": [
+          "Sai Apartment"
+        ],
+        "weapons": [
+          "Knife",
+          "sharp"
+        ],
+        "events": [
+          "location_exit",
+          "observation",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "907fe4e2614e4a0cb7477da441454e2d",
+      "target": "a5451944f62844469bf185052abb6215",
+      "reasons": [
+        "📍 Same location: Sai Apartment",
+        "🗡️ Same weapon type: Knife, sharp",
+        "⚡ Matching event types: location_exit, observation, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4.13,
+      "similarity": 0.128,
+      "shared_entities": {
+        "locations": [
+          "Sai Apartment"
+        ],
+        "weapons": [
+          "Knife",
+          "sharp"
+        ],
+        "events": [
+          "location_exit",
+          "observation",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "907fe4e2614e4a0cb7477da441454e2d",
+      "target": "ae64a58fae574e64a1a9d005f29075ee",
+      "reasons": [
+        "📍 Same location: Sai Apartment",
+        "🗡️ Same weapon type: Knife, sharp",
+        "⚡ Matching event types: location_exit, observation",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4.13,
+      "similarity": 0.128,
+      "shared_entities": {
+        "locations": [
+          "Sai Apartment"
+        ],
+        "weapons": [
+          "Knife",
+          "sharp"
+        ],
+        "events": [
+          "location_exit",
+          "observation"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "907fe4e2614e4a0cb7477da441454e2d",
+      "target": "dcbb258ce4f44b53992f268bbc077d61",
+      "reasons": [
+        "📍 Same location: Sai Apartment",
+        "🗡️ Same weapon type: Knife, sharp",
+        "⚡ Matching event types: location_exit, observation",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4.13,
+      "similarity": 0.128,
+      "shared_entities": {
+        "locations": [
+          "Sai Apartment"
+        ],
+        "weapons": [
+          "Knife",
+          "sharp"
+        ],
+        "events": [
+          "location_exit",
+          "observation"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "907fe4e2614e4a0cb7477da441454e2d",
+      "target": "9bc6495f1a3a4f53bbcb8238b64b928d",
+      "reasons": [
+        "🗡️ Same weapon type: Knife, sharp",
+        "⚡ Matching event types: location_exit, observation",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.13,
+      "similarity": 0.128,
+      "shared_entities": {
+        "weapons": [
+          "Knife",
+          "sharp"
+        ],
+        "events": [
+          "location_exit",
+          "observation"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "907fe4e2614e4a0cb7477da441454e2d",
+      "target": "013d906c35ba4770ad3d7f35d5fbce59",
+      "reasons": [
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 2.61,
+      "similarity": 0.614,
+      "shared_entities": {
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "907fe4e2614e4a0cb7477da441454e2d",
+      "target": "6a70dc446e2544ac8128950463fa46d3",
+      "reasons": [
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 2.61,
+      "similarity": 0.614,
+      "shared_entities": {
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "907fe4e2614e4a0cb7477da441454e2d",
+      "target": "debb88929f3b410285adf76100b52249",
+      "reasons": [
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 2.61,
+      "similarity": 0.614,
+      "shared_entities": {
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "907fe4e2614e4a0cb7477da441454e2d",
+      "target": "e6d701fdc63e4860b2a1ddeed422f171",
+      "reasons": [
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 2.61,
+      "similarity": 0.614,
+      "shared_entities": {
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "907fe4e2614e4a0cb7477da441454e2d",
+      "target": "421b20c40e1d4689a421366093175c31",
+      "reasons": [
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 2.53,
+      "similarity": 0.525,
+      "shared_entities": {
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "907fe4e2614e4a0cb7477da441454e2d",
+      "target": "096863c0eb3e41e4ab7df15714e6492b",
+      "reasons": [
+        "🗡️ Same weapon type: Knife",
+        "⚡ Matching event types: location_exit, observation"
+      ],
+      "weight": 2.13,
+      "similarity": 0.128,
+      "shared_entities": {
+        "weapons": [
+          "Knife"
+        ],
+        "events": [
+          "location_exit",
+          "observation"
+        ]
+      }
+    }
+  ]
+}

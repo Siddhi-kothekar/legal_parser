@@ -935,6 +935,528 @@
     },
     {
       "source": "43efee19bae440f782902f33559bdd90",
+      "target": "0fa864a92a084855a36d166010344266",
+      "reasons": [
+        "📍 Same location: Modern Colony, Pune, Sai Apartment, Shivaji Nagar Police Station",
+        "🗡️ Same weapon type: Knife, sharp, weapon",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4.17,
+      "similarity": 0.17,
+      "shared_entities": {
+        "locations": [
+          "Modern Colony",
+          "Pune",
+          "Sai Apartment",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "sharp",
+          "weapon"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "43efee19bae440f782902f33559bdd90",
+      "target": "2d645081c6dd426c8f794598cf9f2dab",
+      "reasons": [
+        "📍 Same location: CityCare Hospital, Modern Colony, Pune, Sai Apartment, Sai Apartment Main Gate",
+        "🗡️ Same weapon type: Knife, weapon",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4.17,
+      "similarity": 0.175,
+      "shared_entities": {
+        "locations": [
+          "CityCare Hospital",
+          "Modern Colony",
+          "Pune",
+          "Sai Apartment",
+          "Sai Apartment Main Gate",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "43efee19bae440f782902f33559bdd90",
+      "target": "2da656a093564c708be9d1bdd7d88469",
+      "reasons": [
+        "📍 Same location: Modern Colony, Pune, Sai Apartment, Shivaji Nagar Police Station",
+        "🗡️ Same weapon type: Knife, sharp, weapon",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4.17,
+      "similarity": 0.17,
+      "shared_entities": {
+        "locations": [
+          "Modern Colony",
+          "Pune",
+          "Sai Apartment",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "sharp",
+          "weapon"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "43efee19bae440f782902f33559bdd90",
+      "target": "60dada902f3b4ad794c770152f7bb3db",
+      "reasons": [
+        "📍 Same location: CityCare Hospital, FC Road, Modern Colony, Pune, Sai Apartment",
+        "🗡️ Same weapon type: Knife, weapon",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4.17,
+      "similarity": 0.175,
+      "shared_entities": {
+        "locations": [
+          "CityCare Hospital",
+          "FC Road",
+          "Modern Colony",
+          "Pune",
+          "Sai Apartment",
+          "Sai Apartment Main Gate",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "43efee19bae440f782902f33559bdd90",
+      "target": "953aed710060452ca4d28ab54fa3fa13",
+      "reasons": [
+        "📍 Same location: Modern Colony, Pune, Sai Apartment, Shivaji Nagar Police Station",
+        "🗡️ Same weapon type: Knife, sharp, weapon",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4.17,
+      "similarity": 0.17,
+      "shared_entities": {
+        "locations": [
+          "Modern Colony",
+          "Pune",
+          "Sai Apartment",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "sharp",
+          "weapon"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "43efee19bae440f782902f33559bdd90",
+      "target": "9af52f2fd96146099b42c941b12cc85e",
+      "reasons": [
+        "📍 Same location: Modern Colony, Pune, Sai Apartment, Shivaji Nagar Police Station",
+        "🗡️ Same weapon type: Knife, sharp, weapon",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4.17,
+      "similarity": 0.17,
+      "shared_entities": {
+        "locations": [
+          "Modern Colony",
+          "Pune",
+          "Sai Apartment",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "sharp",
+          "weapon"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "43efee19bae440f782902f33559bdd90",
+      "target": "a2d7bfa13a2e40eda43e81d0ee08cb0f",
+      "reasons": [
+        "📍 Same location: CityCare Hospital, FC Road, Modern Colony, Pune, Sai Apartment",
+        "🗡️ Same weapon type: Knife, weapon",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4.17,
+      "similarity": 0.175,
+      "shared_entities": {
+        "locations": [
+          "CityCare Hospital",
+          "FC Road",
+          "Modern Colony",
+          "Pune",
+          "Sai Apartment",
+          "Sai Apartment Main Gate",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "43efee19bae440f782902f33559bdd90",
+      "target": "bd2180c11a154f99b995b1f01951d221",
+      "reasons": [
+        "📍 Same location: CityCare Hospital, FC Road, Modern Colony, Pune, Sai Apartment",
+        "🗡️ Same weapon type: Knife, weapon",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4.17,
+      "similarity": 0.175,
+      "shared_entities": {
+        "locations": [
+          "CityCare Hospital",
+          "FC Road",
+          "Modern Colony",
+          "Pune",
+          "Sai Apartment",
+          "Sai Apartment Main Gate",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "43efee19bae440f782902f33559bdd90",
+      "target": "d8f5b91c649e4e72a35c329af86fa387",
+      "reasons": [
+        "📍 Same location: CityCare Hospital, FC Road, Modern Colony, Pune, Sai Apartment",
+        "🗡️ Same weapon type: Knife, weapon",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4.17,
+      "similarity": 0.175,
+      "shared_entities": {
+        "locations": [
+          "CityCare Hospital",
+          "FC Road",
+          "Modern Colony",
+          "Pune",
+          "Sai Apartment",
+          "Sai Apartment Main Gate",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "43efee19bae440f782902f33559bdd90",
+      "target": "f444f19078c74aa884df5db8e13dfb25",
+      "reasons": [
+        "📍 Same location: Modern Colony, Pune, Sai Apartment, Shivaji Nagar Police Station",
+        "🗡️ Same weapon type: Knife, sharp, weapon",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4.17,
+      "similarity": 0.17,
+      "shared_entities": {
+        "locations": [
+          "Modern Colony",
+          "Pune",
+          "Sai Apartment",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "sharp",
+          "weapon"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "43efee19bae440f782902f33559bdd90",
+      "target": "ff45444f599c477ea1d459edd8662f66",
+      "reasons": [
+        "📍 Same location: CityCare Hospital, FC Road, Modern Colony, Pune, Sai Apartment",
+        "🗡️ Same weapon type: Knife, weapon",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4.17,
+      "similarity": 0.175,
+      "shared_entities": {
+        "locations": [
+          "CityCare Hospital",
+          "FC Road",
+          "Modern Colony",
+          "Pune",
+          "Sai Apartment",
+          "Sai Apartment Main Gate",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "43efee19bae440f782902f33559bdd90",
+      "target": "671b87b349b14e1582526bcb04e76911",
+      "reasons": [
+        "📍 Same location: Modern Colony, Pune, Sai Apartment, Shivaji Nagar Police Station",
+        "🗡️ Same weapon type: Knife, sharp, weapon",
+        "⚡ Matching event types: location_exit, observation, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4.15,
+      "similarity": 0.154,
+      "shared_entities": {
+        "locations": [
+          "Modern Colony",
+          "Pune",
+          "Sai Apartment",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "sharp",
+          "weapon"
+        ],
+        "events": [
+          "location_exit",
+          "observation",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "43efee19bae440f782902f33559bdd90",
+      "target": "907fe4e2614e4a0cb7477da441454e2d",
+      "reasons": [
+        "📍 Same location: Sai Apartment",
+        "🗡️ Same weapon type: Knife, sharp",
+        "⚡ Matching event types: location_exit, observation, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4.13,
+      "similarity": 0.128,
+      "shared_entities": {
+        "locations": [
+          "Sai Apartment"
+        ],
+        "weapons": [
+          "Knife",
+          "sharp"
+        ],
+        "events": [
+          "location_exit",
+          "observation",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "43efee19bae440f782902f33559bdd90",
+      "target": "e4d1315946fc44c1b133f604df51a8d0",
+      "reasons": [
+        "📍 Same location: CityCare Hospital, Pune, Sai Apartment, Sai Apartment Main Gate",
+        "🗡️ Same weapon type: Knife",
+        "⚡ Matching event types: location_exit, observation, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4.13,
+      "similarity": 0.128,
+      "shared_entities": {
+        "locations": [
+          "CityCare Hospital",
+          "Pune",
+          "Sai Apartment",
+          "Sai Apartment Main Gate"
+        ],
+        "weapons": [
+          "Knife"
+        ],
+        "events": [
+          "location_exit",
+          "observation",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "43efee19bae440f782902f33559bdd90",
+      "target": "c3097a3e223d41a0ad5ad233e2775be3",
+      "reasons": [
+        "📍 Same location: FC Road, Modern Colony, Pune, Sai Apartment, Sai Apartment Main Gate",
+        "🗡️ Same weapon type: Knife, weapon",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4.11,
+      "similarity": 0.112,
+      "shared_entities": {
+        "locations": [
+          "FC Road",
+          "Modern Colony",
+          "Pune",
+          "Sai Apartment",
+          "Sai Apartment Main Gate",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "43efee19bae440f782902f33559bdd90",
+      "target": "89a9965eabef4abc8cacfc87db8fd84f",
+      "reasons": [
+        "📍 Same location: FC Road, Modern Colony, Pune, Sai Apartment, Shivaji Nagar Police Station",
+        "🗡️ Same weapon type: Knife, weapon",
+        "⚡ Matching event types: location_exit, observation, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4.08,
+      "similarity": 0.082,
+      "shared_entities": {
+        "locations": [
+          "FC Road",
+          "Modern Colony",
+          "Pune",
+          "Sai Apartment",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "events": [
+          "location_exit",
+          "observation",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "43efee19bae440f782902f33559bdd90",
       "target": "117347727ad546efb234773dc3a4264d",
       "reasons": [
         "📍 Same location: Pune, Sai Apartment, Shivaji Nagar Police Station",
@@ -1095,6 +1617,98 @@
     },
     {
       "source": "43efee19bae440f782902f33559bdd90",
+      "target": "013d906c35ba4770ad3d7f35d5fbce59",
+      "reasons": [
+        "📍 Same location: Pune",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.08,
+      "similarity": 0.08,
+      "shared_entities": {
+        "locations": [
+          "Pune"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "43efee19bae440f782902f33559bdd90",
+      "target": "6a70dc446e2544ac8128950463fa46d3",
+      "reasons": [
+        "📍 Same location: Pune",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.08,
+      "similarity": 0.08,
+      "shared_entities": {
+        "locations": [
+          "Pune"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "43efee19bae440f782902f33559bdd90",
+      "target": "debb88929f3b410285adf76100b52249",
+      "reasons": [
+        "📍 Same location: Pune",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.08,
+      "similarity": 0.08,
+      "shared_entities": {
+        "locations": [
+          "Pune"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "43efee19bae440f782902f33559bdd90",
+      "target": "e6d701fdc63e4860b2a1ddeed422f171",
+      "reasons": [
+        "📍 Same location: Pune",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.08,
+      "similarity": 0.08,
+      "shared_entities": {
+        "locations": [
+          "Pune"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "43efee19bae440f782902f33559bdd90",
       "target": "9bc6495f1a3a4f53bbcb8238b64b928d",
       "reasons": [
         "🗡️ Same weapon type: Knife, knife, sharp",
@@ -1113,6 +1727,24 @@
         "events": [
           "location_exit",
           "observation"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "43efee19bae440f782902f33559bdd90",
+      "target": "421b20c40e1d4689a421366093175c31",
+      "reasons": [
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 2.1,
+      "similarity": 0.102,
+      "shared_entities": {
+        "events": [
+          "location_exit"
         ],
         "dates": [
           "2025-11-28"

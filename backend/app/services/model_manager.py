@@ -77,6 +77,7 @@ class ModelManager:
         "a medical report with injury details",
         "an FIR or charge sheet document",
         "a police memo or internal report",
+        "a crime scene description or photo analysis",
         "a general document or report",
     ]
 
@@ -239,26 +240,49 @@ class ModelManager:
                 )
                 similarities.append(sim)
 
-            labels = ["witness_statement", "medical_report", "fir", "police_memo", "general_document"]
+            # Check text content for better classification before using BERT similarity
+            text_lower_check = text_lower[:500]  # Check first 500 chars
+            if "witness statement" in text_lower_check or "name of witness" in text_lower_check:
+                return {"label": "witness_statement", "confidence": 0.9}
+            elif "crime scene" in text_lower_check or "crime scene photo" in text_lower_check or "items visible" in text_lower_check:
+                return {"label": "crime_scene_description", "confidence": 0.9}
+            elif "medical injury report" in text_lower_check or "hospital medical" in text_lower_check or "patient name:" in text_lower_check:
+                return {"label": "medical_report", "confidence": 0.9}
+            elif "first information report" in text_lower_check or "fir no" in text_lower_check:
+                return {"label": "fir_document", "confidence": 0.9}
+            
+            labels = ["witness_statement", "medical_report", "fir_document", "police_memo", "crime_scene_description", "general_document"]
             best_idx = np.argmax(similarities)
             confidence = float(similarities[best_idx])
 
             # Normalize confidence to [0, 1] range
             confidence = max(0.0, min(1.0, (confidence + 1) / 2))
             
+            # Map similarity index to label (now 6 prompts = 6 labels)
+            label_map = {
+                0: "witness_statement",
+                1: "medical_report",
+                2: "fir_document",
+                3: "police_memo",
+                4: "crime_scene_description",
+                5: "general_document"
+            }
+            selected_label = label_map.get(best_idx, "general_document")
+            
             # If no crime keywords and best match is crime-related, lower confidence and prefer general_document
-            if not has_crime_keywords and labels[best_idx] != "general_document":
+            if not has_crime_keywords and selected_label != "general_document":
                 # Check if general_document has reasonable similarity
-                general_idx = 4  # general_document index
-                general_sim = similarities[general_idx]
-                if general_sim > 0.3:  # If general_document is reasonably similar
-                    return {
-                        "label": "general_document",
-                        "confidence": max(0.5, float(general_sim)),
-                    }
+                general_idx = 5  # general_document index (updated)
+                if general_idx < len(similarities):
+                    general_sim = similarities[general_idx]
+                    if general_sim > 0.3:  # If general_document is reasonably similar
+                        return {
+                            "label": "general_document",
+                            "confidence": max(0.5, float(general_sim)),
+                        }
 
             return {
-                "label": labels[best_idx],
+                "label": selected_label,
                 "confidence": confidence,
             }
         except Exception as e:

@@ -1,0 +1,1877 @@
+{
+  "case_id": "89a9965eabef4abc8cacfc87db8fd84f",
+  "generated_at": "2025-11-28T17:50:40.267503",
+  "timeline_events": [
+    {
+      "timestamp": "2025-03-28T20:45:00",
+      "source": "Police",
+      "description": "FIRST INFORMATION REPORT (FIR) Police Station: Shivaji Nagar Police Station, Pune FIR No: 118/2025 Date: 14 March 2025 Time: 08:45 PM Complainant: Name: Rohan Kulkarni Age: 29 Address: Flat 203, Sai A"
+    },
+    {
+      "timestamp": "2025-03-28T20:45:00",
+      "source": "Police",
+      "description": "ion: Delivery Boy Address: 12/A, Modern Colony, Pune Incident Description: A First Information Report was registered at Shivaji Nagar Police Station, Pune, under FIR No"
+    }
+  ],
+  "inconsistencies": [],
+  "missing_evidence": [
+    "Check for forensic reports (fingerprints, DNA analysis, blood spatter analysis).",
+    "Obtain statements from neighbors and nearby residents.",
+    "Collect phone records and call logs if applicable.",
+    "Limited time coverage. Consider collecting evidence from extended time periods before and after the incident.",
+    "Verify alibis and cross-check with CCTV timestamps."
+  ],
+  "extracted_content": [
+    {
+      "file_type": "document",
+      "classification": {
+        "label": "fir_document",
+        "confidence": 0.9,
+        "method": "BERT"
+      },
+      "extracted_text": "FIRST INFORMATION REPORT (FIR)\n\nPolice Station: Shivaji Nagar Police Station, Pune\nFIR No: 118/2025\nDate: 14 March 2025\nTime: 08:45 PM\n\nComplainant:\nName: Rohan Kulkarni\nAge: 29\nAddress: Flat 203, Sai Apartment, FC Road, Pune\n\nAccused:\nName: Akash Verma\nAge: 28\nOccupation: Delivery Boy\nAddress: 12/A, Modern Colony, Pune\n\nIncident Description:\nA First Information Report was registered at Shivaji Nagar Police Station, Pune, under FIR No. 118/2025 on 14 March 2025 at 08:45 PM. According to the FIR, the complainant Rohan Kulkarni stated that the accused Akash Verma confronted him near the main gate of Sai Apartment regarding a payment dispute. The argument quickly escalated, and Akash allegedly attacked Rohan using a small knife, causing an injury to his left arm.\n\nWitnesses:\n1) Priya Sharma – Neighbor (2nd Floor)\n2) Security Guard – Sai Apartment\n\nSections Applied:\nIPC 324 – Voluntarily causing hurt by dangerous weapons\nIPC 504 – Intentional insult with intent to provoke breach of peace\n\nAction Taken:\nKnife recovered from scene. Medical examination completed. Accused detained.",
+      "entities": [
+        {
+          "entity": "Police Station",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Shivaji Nagar Police Station",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Pune",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Time",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Complainant",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Rohan Kulkarni\nAge",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Flat",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Sai Apartment",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Road",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Pune\n\nAccused",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Akash Verma\nAge",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Delivery Boy\nAddress",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Modern Colony",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Pune\n\nIncident Description",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "First Information Report",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Shivaji Nagar Police Station",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Pune",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "According",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Rohan Kulkarni",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Akash Verma",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Sai Apartment",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Akash",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Rohan",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Witnesses",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Priya Sharma",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Neighbor",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Floor",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Security Guard",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Sai Apartment\n\nSections Applied",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Voluntarily",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Intentional",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Knife",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Medical",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Accused",
+          "label": "PERSON_OR_LOCATION"
+        }
+      ],
+      "objects_detected": [],
+      "ocr_text": "",
+      "timestamps": [
+        "08:45 PM",
+        "March"
+      ],
+      "locations": [
+        "FC Road",
+        "Medical",
+        "Modern Colony",
+        "Pune",
+        "Sai Apartment",
+        "Shivaji Nagar Police Station"
+      ],
+      "summary": "FIRST INFORMATION REPORT (FIR)\n\nPolice Station: Shivaji Nagar Police Station, Pune\nFIR No: 118/2025\nDate: 14 March 2025\nTime: 08:45 PM\n\nComplainant:\nName: Rohan Kulkarni\nAge: 29\nAddress: Flat 203, Sai Apartment, FC Road, Pune\n\nAccused:\nName: Akash Verma\nAge: 28\nOccupation: Delivery Boy\nAddress: 12/A, Modern Colony, Pune\n\nIncident Description:\nA First Information Report was registered at Shivaji Nagar Police Station, Pune, under FIR No. 118/2025 on 14 March 2025 at 08:45 PM. According to the FIR,...",
+      "filename": "fir_01.txt",
+      "dates": [
+        "March"
+      ],
+      "events": [
+        {
+          "event": "attacked",
+          "type": "violence",
+          "context": "e argument quickly escalated, and Akash allegedly attacked Rohan using a small knife, causing an injury to h"
+        },
+        {
+          "event": "left arm",
+          "type": "location_exit",
+          "context": "han using a small knife, causing an injury to his left arm.\n\nWitnesses:\n1) Priya Sharma – Neighbor (2nd Floo"
+        }
+      ],
+      "legal_entities": {
+        "ipc_sections": [
+          "324",
+          "504"
+        ],
+        "fir_numbers": [
+          "118/2025"
+        ],
+        "mlc_numbers": [],
+        "hospital_names": [],
+        "vehicle_numbers": [],
+        "injury_terms": []
+      },
+      "persons": [
+        "Akash Verma",
+        "First Information Report",
+        "Priya Sharma",
+        "Pune\n\nAccused",
+        "Rohan Kulkarni",
+        "accused",
+        "complainant"
+      ],
+      "injuries": [],
+      "weapons": [
+        "knife",
+        "small knife"
+      ],
+      "camera_id": null
+    },
+    {
+      "file_type": "document",
+      "classification": {
+        "label": "medical_report",
+        "confidence": 0.9079501628875732,
+        "method": "BERT"
+      },
+      "extracted_text": "CITYCARE HOSPITAL – INJURY REPORT\n\nCase Ref: CR-5541/2025\nPatient: Rohan Kulkarni\nAge: 29\nDate: 14 March 2025\nTime: 20:30 PM\n\nInjuries Observed:\n- 3 cm deep cut wound on left arm (forearm region)\n- Moderate bleeding controlled\n- No fractures or major vascular damage\n- Wound consistent with sharp pointed object (knife)\n\nDoctor Comments:\nThe medical examination of Rohan Kulkarni was carried out at CityCare Hospital, Pune, on 14 March 2025 following the reported assault. The doctor noted a 3 cm deep cut wound on Rohan's left arm, consistent with an injury caused by a sharp pointed object, most likely a knife. The bleeding was described as moderate, and no fractures or major damage to blood vessels were observed. The report confirmed that the injury was consistent with an assault occurring at the time stated in the FIR and CCTV records.\n\nTreatment: 5 stitches, antibiotics, tetanus injection\n",
+      "entities": [
+        {
+          "entity": "Case Ref",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Patient",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Rohan Kulkarni\nAge",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Time",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Injuries Observed",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Moderate",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Wound",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Doctor Comments",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Rohan Kulkarni",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Hospital",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Pune",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Rohan",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Treatment",
+          "label": "PERSON_OR_LOCATION"
+        }
+      ],
+      "objects_detected": [],
+      "ocr_text": "",
+      "timestamps": [
+        "20:30 PM",
+        "March"
+      ],
+      "locations": [
+        "Pune"
+      ],
+      "summary": "CITYCARE HOSPITAL – INJURY REPORT\n\nCase Ref: CR-5541/2025\nPatient: Rohan Kulkarni\nAge: 29\nDate: 14 March 2025\nTime: 20:30 PM\n\nInjuries Observed:\n- 3 cm deep cut wound on left arm (forearm region)\n- Moderate bleeding controlled\n- No fractures or major vascular damage\n- Wound consistent with sharp pointed object (knife)\n\nDoctor Comments:\nThe medical examination of Rohan Kulkarni was carried out at CityCare Hospital, Pune, on 14 March 2025 following the reported assault. The doctor noted a 3 cm dee...",
+      "filename": "medical_01.txt",
+      "dates": [
+        "March"
+      ],
+      "events": [
+        {
+          "event": "left arm",
+          "type": "location_exit",
+          "context": "0 PM\n\nInjuries Observed:\n- 3 cm deep cut wound on left arm (forearm region)\n- Moderate bleeding controlled\n-"
+        },
+        {
+          "event": "left arm",
+          "type": "location_exit",
+          "context": "The doctor noted a 3 cm deep cut wound on Rohan's left arm, consistent with an injury caused by a sharp poin"
+        }
+      ],
+      "legal_entities": {
+        "ipc_sections": [],
+        "fir_numbers": [],
+        "mlc_numbers": [],
+        "hospital_names": [
+          "The medical examination of Rohan Kulkarni was carried out at CityCare Hospital"
+        ],
+        "vehicle_numbers": [],
+        "injury_terms": [
+          "bleeding"
+        ]
+      },
+      "persons": [
+        "Case Ref",
+        "Doctor Comments",
+        "Injuries Observed",
+        "Rohan Kulkarni"
+      ],
+      "injuries": [
+        "bleeding"
+      ],
+      "weapons": [
+        "knife"
+      ],
+      "camera_id": null
+    },
+    {
+      "file_type": "document",
+      "classification": {
+        "label": "witness_statement",
+        "confidence": 0.9,
+        "method": "BERT"
+      },
+      "extracted_text": "WITNESS STATEMENT\n\nName: Priya Sharma\nAge: 32\nAddress: Flat 205, 2nd Floor, Sai Apartment, FC Road, Pune\nDate: 14 March 2025\nTime: 21:30 PM\n\nStatement:\nA witness, Priya Sharma, aged 32, who resides on the 2nd floor of Sai Apartment, reported that she heard loud arguing at approximately 8 PM on 14 March 2025. When she went to her balcony to check the situation, she saw Akash Verma pushing Rohan Kulkarni near the gate. She observed Akash taking out a small object from his pocket, after which Rohan shouted in pain. Priya stated that the security guard immediately ran toward the two men upon hearing the commotion. Her statement aligns with both the CCTV footage and the medical injury report.\n\nAdditional Details:\n- Akash wearing red shirt, black trousers\n- Rohan wearing white t-shirt, blue jeans\n- Incident lasted approximately 2-3 minutes\n- Security guard arrived within 30 seconds\n\nWitness Signature: ____________________\n",
+      "entities": [
+        {
+          "entity": "Priya Sharma\nAge",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Flat",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Floor",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Sai Apartment",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Road",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Pune\nDate",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Time",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Statement",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Priya Sharma",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Sai Apartment",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "When",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Akash Verma",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Rohan Kulkarni",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "She",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Akash",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Rohan",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Priya",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Her",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Additional Details",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Akash",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Rohan",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Incident",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Security",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Witness Signature",
+          "label": "PERSON_OR_LOCATION"
+        }
+      ],
+      "objects_detected": [],
+      "ocr_text": "",
+      "timestamps": [
+        "21:30 PM",
+        "approximately 8",
+        "March"
+      ],
+      "locations": [
+        "FC Road",
+        "Pune",
+        "Sai Apartment"
+      ],
+      "summary": "WITNESS STATEMENT\n\nName: Priya Sharma\nAge: 32\nAddress: Flat 205, 2nd Floor, Sai Apartment, FC Road, Pune\nDate: 14 March 2025\nTime: 21:30 PM\n\nStatement:\nA witness, Priya Sharma, aged 32, who resides on the 2nd floor of Sai Apartment, reported that she heard loud arguing at approximately 8 PM on 14 March 2025. When she went to her balcony to check the situation, she saw Akash Verma pushing Rohan Kulkarni near the gate. She observed Akash taking out a small object from his pocket, after which Rohan...",
+      "filename": "witness_01.txt",
+      "dates": [
+        "March"
+      ],
+      "events": [
+        {
+          "event": "heard loud arguing at approximately",
+          "type": "observation",
+          "context": "the 2nd floor of Sai Apartment, reported that she heard loud arguing at approximately 8 PM on 14 March 2025. When she went to her balco"
+        },
+        {
+          "event": "saw Akash Verma pushing Rohan Kulkarni near the gate",
+          "type": "observation",
+          "context": "e went to her balcony to check the situation, she saw Akash Verma pushing Rohan Kulkarni near the gate. She observed Akash taking out a small object fro"
+        },
+        {
+          "event": "observed Akash taking out a small object from his pocket",
+          "type": "observation",
+          "context": "h Verma pushing Rohan Kulkarni near the gate. She observed Akash taking out a small object from his pocket, after which Rohan shouted in pain. Priya stated "
+        },
+        {
+          "event": "hit",
+          "type": "violence",
+          "context": "earing red shirt, black trousers\n- Rohan wearing white t-shirt, blue jeans\n- Incident lasted approximat"
+        }
+      ],
+      "legal_entities": {
+        "ipc_sections": [],
+        "fir_numbers": [],
+        "mlc_numbers": [],
+        "hospital_names": [],
+        "vehicle_numbers": [],
+        "injury_terms": []
+      },
+      "persons": [
+        "Additional Details",
+        "Akash Verma",
+        "Priya Sharma",
+        "Pune\nDate",
+        "Rohan Kulkarni"
+      ],
+      "injuries": [],
+      "weapons": [],
+      "camera_id": null
+    }
+  ],
+  "warnings": [
+    "LLM inconsistency detection skipped: OpenAI key missing or disabled."
+  ],
+  "evidence_map": {
+    "case_persons": [
+      "Additional Details",
+      "Akash Verma",
+      "Case Ref",
+      "Doctor Comments",
+      "First Information Report",
+      "Injuries Observed",
+      "Priya Sharma",
+      "Pune\n\nAccused",
+      "Pune\nDate",
+      "Rohan Kulkarni",
+      "accused",
+      "complainant"
+    ],
+    "case_locations": [
+      "FC Road",
+      "Medical",
+      "Modern Colony",
+      "Pune",
+      "Sai Apartment",
+      "Shivaji Nagar Police Station"
+    ],
+    "case_timestamps": [
+      "08:45 PM",
+      "20:30 PM",
+      "21:30 PM",
+      "March",
+      "PM",
+      "approximately 8"
+    ],
+    "case_injuries": [
+      "bleeding"
+    ],
+    "case_weapons": [
+      "Knife",
+      "knife",
+      "small knife",
+      "weapon"
+    ],
+    "ipc_sections": [
+      "324",
+      "504"
+    ],
+    "fir_numbers": [
+      "118/2025"
+    ],
+    "mlc_numbers": [],
+    "hospital_names": [
+      "The medical examination of Rohan Kulkarni was carried out at CityCare Hospital"
+    ],
+    "vehicle_numbers": [],
+    "files": [
+      {
+        "file": "fir_01.txt",
+        "type": "document",
+        "classification": {
+          "label": "fir_document",
+          "confidence": 0.9,
+          "method": "BERT"
+        },
+        "summary": "FIRST INFORMATION REPORT (FIR)\n\nPolice Station: Shivaji Nagar Police Station, Pune\nFIR No: 118/2025\nDate: 14 March 2025\nTime: 08:45 PM\n\nComplainant:\nName: Rohan Kulkarni\nAge: 29\nAddress: Flat 203, Sai Apartment, FC Road, Pune\n\nAccused:\nName: Akash Verma\nAge: 28\nOccupation: Delivery Boy\nAddress: 12/A, Modern Colony, Pune\n\nIncident Description:\nA First Information Report was registered at Shivaji Nagar Police Station, Pune, under FIR No. 118/2025 on 14 March 2025 at 08:45 PM. According to the FIR,",
+        "persons": [
+          "Akash Verma",
+          "First Information Report",
+          "Priya Sharma",
+          "Pune\n\nAccused",
+          "Rohan Kulkarni",
+          "accused",
+          "complainant"
+        ],
+        "locations": [
+          "FC Road",
+          "Medical",
+          "Modern Colony",
+          "Pune",
+          "Sai Apartment",
+          "Shivaji Nagar Police Station"
+        ],
+        "timestamps": [
+          "08:45 PM",
+          "March"
+        ],
+        "injuries": [],
+        "weapons": [
+          "knife",
+          "small knife"
+        ],
+        "legal_entities": {
+          "ipc_sections": [
+            "324",
+            "504"
+          ],
+          "fir_numbers": [
+            "118/2025"
+          ],
+          "mlc_numbers": [],
+          "hospital_names": [],
+          "vehicle_numbers": [],
+          "injury_terms": []
+        }
+      },
+      {
+        "file": "medical_01.txt",
+        "type": "document",
+        "classification": {
+          "label": "medical_report",
+          "confidence": 0.9079501628875732,
+          "method": "BERT"
+        },
+        "summary": "CITYCARE HOSPITAL – INJURY REPORT\n\nCase Ref: CR-5541/2025\nPatient: Rohan Kulkarni\nAge: 29\nDate: 14 March 2025\nTime: 20:30 PM\n\nInjuries Observed:\n- 3 cm deep cut wound on left arm (forearm region)\n- Moderate bleeding controlled\n- No fractures or major vascular damage\n- Wound consistent with sharp pointed object (knife)\n\nDoctor Comments:\nThe medical examination of Rohan Kulkarni was carried out at CityCare Hospital, Pune, on 14 March 2025 following the reported assault. The doctor noted a 3 cm dee",
+        "persons": [
+          "Case Ref",
+          "Doctor Comments",
+          "Injuries Observed",
+          "Rohan Kulkarni"
+        ],
+        "locations": [
+          "Pune"
+        ],
+        "timestamps": [
+          "20:30 PM",
+          "March"
+        ],
+        "injuries": [
+          "bleeding"
+        ],
+        "weapons": [
+          "knife"
+        ],
+        "legal_entities": {
+          "ipc_sections": [],
+          "fir_numbers": [],
+          "mlc_numbers": [],
+          "hospital_names": [
+            "The medical examination of Rohan Kulkarni was carried out at CityCare Hospital"
+          ],
+          "vehicle_numbers": [],
+          "injury_terms": [
+            "bleeding"
+          ]
+        }
+      },
+      {
+        "file": "witness_01.txt",
+        "type": "document",
+        "classification": {
+          "label": "witness_statement",
+          "confidence": 0.9,
+          "method": "BERT"
+        },
+        "summary": "WITNESS STATEMENT\n\nName: Priya Sharma\nAge: 32\nAddress: Flat 205, 2nd Floor, Sai Apartment, FC Road, Pune\nDate: 14 March 2025\nTime: 21:30 PM\n\nStatement:\nA witness, Priya Sharma, aged 32, who resides on the 2nd floor of Sai Apartment, reported that she heard loud arguing at approximately 8 PM on 14 March 2025. When she went to her balcony to check the situation, she saw Akash Verma pushing Rohan Kulkarni near the gate. She observed Akash taking out a small object from his pocket, after which Rohan",
+        "persons": [
+          "Additional Details",
+          "Akash Verma",
+          "Priya Sharma",
+          "Pune\nDate",
+          "Rohan Kulkarni"
+        ],
+        "locations": [
+          "FC Road",
+          "Pune",
+          "Sai Apartment"
+        ],
+        "timestamps": [
+          "21:30 PM",
+          "approximately 8",
+          "March"
+        ],
+        "injuries": [],
+        "weapons": [],
+        "legal_entities": {
+          "ipc_sections": [],
+          "fir_numbers": [],
+          "mlc_numbers": [],
+          "hospital_names": [],
+          "vehicle_numbers": [],
+          "injury_terms": []
+        }
+      }
+    ],
+    "consolidated_text": "FIRST INFORMATION REPORT (FIR)\n\nPolice Station: Shivaji Nagar Police Station, Pune\nFIR No: 118/2025\nDate: 14 March 2025\nTime: 08:45 PM\n\nComplainant:\nName: Rohan Kulkarni\nAge: 29\nAddress: Flat 203, Sai Apartment, FC Road, Pune\n\nAccused:\nName: Akash Verma\nAge: 28\nOccupation: Delivery Boy\nAddress: 12/A, Modern Colony, Pune\n\nIncident Description:\nA First Information Report was registered at Shivaji Nagar Police Station, Pune, under FIR No. 118/2025 on 14 March 2025 at 08:45 PM. According to the FIR, the complainant Rohan Kulkarni stated that the accused Akash Verma confronted him near the main gate of Sai Apartment regarding a payment dispute. The argument quickly escalated, and Akash allegedly attacked Rohan using a small knife, causing an injury to his left arm.\n\nWitnesses:\n1) Priya Sharma – Neighbor (2nd Floor)\n2) Security Guard – Sai Apartment\n\nSections Applied:\nIPC 324 – Voluntarily causing hurt by dangerous weapons\nIPC 504 – Intentional insult with intent to provoke breach of peace\n\nAction Taken:\nKnife recovered from scene. Medical examination completed. Accused detained.\n---\nCITYCARE HOSPITAL – INJURY REPORT\n\nCase Ref: CR-5541/2025\nPatient: Rohan Kulkarni\nAge: 29\nDate: 14 March 2025\nTime: 20:30 PM\n\nInjuries Observed:\n- 3 cm deep cut wound on left arm (forearm region)\n- Moderate bleeding controlled\n- No fractures or major vascular damage\n- Wound consistent with sharp pointed object (knife)\n\nDoctor Comments:\nThe medical examination of Rohan Kulkarni was carried out at CityCare Hospital, Pune, on 14 March 2025 following the reported assault. The doctor noted a 3 cm deep cut wound on Rohan's left arm, consistent with an injury caused by a sharp pointed object, most likely a knife. The bleeding was described as moderate, and no fractures or major damage to blood vessels were observed. The report confirmed that the injury was consistent with an assault occurring at the time stated in the FIR and CCTV records.\n\nTreatment: 5 stitches, antibiotics, tetanus injection\n\n---\nWITNESS STATEMENT\n\nName: Priya Sharma\nAge: 32\nAddress: Flat 205, 2nd Floor, Sai Apartment, FC Road, Pune\nDate: 14 March 2025\nTime: 21:30 PM\n\nStatement:\nA witness, Priya Sharma, aged 32, who resides on the 2nd floor of Sai Apartment, reported that she heard loud arguing at approximately 8 PM on 14 March 2025. When she went to her balcony to check the situation, she saw Akash Verma pushing Rohan Kulkarni near the gate. She observed Akash taking out a small object from his pocket, after which Rohan shouted in pain. Priya stated that the security guard immediately ran toward the two men upon hearing the commotion. Her statement aligns with both the CCTV footage and the medical injury report.\n\nAdditional Details:\n- Akash wearing red shirt, black trousers\n- Rohan wearing white t-shirt, blue jeans\n- Incident lasted approximately 2-3 minutes\n- Security guard arrived within 30 seconds\n\nWitness Signature: ____________________\n",
+    "entity_files": {
+      "persons": {
+        "Akash Verma": [
+          "fir_01.txt",
+          "witness_01.txt"
+        ],
+        "First Information Report": [
+          "fir_01.txt"
+        ],
+        "Priya Sharma": [
+          "fir_01.txt",
+          "witness_01.txt"
+        ],
+        "Pune\n\nAccused": [
+          "fir_01.txt"
+        ],
+        "Rohan Kulkarni": [
+          "fir_01.txt",
+          "medical_01.txt",
+          "witness_01.txt"
+        ],
+        "accused": [
+          "fir_01.txt"
+        ],
+        "complainant": [
+          "fir_01.txt"
+        ],
+        "Case Ref": [
+          "medical_01.txt"
+        ],
+        "Doctor Comments": [
+          "medical_01.txt"
+        ],
+        "Injuries Observed": [
+          "medical_01.txt"
+        ],
+        "Additional Details": [
+          "witness_01.txt"
+        ],
+        "Pune\nDate": [
+          "witness_01.txt"
+        ]
+      },
+      "locations": {
+        "FC Road": [
+          "fir_01.txt",
+          "witness_01.txt"
+        ],
+        "Medical": [
+          "fir_01.txt"
+        ],
+        "Modern Colony": [
+          "fir_01.txt"
+        ],
+        "Pune": [
+          "fir_01.txt",
+          "medical_01.txt",
+          "witness_01.txt"
+        ],
+        "Sai Apartment": [
+          "fir_01.txt",
+          "witness_01.txt"
+        ],
+        "Shivaji Nagar Police Station": [
+          "fir_01.txt"
+        ]
+      },
+      "timestamps": {
+        "08:45 PM": [
+          "fir_01.txt"
+        ],
+        "March": [
+          "fir_01.txt",
+          "medical_01.txt",
+          "witness_01.txt"
+        ],
+        "20:30 PM": [
+          "medical_01.txt"
+        ],
+        "21:30 PM": [
+          "witness_01.txt"
+        ],
+        "approximately 8": [
+          "witness_01.txt"
+        ]
+      },
+      "injuries": {
+        "bleeding": [
+          "medical_01.txt"
+        ]
+      },
+      "weapons": {
+        "knife": [
+          "fir_01.txt",
+          "medical_01.txt"
+        ],
+        "small knife": [
+          "fir_01.txt"
+        ]
+      }
+    }
+  },
+  "case_summary": "FIRST INFORMATION REPORT (FIR)\n\nPolice Station: Shivaji Nagar Police Station, Pune\nFIR No: 118/2025\nDate: 14 March 2025\nTime: 08:45 PM\n\nComplainant:\nName: Rohan Kulkarni\nAge: 29\nAddress: Flat 203, Sai Apartment, FC Road, Pune\n\nAccused:\nName: Akash Verma\nAge: 28\nOccupation: Delivery Boy\nAddress: 12/A, Modern Colony, Pune\n\nIncident Description:\nA First Information Report was registered at Shivaji Nagar Police Station, Pune, under FIR No.\nThe argument quickly escalated, and Akash allegedly attacked Rohan using a small knife, causing an injury to his left arm.\n\nWitnesses:\n1) Priya Sharma – Neighbor (2nd Floor)\n2) Security Guard – Sai Apartment\n\nSections Applied:\nIPC 324 – Voluntarily causing hurt by dangerous weapons\nIPC 504 – Intentional insult with intent to provoke breach of peace\n\nAction Taken:\nKnife recovered from scene.\nAccused detained.\n---\nCITYCARE HOSPITAL – INJURY REPORT\n\nCase Ref: CR-5541/2025\nPatient: Rohan Kulkarni\nAge: 29\nDate: 14 March 2025\nTime: 20:30 PM\n\nInjuries Observed:\n- 3 cm deep cut wound on left arm (forearm region)\n- Moderate bleeding controlled\n- No fractures or major vascular damage\n- Wound consistent with sharp pointed object (knife)\n\nDoctor Comments:\nThe medical examination of Rohan Kulkarni was carried out at CityCare Hospital, Pune, on 14 March 2025 following the reported assault.\nThe report confirmed that the injury was consistent with an assault occurring at the time stated in the FIR and CCTV records.\n\nTreatment: 5 stitches, antibiotics, tetanus injection\n\n---\nWITNESS STATEMENT\n\nName: Priya Sharma\nAge: 32\nAddress: Flat 205, 2nd Floor, Sai Apartment, FC Road, Pune\nDate: 14 March 2025\nTime: 21:30 PM\n\nStatement:\nA witness, Priya Sharma, aged 32, who resides on the 2nd floor of Sai Apartment, reported that she heard loud arguing at approximately 8 PM on 14 March 2025.\nHer statement aligns with both the CCTV footage and the medical injury report.\n\nAdditional Details:\n- Akash wearing red shirt, black trousers\n- Rohan wearing white t-shirt, blue jeans\n- Incident lasted approximately 2-3 minutes\n- Security guard arrived within 30 seconds\n\nWitness Signature: ____________________",
+  "relationships": [
+    {
+      "source": "89a9965eabef4abc8cacfc87db8fd84f",
+      "target": "2d645081c6dd426c8f794598cf9f2dab",
+      "reasons": [
+        "👤 Same person: accused, Akash Verma, complainant, Priya Sharma, Rohan Kulkarni",
+        "📍 Same location: Modern Colony, Pune, Sai Apartment, Shivaji Nagar Police Station",
+        "🗡️ Same weapon type: Knife, weapon",
+        "🩺 Similar injuries: bleeding",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours",
+        "🤖 Narrative similarity 0.91"
+      ],
+      "weight": 7.91,
+      "similarity": 0.912,
+      "shared_entities": {
+        "persons": [
+          "accused",
+          "Akash Verma",
+          "complainant",
+          "Priya Sharma",
+          "Rohan Kulkarni"
+        ],
+        "locations": [
+          "Modern Colony",
+          "Pune",
+          "Sai Apartment",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "injuries": [
+          "bleeding"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-03-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "89a9965eabef4abc8cacfc87db8fd84f",
+      "target": "60dada902f3b4ad794c770152f7bb3db",
+      "reasons": [
+        "👤 Same person: accused, Akash Verma, complainant, Priya Sharma, Rohan Kulkarni",
+        "📍 Same location: FC Road, Modern Colony, Pune, Sai Apartment, Shivaji Nagar Police Station",
+        "🗡️ Same weapon type: Knife, small knife, weapon",
+        "🩺 Similar injuries: Bleeding",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours",
+        "🤖 Narrative similarity 0.91"
+      ],
+      "weight": 7.91,
+      "similarity": 0.912,
+      "shared_entities": {
+        "persons": [
+          "accused",
+          "Akash Verma",
+          "complainant",
+          "Priya Sharma",
+          "Rohan Kulkarni"
+        ],
+        "locations": [
+          "FC Road",
+          "Modern Colony",
+          "Pune",
+          "Sai Apartment",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "small knife",
+          "weapon"
+        ],
+        "injuries": [
+          "Bleeding"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-03-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "89a9965eabef4abc8cacfc87db8fd84f",
+      "target": "a2d7bfa13a2e40eda43e81d0ee08cb0f",
+      "reasons": [
+        "👤 Same person: accused, Akash Verma, complainant, Priya Sharma, Rohan Kulkarni",
+        "📍 Same location: FC Road, Modern Colony, Pune, Sai Apartment, Shivaji Nagar Police Station",
+        "🗡️ Same weapon type: Knife, small knife, weapon",
+        "🩺 Similar injuries: bleeding",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours",
+        "🤖 Narrative similarity 0.91"
+      ],
+      "weight": 7.91,
+      "similarity": 0.912,
+      "shared_entities": {
+        "persons": [
+          "accused",
+          "Akash Verma",
+          "complainant",
+          "Priya Sharma",
+          "Rohan Kulkarni"
+        ],
+        "locations": [
+          "FC Road",
+          "Modern Colony",
+          "Pune",
+          "Sai Apartment",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "small knife",
+          "weapon"
+        ],
+        "injuries": [
+          "bleeding"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-03-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "89a9965eabef4abc8cacfc87db8fd84f",
+      "target": "bd2180c11a154f99b995b1f01951d221",
+      "reasons": [
+        "👤 Same person: accused, Akash Verma, complainant, Priya Sharma, Rohan Kulkarni",
+        "📍 Same location: FC Road, Modern Colony, Pune, Sai Apartment, Shivaji Nagar Police Station",
+        "🗡️ Same weapon type: Knife, small knife, weapon",
+        "🩺 Similar injuries: bleeding",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours",
+        "🤖 Narrative similarity 0.91"
+      ],
+      "weight": 7.91,
+      "similarity": 0.912,
+      "shared_entities": {
+        "persons": [
+          "accused",
+          "Akash Verma",
+          "complainant",
+          "Priya Sharma",
+          "Rohan Kulkarni"
+        ],
+        "locations": [
+          "FC Road",
+          "Modern Colony",
+          "Pune",
+          "Sai Apartment",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "small knife",
+          "weapon"
+        ],
+        "injuries": [
+          "bleeding"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-03-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "89a9965eabef4abc8cacfc87db8fd84f",
+      "target": "d8f5b91c649e4e72a35c329af86fa387",
+      "reasons": [
+        "👤 Same person: accused, Akash Verma, complainant, Priya Sharma, Rohan Kulkarni",
+        "📍 Same location: FC Road, Modern Colony, Pune, Sai Apartment, Shivaji Nagar Police Station",
+        "🗡️ Same weapon type: Knife, small knife, weapon",
+        "🩺 Similar injuries: bleeding",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours",
+        "🤖 Narrative similarity 0.91"
+      ],
+      "weight": 7.91,
+      "similarity": 0.912,
+      "shared_entities": {
+        "persons": [
+          "accused",
+          "Akash Verma",
+          "complainant",
+          "Priya Sharma",
+          "Rohan Kulkarni"
+        ],
+        "locations": [
+          "FC Road",
+          "Modern Colony",
+          "Pune",
+          "Sai Apartment",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "small knife",
+          "weapon"
+        ],
+        "injuries": [
+          "bleeding"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-03-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "89a9965eabef4abc8cacfc87db8fd84f",
+      "target": "ff45444f599c477ea1d459edd8662f66",
+      "reasons": [
+        "👤 Same person: accused, Akash Verma, complainant, Priya Sharma, Rohan Kulkarni",
+        "📍 Same location: FC Road, Modern Colony, Pune, Sai Apartment, Shivaji Nagar Police Station",
+        "🗡️ Same weapon type: Knife, small knife, weapon",
+        "🩺 Similar injuries: bleeding",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours",
+        "🤖 Narrative similarity 0.91"
+      ],
+      "weight": 7.91,
+      "similarity": 0.912,
+      "shared_entities": {
+        "persons": [
+          "accused",
+          "Akash Verma",
+          "complainant",
+          "Priya Sharma",
+          "Rohan Kulkarni"
+        ],
+        "locations": [
+          "FC Road",
+          "Modern Colony",
+          "Pune",
+          "Sai Apartment",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "small knife",
+          "weapon"
+        ],
+        "injuries": [
+          "bleeding"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-03-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "89a9965eabef4abc8cacfc87db8fd84f",
+      "target": "c3097a3e223d41a0ad5ad233e2775be3",
+      "reasons": [
+        "👤 Same person: accused, Akash Verma, Case Ref, complainant, Doctor Comments",
+        "📍 Same location: FC Road, Medical, Modern Colony, Pune, Sai Apartment",
+        "🗡️ Same weapon type: Knife, small knife, weapon",
+        "🩺 Similar injuries: bleeding",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours",
+        "🤖 Narrative similarity 0.88"
+      ],
+      "weight": 7.88,
+      "similarity": 0.88,
+      "shared_entities": {
+        "persons": [
+          "accused",
+          "Akash Verma",
+          "Case Ref",
+          "complainant",
+          "Doctor Comments",
+          "First Information Report",
+          "Injuries Observed",
+          "Priya Sharma",
+          "Pune Accused",
+          "Rohan Kulkarni"
+        ],
+        "locations": [
+          "FC Road",
+          "Medical",
+          "Modern Colony",
+          "Pune",
+          "Sai Apartment",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "small knife",
+          "weapon"
+        ],
+        "injuries": [
+          "bleeding"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-03-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "89a9965eabef4abc8cacfc87db8fd84f",
+      "target": "907fe4e2614e4a0cb7477da441454e2d",
+      "reasons": [
+        "👤 Same person: Akash Verma",
+        "📍 Same location: Sai Apartment",
+        "🗡️ Same weapon type: Knife",
+        "🩺 Similar injuries: bleeding",
+        "⚡ Matching event types: location_exit, observation, violence",
+        "🕒 Incidents within 48 hours",
+        "🤖 Narrative similarity 0.84"
+      ],
+      "weight": 7.84,
+      "similarity": 0.841,
+      "shared_entities": {
+        "persons": [
+          "Akash Verma"
+        ],
+        "locations": [
+          "Sai Apartment"
+        ],
+        "weapons": [
+          "Knife"
+        ],
+        "injuries": [
+          "bleeding"
+        ],
+        "events": [
+          "location_exit",
+          "observation",
+          "violence"
+        ],
+        "dates": [
+          "2025-03-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "89a9965eabef4abc8cacfc87db8fd84f",
+      "target": "e4d1315946fc44c1b133f604df51a8d0",
+      "reasons": [
+        "👤 Same person: Akash Verma, Priya Sharma, Rohan Kulkarni",
+        "📍 Same location: Pune, Sai Apartment",
+        "🗡️ Same weapon type: Knife",
+        "🩺 Similar injuries: bleeding",
+        "⚡ Matching event types: location_exit, observation, violence",
+        "🕒 Incidents within 48 hours",
+        "🤖 Narrative similarity 0.84"
+      ],
+      "weight": 7.84,
+      "similarity": 0.841,
+      "shared_entities": {
+        "persons": [
+          "Akash Verma",
+          "Priya Sharma",
+          "Rohan Kulkarni"
+        ],
+        "locations": [
+          "Pune",
+          "Sai Apartment"
+        ],
+        "weapons": [
+          "Knife"
+        ],
+        "injuries": [
+          "bleeding"
+        ],
+        "events": [
+          "location_exit",
+          "observation",
+          "violence"
+        ],
+        "dates": [
+          "2025-03-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "89a9965eabef4abc8cacfc87db8fd84f",
+      "target": "0fa864a92a084855a36d166010344266",
+      "reasons": [
+        "👤 Same person: Akash Verma, Priya Sharma",
+        "📍 Same location: Modern Colony, Pune, Sai Apartment, Shivaji Nagar Police Station",
+        "🗡️ Same weapon type: Knife, weapon",
+        "🩺 Similar injuries: bleeding",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours",
+        "🤖 Narrative similarity 0.81"
+      ],
+      "weight": 7.81,
+      "similarity": 0.808,
+      "shared_entities": {
+        "persons": [
+          "Akash Verma",
+          "Priya Sharma"
+        ],
+        "locations": [
+          "Modern Colony",
+          "Pune",
+          "Sai Apartment",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "injuries": [
+          "bleeding"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-03-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "89a9965eabef4abc8cacfc87db8fd84f",
+      "target": "2da656a093564c708be9d1bdd7d88469",
+      "reasons": [
+        "👤 Same person: Akash Verma, Priya Sharma",
+        "📍 Same location: Modern Colony, Pune, Sai Apartment, Shivaji Nagar Police Station",
+        "🗡️ Same weapon type: Knife, weapon",
+        "🩺 Similar injuries: bleeding",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours",
+        "🤖 Narrative similarity 0.81"
+      ],
+      "weight": 7.81,
+      "similarity": 0.808,
+      "shared_entities": {
+        "persons": [
+          "Akash Verma",
+          "Priya Sharma"
+        ],
+        "locations": [
+          "Modern Colony",
+          "Pune",
+          "Sai Apartment",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "injuries": [
+          "bleeding"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-03-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "89a9965eabef4abc8cacfc87db8fd84f",
+      "target": "953aed710060452ca4d28ab54fa3fa13",
+      "reasons": [
+        "👤 Same person: Akash Verma, Priya Sharma",
+        "📍 Same location: Modern Colony, Pune, Sai Apartment, Shivaji Nagar Police Station",
+        "🗡️ Same weapon type: Knife, weapon",
+        "🩺 Similar injuries: bleeding",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours",
+        "🤖 Narrative similarity 0.81"
+      ],
+      "weight": 7.81,
+      "similarity": 0.808,
+      "shared_entities": {
+        "persons": [
+          "Akash Verma",
+          "Priya Sharma"
+        ],
+        "locations": [
+          "Modern Colony",
+          "Pune",
+          "Sai Apartment",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "injuries": [
+          "bleeding"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-03-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "89a9965eabef4abc8cacfc87db8fd84f",
+      "target": "9af52f2fd96146099b42c941b12cc85e",
+      "reasons": [
+        "👤 Same person: Akash Verma, Priya Sharma",
+        "📍 Same location: Modern Colony, Pune, Sai Apartment, Shivaji Nagar Police Station",
+        "🗡️ Same weapon type: Knife, weapon",
+        "🩺 Similar injuries: bleeding",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours",
+        "🤖 Narrative similarity 0.81"
+      ],
+      "weight": 7.81,
+      "similarity": 0.808,
+      "shared_entities": {
+        "persons": [
+          "Akash Verma",
+          "Priya Sharma"
+        ],
+        "locations": [
+          "Modern Colony",
+          "Pune",
+          "Sai Apartment",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "injuries": [
+          "bleeding"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-03-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "89a9965eabef4abc8cacfc87db8fd84f",
+      "target": "f444f19078c74aa884df5db8e13dfb25",
+      "reasons": [
+        "👤 Same person: Akash Verma, Priya Sharma",
+        "📍 Same location: Modern Colony, Pune, Sai Apartment, Shivaji Nagar Police Station",
+        "🗡️ Same weapon type: Knife, weapon",
+        "🩺 Similar injuries: bleeding",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours",
+        "🤖 Narrative similarity 0.81"
+      ],
+      "weight": 7.81,
+      "similarity": 0.808,
+      "shared_entities": {
+        "persons": [
+          "Akash Verma",
+          "Priya Sharma"
+        ],
+        "locations": [
+          "Modern Colony",
+          "Pune",
+          "Sai Apartment",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "injuries": [
+          "bleeding"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-03-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "89a9965eabef4abc8cacfc87db8fd84f",
+      "target": "671b87b349b14e1582526bcb04e76911",
+      "reasons": [
+        "👤 Same person: Akash Verma, Priya Sharma",
+        "📍 Same location: Modern Colony, Pune, Sai Apartment, Shivaji Nagar Police Station",
+        "🗡️ Same weapon type: Knife, weapon",
+        "🩺 Similar injuries: bleeding",
+        "⚡ Matching event types: location_exit, observation, violence",
+        "🕒 Incidents within 48 hours",
+        "🤖 Narrative similarity 0.79"
+      ],
+      "weight": 7.79,
+      "similarity": 0.788,
+      "shared_entities": {
+        "persons": [
+          "Akash Verma",
+          "Priya Sharma"
+        ],
+        "locations": [
+          "Modern Colony",
+          "Pune",
+          "Sai Apartment",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "injuries": [
+          "bleeding"
+        ],
+        "events": [
+          "location_exit",
+          "observation",
+          "violence"
+        ],
+        "dates": [
+          "2025-03-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "89a9965eabef4abc8cacfc87db8fd84f",
+      "target": "11f483d2360e4fb8bf9e36c15262f899",
+      "reasons": [
+        "📍 Same location: FC Road, Pune, Sai Apartment",
+        "🗡️ Same weapon type: Knife, weapon",
+        "⚡ Matching event types: location_exit, observation, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4.29,
+      "similarity": 0.288,
+      "shared_entities": {
+        "locations": [
+          "FC Road",
+          "Pune",
+          "Sai Apartment"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "events": [
+          "location_exit",
+          "observation",
+          "violence"
+        ],
+        "dates": [
+          "2025-03-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "89a9965eabef4abc8cacfc87db8fd84f",
+      "target": "cafac347ceb242ca91b8be019da1bb52",
+      "reasons": [
+        "📍 Same location: FC Road, Pune, Sai Apartment",
+        "🗡️ Same weapon type: Knife, weapon",
+        "⚡ Matching event types: location_exit, observation, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4.29,
+      "similarity": 0.288,
+      "shared_entities": {
+        "locations": [
+          "FC Road",
+          "Pune",
+          "Sai Apartment"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "events": [
+          "location_exit",
+          "observation",
+          "violence"
+        ],
+        "dates": [
+          "2025-03-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "89a9965eabef4abc8cacfc87db8fd84f",
+      "target": "117347727ad546efb234773dc3a4264d",
+      "reasons": [
+        "📍 Same location: Pune, Sai Apartment, Shivaji Nagar Police Station",
+        "🗡️ Same weapon type: Knife, weapon",
+        "⚡ Matching event types: location_exit, observation",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4.08,
+      "similarity": 0.082,
+      "shared_entities": {
+        "locations": [
+          "Pune",
+          "Sai Apartment",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "events": [
+          "location_exit",
+          "observation"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "89a9965eabef4abc8cacfc87db8fd84f",
+      "target": "43efee19bae440f782902f33559bdd90",
+      "reasons": [
+        "📍 Same location: FC Road, Modern Colony, Pune, Sai Apartment, Shivaji Nagar Police Station",
+        "🗡️ Same weapon type: Knife, weapon",
+        "⚡ Matching event types: location_exit, observation, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4.08,
+      "similarity": 0.082,
+      "shared_entities": {
+        "locations": [
+          "FC Road",
+          "Modern Colony",
+          "Pune",
+          "Sai Apartment",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "events": [
+          "location_exit",
+          "observation",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "89a9965eabef4abc8cacfc87db8fd84f",
+      "target": "9bc6495f1a3a4f53bbcb8238b64b928d",
+      "reasons": [
+        "👤 Same person: complainant",
+        "🗡️ Same weapon type: Knife, weapon",
+        "⚡ Matching event types: location_exit, observation",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4.08,
+      "similarity": 0.082,
+      "shared_entities": {
+        "persons": [
+          "complainant"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "events": [
+          "location_exit",
+          "observation"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "89a9965eabef4abc8cacfc87db8fd84f",
+      "target": "a5451944f62844469bf185052abb6215",
+      "reasons": [
+        "📍 Same location: FC Road, Modern Colony, Pune, Sai Apartment, Shivaji Nagar Police Station",
+        "🗡️ Same weapon type: Knife, weapon",
+        "⚡ Matching event types: location_exit, observation, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4.08,
+      "similarity": 0.082,
+      "shared_entities": {
+        "locations": [
+          "FC Road",
+          "Modern Colony",
+          "Pune",
+          "Sai Apartment",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "events": [
+          "location_exit",
+          "observation",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "89a9965eabef4abc8cacfc87db8fd84f",
+      "target": "ae64a58fae574e64a1a9d005f29075ee",
+      "reasons": [
+        "📍 Same location: Pune, Sai Apartment, Shivaji Nagar Police Station",
+        "🗡️ Same weapon type: Knife, weapon",
+        "⚡ Matching event types: location_exit, observation",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4.08,
+      "similarity": 0.082,
+      "shared_entities": {
+        "locations": [
+          "Pune",
+          "Sai Apartment",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "events": [
+          "location_exit",
+          "observation"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "89a9965eabef4abc8cacfc87db8fd84f",
+      "target": "dcbb258ce4f44b53992f268bbc077d61",
+      "reasons": [
+        "📍 Same location: Pune, Sai Apartment, Shivaji Nagar Police Station",
+        "🗡️ Same weapon type: Knife, weapon",
+        "⚡ Matching event types: location_exit, observation",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 4.08,
+      "similarity": 0.082,
+      "shared_entities": {
+        "locations": [
+          "Pune",
+          "Sai Apartment",
+          "Shivaji Nagar Police Station"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "events": [
+          "location_exit",
+          "observation"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "89a9965eabef4abc8cacfc87db8fd84f",
+      "target": "013d906c35ba4770ad3d7f35d5fbce59",
+      "reasons": [
+        "📍 Same location: Pune",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.67,
+      "similarity": 0.666,
+      "shared_entities": {
+        "locations": [
+          "Pune"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "89a9965eabef4abc8cacfc87db8fd84f",
+      "target": "6a70dc446e2544ac8128950463fa46d3",
+      "reasons": [
+        "📍 Same location: Pune",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.67,
+      "similarity": 0.666,
+      "shared_entities": {
+        "locations": [
+          "Pune"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "89a9965eabef4abc8cacfc87db8fd84f",
+      "target": "debb88929f3b410285adf76100b52249",
+      "reasons": [
+        "📍 Same location: Pune",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.67,
+      "similarity": 0.666,
+      "shared_entities": {
+        "locations": [
+          "Pune"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "89a9965eabef4abc8cacfc87db8fd84f",
+      "target": "e6d701fdc63e4860b2a1ddeed422f171",
+      "reasons": [
+        "📍 Same location: Pune",
+        "⚡ Matching event types: location_exit, violence",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.67,
+      "similarity": 0.666,
+      "shared_entities": {
+        "locations": [
+          "Pune"
+        ],
+        "events": [
+          "location_exit",
+          "violence"
+        ],
+        "dates": [
+          "2025-11-29"
+        ]
+      }
+    },
+    {
+      "source": "89a9965eabef4abc8cacfc87db8fd84f",
+      "target": "096863c0eb3e41e4ab7df15714e6492b",
+      "reasons": [
+        "👤 Same person: complainant",
+        "🗡️ Same weapon type: Knife, weapon",
+        "⚡ Matching event types: location_exit, observation"
+      ],
+      "weight": 3.08,
+      "similarity": 0.082,
+      "shared_entities": {
+        "persons": [
+          "complainant"
+        ],
+        "weapons": [
+          "Knife",
+          "weapon"
+        ],
+        "events": [
+          "location_exit",
+          "observation"
+        ]
+      }
+    },
+    {
+      "source": "89a9965eabef4abc8cacfc87db8fd84f",
+      "target": "421b20c40e1d4689a421366093175c31",
+      "reasons": [
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 2.54,
+      "similarity": 0.538,
+      "shared_entities": {
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    }
+  ],
+  "evidence_relationships": [
+    {
+      "source": "FIR",
+      "target": "Medical Report",
+      "matches": [
+        "Matches persons: Rohan Kulkarni",
+        "Matches location: Pune",
+        "Matches timeline (March)",
+        "Weapon: knife"
+      ]
+    },
+    {
+      "source": "FIR",
+      "target": "Witness Statement",
+      "matches": [
+        "Matches persons: Akash Verma, Priya Sharma, Rohan Kulkarni",
+        "Matches location: FC Road, Pune, Sai Apartment",
+        "Matches timeline (March)"
+      ]
+    },
+    {
+      "source": "Medical Report",
+      "target": "Witness Statement",
+      "matches": [
+        "Matches persons: Rohan Kulkarni",
+        "Matches location: Pune",
+        "Matches timeline (March)"
+      ]
+    }
+  ]
+}

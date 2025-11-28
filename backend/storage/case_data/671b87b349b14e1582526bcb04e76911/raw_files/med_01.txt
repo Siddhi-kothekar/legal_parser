@@ -1,0 +1,16 @@
+HOSPITAL MEDICAL INJURY REPORT
+
+Case Reference: CR-5541/2025
+Patient Name: Rohan Kulkarni
+Age: 29
+Date of Examination: 14 March 2025
+Hospital: CityCare Hospital, Pune
+
+Findings:
+- 3 cm deep cut wound on left arm
+- Caused by: sharp object (likely knife)
+- Bleeding moderate
+- No fracture or major blood vessel injury
+
+Doctor's Note:
+Injury type consistent with assault involving a pointed sharp object.

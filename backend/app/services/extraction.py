@@ -353,10 +353,93 @@ class ExtractionService:
 
         summary = text[:500] + "..." if len(text) > 500 else text
 
-        # Normalize entities and extract per-file structured lists
-        # Persons and locations from NER
+        # Extract structured entities using regex patterns (PRIMARY SOURCE)
         persons = set()
         locations = set()
+        
+        # Extract persons from structured patterns (FIR, Medical Reports, etc.)
+        person_patterns = [
+            r"Patient Name:\s*([A-Z][a-z]+(?:\s+[A-Z][a-z]+)+?)(?:\s+Age|\s+Address|\s+Phone|$)",  # "Patient Name: Rohan Kulkarni" (stop at Age/Address)
+            r"Name of Witness:\s*([A-Z][a-z]+(?:\s+[A-Z][a-z]+)+?)(?:\s+Age|\s+Address|\s+Phone|$)",  # "Name of Witness: Priya Sharma"
+            r"(?:Complainant|Accused|Victim|Suspect)[:]\s*Name:\s*([A-Z][a-z]+(?:\s+[A-Z][a-z]+)+?)(?:\s+Age|\s+Address|\s+Phone|$)",  # "Complainant: Name: ..."
+            r"(?:Complainant|Accused|Victim|Suspect)[:]\s*([A-Z][a-z]+(?:\s+[A-Z][a-z]+)+?)(?:\s+Age|\s+Address|\s+Phone|$)",  # "Complainant: Rohan Kulkarni"
+            r"Witnesses?:\s*\d+\)\s*([A-Z][a-z]+(?:\s+[A-Z][a-z]+)+?)(?:\s*–|\s+Age|\s+Address|$)",  # "Witnesses: 1) Priya Sharma"
+            r"([A-Z][a-z]+\s+[A-Z][a-z]+)\s*–\s*(?:Neighbor|Security Guard)",  # "Priya Sharma – Neighbor"
+            # Extract from context: "I saw Akash Verma pushing Rohan"
+            r"(?:saw|met|spoke with|contacted)\s+([A-Z][a-z]+\s+[A-Z][a-z]+)(?:\s+pushing|\s+near|\s+at|$)",  # Context-based
+        ]
+        for pattern in person_patterns:
+            matches = re.findall(pattern, text, re.IGNORECASE)
+            for match in matches:
+                if isinstance(match, tuple):
+                    match = " ".join(match)
+                person_name = match.strip()
+                # Clean up - remove trailing words like "Age", "Address", etc.
+                person_name = re.sub(r'\s+(Age|Address|Phone|Occupation|Statement|Signature|pushing|near|at)$', '', person_name, flags=re.IGNORECASE)
+                person_name = person_name.strip()
+                # Validate it's a real person name
+                if self._is_valid_person_name(person_name):
+                    persons.add(person_name)
+        
+        # Extract generic role mentions (accused, complainant) from CCTV/context
+        # These are not full names but should be included
+        if "accused" in text.lower() and "complainant" in text.lower():
+            # Check if they're mentioned as roles (not as full names)
+            if re.search(r"\b(?:the\s+)?accused\b", text, re.IGNORECASE):
+                persons.add("accused")
+            if re.search(r"\b(?:the\s+)?complainant\b", text, re.IGNORECASE):
+                persons.add("complainant")
+        
+        # Extract locations from structured patterns
+        location_patterns = [
+            r"Location:\s*([A-Z][a-zA-Z\s,]+(?:Road|Street|Avenue|Lane|Colony|Apartment|Gate|Station|Main Gate))",  # Exclude generic "Hospital"
+            r"Address:\s*([A-Z][a-zA-Z\s,]+(?:Road|Street|Avenue|Lane|Colony|Apartment|Pune|Mumbai|Delhi))",
+            r"Police Station:\s*([A-Z][a-zA-Z\s,]+(?:Police Station|Station))",
+            r"Hospital:\s*([A-Z][a-zA-Z\s,]+(?:Hospital|Clinic|Medical Center))",  # Full hospital name
+            r"([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*\s+(?:Road|Street|Avenue|Lane|Colony|Apartment|Gate))",  # "FC Road", "Main Street"
+            r"([A-Z]{1,3}\s+[A-Z][a-z]+\s+(?:Road|Street|Avenue))",  # "FC Road", "MG Road"
+            r"([A-Z]{1,3}\s+Road)",  # "FC Road" (simpler pattern)
+            r",\s*([A-Z]{1,3}\s+Road),",  # "..., FC Road, ..." (from addresses)
+            r"([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*\s+Police Station)",
+            r"([A-Z][a-z]+(?:\s+[A-Z][a-z]+)+\s+(?:Hospital|Clinic|Medical Center))",  # Full hospital name only
+            r"([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*\s+Main Gate)",
+            r"Flat\s+\d+,\s*([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*\s+Apartment)",  # "Flat 203, Sai Apartment"
+            r"([A-Z][a-z]+\s+Apartment),\s*([A-Z]{1,3}\s+Road)",  # "Sai Apartment, FC Road" - extract both
+        ]
+        for pattern in location_patterns:
+            matches = re.findall(pattern, text)
+            for match in matches:
+                if isinstance(match, tuple):
+                    # Handle patterns that extract multiple locations
+                    if len(match) == 2:
+                        # Add both locations (e.g., "Sai Apartment" and "FC Road")
+                        for loc in match:
+                            loc_clean = loc.strip()
+                            loc_clean = re.sub(r',\s*$', '', loc_clean).strip()
+                            if self._is_valid_location(loc_clean):
+                                locations.add(loc_clean)
+                        continue
+                    else:
+                        match = " ".join(match)
+                location = match.strip()
+                # Clean up location (remove trailing commas, extra spaces, and false positives)
+                location = re.sub(r',\s*$', '', location).strip()
+                # Remove false positives like "Items Visible", "Time Estimated"
+                location = re.sub(r'\s+(Items Visible|Time Estimated|Witness Signature|Findings|Statement)$', '', location, flags=re.IGNORECASE)
+                # Skip if it's just "Hospital" or "Care Hospital" (not in text)
+                if location.lower() in {"hospital", "care hospital"}:
+                    continue
+                # Filter out false positives
+                if self._is_valid_location(location):
+                    locations.add(location)
+        
+        # Extract city names mentioned standalone
+        city_pattern = r"\b(Pune|Mumbai|Delhi|Bangalore|Hyderabad|Kolkata|Chennai)\b"
+        city_matches = re.findall(city_pattern, text, re.IGNORECASE)
+        for city in city_matches:
+            locations.add(city)
+        
+        # Also extract from NER but with STRICT filtering (SECONDARY SOURCE)
         for ent in entities:
             if isinstance(ent, dict):
                 ent_text = ent.get("entity") or ent.get("text")
@@ -366,23 +449,67 @@ class ExtractionService:
                 ent_label = None
             if not ent_text or not isinstance(ent_text, str):
                 continue
-            # Filter out tokenization artifacts and formatting characters
+            
+            # STRICT filtering - exclude common false positives
             ent_text_clean = self._clean_entity_text(ent_text.strip())
-            if not ent_text_clean or len(ent_text_clean) < 2:
+            if not ent_text_clean or len(ent_text_clean) < 3:
                 continue
-            # Skip single letters, tokenization artifacts, and formatting characters
+            
+            # Exclude common false positives
+            lower_clean = ent_text_clean.lower()
+            false_positives = {
+                "time visible", "action taken", "case reference", "incident description",
+                "sections applied", "doctor's note", "findings", "notes", "the", "date",
+                "march", "frame", "pm", "am", "name", "age", "occupation", "address", "phone",
+                "camera", "camera id", "delivery boy", "security guard", "police station",
+                "road", "modern colony", "sections applied", "pune", "mumbai", "delhi",
+                "time estimated", "witness signature", "statement", "patient name", "items visible",
+                "care hospital", "hospital", "delivery boy", "address", "phone"  # Generic words and labels
+            }
+            # Check if it's a known location (should not be a person)
+            if lower_clean in self._KNOWN_LOCATIONS:
+                if self._is_valid_location(ent_text_clean):
+                    locations.add(ent_text_clean)
+                continue  # Don't process as person
+            
+            # Check for false positive patterns
+            false_positive_patterns = [
+                "time visible", "action taken", "sections applied", "incident description",
+                "time estimated", "witness signature", "patient name", "items visible",
+                "findings", "statement", "age", "name", "delivery boy", "address", "phone",
+                "occupation"
+            ]
+            if lower_clean in false_positives or any(fp in lower_clean for fp in false_positive_patterns):
+                continue
+            
+            # Skip if it's just a generic word like "Hospital", "Findings", etc.
+            if lower_clean in {"hospital", "findings", "statement", "age", "name", "address", "phone", 
+                               "delivery boy", "occupation"}:
+                continue
+            
+            # Skip single words that are labels
+            if len(ent_text_clean.split()) == 1:
+                if lower_clean in {"address", "phone", "age", "name", "occupation", "delivery", "boy"}:
+                    continue
+            
+            # Skip if it's a single word that's too common
+            if len(ent_text_clean.split()) == 1:
+                if lower_clean in {"the", "a", "an", "is", "are", "was", "were", "pm", "am", "march", "date", "time"}:
+                    continue
+            
+            # Skip single letters, tokenization artifacts
             if len(ent_text_clean) == 1 or ent_text_clean.startswith("##"):
                 continue
-            # Skip ASCII box-drawing characters and formatting artifacts
             if self._is_formatting_artifact(ent_text_clean):
                 continue
-            # Skip bullet points and list markers
             if ent_text_clean.startswith("•") or ent_text_clean.startswith("-") or ent_text_clean.startswith("*"):
                 continue
+            
+            # Only classify if it looks like a real entity
             classification = self._classify_entity(ent_text_clean, ent_label)
-            if classification == "person":
+            if classification == "person" and self._is_valid_person_name(ent_text_clean):
                 persons.add(ent_text_clean)
-            elif classification == "location":
+            elif classification == "location" and self._is_valid_location(ent_text_clean):
                 locations.add(ent_text_clean)
 
         # Injuries from legal_entities - filter out negated terms
@@ -393,37 +520,105 @@ class ExtractionService:
             if not self._is_negated_injury(text_lower, injury_term.lower()):
                 injuries.add(injury_term)
 
-        # Weapons from text heuristic
+        # Weapons from text - more precise extraction (capture full phrases)
         weapons = set()
-        for kw in ["knife", "gun", "blade", "weapon", "sharp"]:
-            if kw in (text or "").lower():
-                weapons.add(kw)
+        weapon_patterns = [
+            r"\b(small\s+knife|large\s+knife|pocket\s+knife)\b",  # Full phrases first
+            r"\b(small|large|pocket)\s+knife\b",  # "small knife" as whole
+            r"\bknife\b",  # Standalone "knife"
+            r"\b(gun|firearm|pistol|revolver)\b",
+            r"\b(blade|sharp\s+object)\b",
+            r"sharp\s+object\s*\(likely\s+knife\)",  # "sharp object (likely knife)"
+        ]
+        for pattern in weapon_patterns:
+            matches = re.findall(pattern, text, re.IGNORECASE)
+            for match in matches:
+                if isinstance(match, tuple):
+                    match = " ".join(match)
+                weapon = match.strip()
+                if weapon:
+                    weapon_lower = weapon.lower()
+                    # Normalize - keep full phrases
+                    if "small knife" in weapon_lower:
+                        weapons.add("small knife")
+                    elif "large knife" in weapon_lower:
+                        weapons.add("large knife")
+                    elif "pocket knife" in weapon_lower:
+                        weapons.add("pocket knife")
+                    elif "knife" in weapon_lower and len(weapon.split()) == 1:
+                        weapons.add("knife")
+                    elif "sharp object" in weapon_lower:
+                        weapons.add("sharp object")
+                    elif weapon_lower in ["gun", "firearm", "pistol", "revolver", "blade"]:
+                        weapons.add(weapon_lower)
+                    # Don't add standalone "small", "large", "pocket" as weapons
 
-        # Normalize timestamps: try to parse time_mentions and dates to ISO if possible
+        # Keep original timestamps - don't convert to ISO here, preserve original format
+        # Deduplicate timestamps (e.g., "8:15 PM" and "8:15" are the same)
         timestamps = []
-        try:
-            from dateutil import parser as _parser
-        except Exception:
-            _parser = None
-        for raw in (time_mentions or []):
-            parsed = raw
-            if _parser:
-                try:
-                    dt = _parser.parse(raw, fuzzy=True)
-                    parsed = dt.isoformat()
-                except Exception:
-                    parsed = raw
-            timestamps.append(parsed)
-        for raw in (dates or []):
-            parsed = raw
-            if _parser:
-                try:
-                    dt = _parser.parse(raw, fuzzy=True)
-                    parsed = dt.isoformat()
-                except Exception:
-                    parsed = raw
-            timestamps.append(parsed)
+        seen_timestamps = set()
+        
+        # Add time mentions as-is (preserve original format like "08:01 PM")
+        for tm in (time_mentions or []):
+            tm_str = str(tm).strip()
+            # Normalize for deduplication: "8:15 PM" and "8:15" should be treated as same
+            tm_normalized = tm_str.lower().replace(" ", "").replace("pm", "").replace("am", "").replace(":", "")
+            if tm_normalized not in seen_timestamps:
+                timestamps.append(tm_str)
+                seen_timestamps.add(tm_normalized)
+        
+        # Add dates as-is (preserve original format like "14 March 2025")
+        for dt in (dates or []):
+            dt_str = str(dt).strip()
+            if dt_str not in timestamps:  # Simple string deduplication for dates
+                timestamps.append(dt_str)
 
+        # Extract Camera ID if present
+        camera_id_match = re.search(r"Camera\s+ID:\s*([A-Z0-9\-]+)", text, re.IGNORECASE)
+        camera_id = camera_id_match.group(1) if camera_id_match else None
+
+        # Final cleanup: remove duplicates and ensure no false positives
+        final_persons = []
+        seen_persons = set()
+        for p in sorted(persons):
+            p_lower = p.lower().strip()
+            # Skip if it's a known location
+            if p_lower in self._KNOWN_LOCATIONS:
+                continue
+            # Skip if it's a false positive (occupations, labels, etc.)
+            false_positives = {
+                "pune", "mumbai", "delhi", "findings", "statement", "age", "name", 
+                "address", "phone", "time estimated", "witness signature", "items visible", 
+                "patient name", "delivery boy", "occupation", "phone", "address"
+            }
+            if p_lower in false_positives:
+                continue
+            # Skip if it contains false positive patterns
+            if any(fp in p_lower for fp in ["findings", "statement", "age", "name", "time estimated", 
+                                             "witness signature", "items visible", "delivery boy", 
+                                             "occupation", "address", "phone"]):
+                continue
+            # Skip single words that are not person names
+            if len(p.split()) == 1 and p_lower in {"address", "phone", "age", "name", "occupation"}:
+                continue
+            if p not in seen_persons:
+                final_persons.append(p)
+                seen_persons.add(p)
+        
+        final_locations = []
+        seen_locations = set()
+        for loc in sorted(locations):
+            loc_lower = loc.lower()
+            # Skip generic words
+            if loc_lower in {"hospital", "care hospital", "findings", "statement", "items visible", "time estimated"}:
+                continue
+            # Skip if it contains false positive patterns
+            if any(fp in loc_lower for fp in ["items visible", "time estimated", "witness signature", "findings", "statement"]):
+                continue
+            if loc not in seen_locations:
+                final_locations.append(loc)
+                seen_locations.add(loc)
+        
         return {
             "type": "document",
             "raw_text": text,
@@ -432,12 +627,13 @@ class ExtractionService:
             "dates": dates,
             "events": events,
             "legal_entities": legal_entities,
-            "persons": list(persons),
-            "locations": list(locations),
+            "persons": final_persons,  # Cleaned and deduplicated
+            "locations": final_locations,  # Cleaned and deduplicated
             "timestamps": timestamps,
-            "injuries": list(injuries),
-            "weapons": list(weapons),
+            "injuries": sorted(list(injuries)),
+            "weapons": sorted(list(weapons)),
             "summary": summary,
+            "camera_id": camera_id,  # Add camera ID if found
         }
 
     def _read_pdf_text(self, artifact_path: Path) -> str:
@@ -591,18 +787,45 @@ class ExtractionService:
         return False
 
     def _extract_time_expressions(self, text: str) -> List[str]:
-        """Extract time expressions from text."""
+        """Extract time expressions from text - preserve original format."""
         patterns = [
-            r"\b\d{1,2}:\d{2}\s?(AM|PM|am|pm)\b",
-            r"\b\d{1,2}:\d{2}:\d{2}\b",
-            r"\b\d{1,2}:\d{2}\b",
-            r"\b(at|around|approximately)\s+\d{1,2}\s?(AM|PM|am|pm)\b",
+            r"\b(\d{1,2}:\d{2}\s?(?:AM|PM|am|pm))\b",  # "08:01 PM"
+            r"\b(\d{1,2}:\d{2}:\d{2})\b",  # "08:01:00"
+            r"\b(\d{1,2}:\d{2})\b",  # "08:01"
+            r"\b(around|approximately|about)\s+(\d{1,2})\s?(?:AM|PM|am|pm)\b",  # "around 8 PM"
         ]
         found: List[str] = []
         for pattern in patterns:
-            matches = re.findall(pattern, text)
-            found.extend([m if isinstance(m, str) else " ".join(m) for m in matches])
-        return list(set(found))[:20]
+            matches = re.findall(pattern, text, re.IGNORECASE)
+            for match in matches:
+                if isinstance(match, tuple):
+                    # Reconstruct from tuple (e.g., "around 8 PM")
+                    found.append(" ".join(match))
+                else:
+                    found.append(match)
+        # Remove duplicates and filter out invalid times
+        unique_times = []
+        seen = set()
+        for time_str in found:
+            # Filter out standalone "PM" or "AM"
+            if time_str.upper() in ["PM", "AM"]:
+                continue
+            # Only keep if it contains a colon or is a valid time expression
+            if ":" in time_str or re.match(r"around|approximately|about", time_str, re.IGNORECASE):
+                # Normalize for deduplication: "8:15 PM" and "8:15" should be treated as same
+                # Prefer the version with AM/PM if available
+                time_normalized = time_str.lower().replace(" ", "").replace("pm", "").replace("am", "").replace(":", "")
+                if time_normalized not in seen:
+                    unique_times.append(time_str)
+                    seen.add(time_normalized)
+                elif "pm" in time_str.lower() or "am" in time_str.lower():
+                    # If we already have "8:15" but now see "8:15 PM", replace it
+                    for i, existing in enumerate(unique_times):
+                        existing_normalized = existing.lower().replace(" ", "").replace("pm", "").replace("am", "").replace(":", "")
+                        if existing_normalized == time_normalized and ("pm" not in existing.lower() and "am" not in existing.lower()):
+                            unique_times[i] = time_str  # Replace with version that has AM/PM
+                            break
+        return unique_times[:20]
 
     def _extract_dates(self, text: str) -> List[str]:
         """Extract date expressions from text."""
@@ -650,7 +873,7 @@ class ExtractionService:
         if any(c in box_chars for c in text):
             return True
         # Check if it's mostly formatting characters
-        if len(text) <= 3 and all(c in '═║─│•\-\*' for c in text):
+        if len(text) <= 3 and all(c in '═║─│•\\-\\*' for c in text):
             return True
         # Check for common formatting patterns
         formatting_patterns = [
@@ -674,6 +897,96 @@ class ExtractionService:
                 return True
             idx = text_lower.find(injury_term, idx + 1)
         return False
+    
+    def _is_valid_person_name(self, name: str) -> bool:
+        """Validate if a string is a valid person name."""
+        if not name or len(name) < 3:
+            return False
+        name_lower = name.lower().strip()
+        
+        # Exclude common false positives
+        false_positives = {
+            "time visible", "action taken", "case reference", "incident description",
+            "sections applied", "doctor's note", "findings", "notes", "the", "date",
+            "march", "frame", "pm", "am", "name", "age", "occupation", "address", "phone",
+            "camera", "camera id", "delivery boy", "security guard", "police station",
+            "road", "modern colony", "sections applied", "pune", "mumbai", "delhi",
+            "complainant", "accused", "witness", "patient", "victim", "suspect",
+            "address", "phone", "delivery boy", "occupation"
+        }
+        if name_lower in false_positives:
+            return False
+        
+        # Skip single words that are labels/fields
+        if len(name.split()) == 1:
+            if name_lower in {"address", "phone", "age", "name", "occupation", "pune", "mumbai", "delhi"}:
+                return False
+        
+        # Must be 2-4 words, all capitalized (proper noun pattern)
+        words = name.split()
+        if not (2 <= len(words) <= 4):
+            # Allow single words only if they're roles like "accused", "complainant"
+            if len(words) == 1 and name_lower in {"accused", "complainant"}:
+                return True
+            return False
+        
+        # All words should start with capital letter
+        if not all(word and word[0].isupper() for word in words if word):
+            return False
+        
+        # No digits
+        if any(any(c.isdigit() for c in word) for word in words):
+            return False
+        
+        # Should not be a location keyword
+        if any(word.lower() in self._LOCATION_KEYWORDS for word in words):
+            return False
+        
+        # Should not be a month name
+        if any(word.lower() in self._MONTH_NAMES for word in words):
+            return False
+        
+        # Should not contain occupation/label words
+        if any(word.lower() in {"delivery", "boy", "address", "phone", "occupation"} for word in words):
+            return False
+        
+        return True
+    
+    def _is_valid_location(self, location: str) -> bool:
+        """Validate if a string is a valid location."""
+        if not location or len(location) < 3:
+            return False
+        loc_lower = location.lower().strip()
+        
+        # Exclude common false positives
+        false_positives = {
+            "sections applied", "incident description", "action taken", "case reference",
+            "camera", "camera id", "time visible", "notes", "findings", "the", "date",
+            "items visible", "time estimated", "witness signature", "statement", "age",
+            "hospital", "care hospital"  # Generic words
+        }
+        if loc_lower in false_positives:
+            return False
+        
+        # Exclude if it contains false positive patterns
+        if any(fp in loc_lower for fp in ["items visible", "time estimated", "witness signature", "findings", "statement"]):
+            return False
+        
+        # Must contain location keywords or be a known location
+        has_location_keyword = any(kw in loc_lower for kw in self._LOCATION_KEYWORDS)
+        is_known_location = loc_lower in self._KNOWN_LOCATIONS
+        
+        # Or matches location pattern (proper noun + location suffix)
+        words = location.split()
+        has_proper_noun = any(word and word[0].isupper() for word in words)
+        has_location_suffix = any(word.lower() in self._LOCATION_SUFFIXES for word in words)
+        
+        # For hospital names, must be full name (not just "Hospital")
+        if "hospital" in loc_lower:
+            if len(words) < 2:  # Must have at least 2 words (e.g., "CityCare Hospital")
+                return False
+        
+        return has_location_keyword or is_known_location or (has_proper_noun and has_location_suffix)
 
     def _extract_events(self, text: str) -> List[Dict[str, str]]:
         """Extract action/event phrases from text."""

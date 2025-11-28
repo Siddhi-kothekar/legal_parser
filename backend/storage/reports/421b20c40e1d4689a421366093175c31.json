@@ -1,0 +1,706 @@
+{
+  "case_id": "421b20c40e1d4689a421366093175c31",
+  "generated_at": "2025-11-28T18:24:36.671322",
+  "timeline_events": [
+    {
+      "timestamp": "2025-02-28T03:10:00",
+      "source": "Medical",
+      "description": "LOTUS MULTI-SPECIALTY HOSPITAL – MEDICAL REPORT Patient: Aarohi Deshmukh Date: 23 February 2025, 03:10 AM Injuries: - Multiple abrasions on wrists and upper arms - 1.5 cm superficial cut on left elbow"
+    }
+  ],
+  "inconsistencies": [],
+  "missing_evidence": [
+    "Check for forensic reports (fingerprints, DNA analysis, blood spatter analysis).",
+    "No witness statements found. Consider obtaining statements from witnesses and bystanders.",
+    "No FIR (First Information Report) found. Ensure FIR is included in case files.",
+    "No CCTV footage or surveillance images found. Consider collecting CCTV from nearby locations.",
+    "Collect phone records and call logs if applicable.",
+    "Obtain statements from neighbors and nearby residents.",
+    "Limited time coverage. Consider collecting evidence from extended time periods before and after the incident.",
+    "Verify alibis and cross-check with CCTV timestamps."
+  ],
+  "extracted_content": [
+    {
+      "file_type": "document",
+      "classification": {
+        "label": "medical_report",
+        "confidence": 0.9111335575580597,
+        "method": "BERT"
+      },
+      "extracted_text": "LOTUS MULTI-SPECIALTY HOSPITAL – MEDICAL REPORT\n\nPatient: Aarohi Deshmukh\nDate: 23 February 2025, 03:10 AM\n\nInjuries:\n- Multiple abrasions on wrists and upper arms\n- 1.5 cm superficial cut on left elbow\n- Psychological acute stress reaction and panic\n- No signs of sexual assault\n\nComments:\nInjuries consistent with physical struggle and restraint. Alcohol negative; high cortisol indicating distress. Report forwarded for investigation.",
+      "entities": [
+        {
+          "entity": "Patient",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Aarohi Deshmukh\nDate",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "February",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Injuries",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Multiple",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Psychological",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Comments",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Injuries",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Alcohol",
+          "label": "PERSON_OR_LOCATION"
+        },
+        {
+          "entity": "Report",
+          "label": "PERSON_OR_LOCATION"
+        }
+      ],
+      "objects_detected": [],
+      "ocr_text": "",
+      "timestamps": [
+        "03:10 AM",
+        "February"
+      ],
+      "locations": [],
+      "summary": "LOTUS MULTI-SPECIALTY HOSPITAL – MEDICAL REPORT\n\nPatient: Aarohi Deshmukh\nDate: 23 February 2025, 03:10 AM\n\nInjuries:\n- Multiple abrasions on wrists and upper arms\n- 1.5 cm superficial cut on left elbow\n- Psychological acute stress reaction and panic\n- No signs of sexual assault\n\nComments:\nInjuries consistent with physical struggle and restraint. Alcohol negative; high cortisol indicating distress. Report forwarded for investigation.",
+      "filename": "unknown",
+      "dates": [
+        "February"
+      ],
+      "events": [
+        {
+          "event": "left elbow",
+          "type": "location_exit",
+          "context": "wrists and upper arms\n- 1.5 cm superficial cut on left elbow\n- Psychological acute stress reaction and panic\n-"
+        }
+      ],
+      "legal_entities": {
+        "ipc_sections": [],
+        "fir_numbers": [],
+        "mlc_numbers": [],
+        "hospital_names": [],
+        "vehicle_numbers": [],
+        "injury_terms": []
+      },
+      "persons": [
+        "Aarohi Deshmukh\nDate"
+      ],
+      "injuries": [],
+      "weapons": [],
+      "camera_id": null
+    }
+  ],
+  "warnings": [
+    "LLM inconsistency detection skipped: OpenAI key missing or disabled."
+  ],
+  "evidence_map": {
+    "case_persons": [
+      "Aarohi Deshmukh\nDate"
+    ],
+    "case_locations": [],
+    "case_timestamps": [
+      "03:10 AM",
+      "AM",
+      "February"
+    ],
+    "case_injuries": [],
+    "case_weapons": [],
+    "ipc_sections": [],
+    "fir_numbers": [],
+    "mlc_numbers": [],
+    "hospital_names": [],
+    "vehicle_numbers": [],
+    "files": [
+      {
+        "file": "unknown",
+        "type": "document",
+        "classification": {
+          "label": "medical_report",
+          "confidence": 0.9111335575580597,
+          "method": "BERT"
+        },
+        "summary": "LOTUS MULTI-SPECIALTY HOSPITAL – MEDICAL REPORT\n\nPatient: Aarohi Deshmukh\nDate: 23 February 2025, 03:10 AM\n\nInjuries:\n- Multiple abrasions on wrists and upper arms\n- 1.5 cm superficial cut on left elbow\n- Psychological acute stress reaction and panic\n- No signs of sexual assault\n\nComments:\nInjuries consistent with physical struggle and restraint. Alcohol negative; high cortisol indicating distress. Report forwarded for investigation.",
+        "persons": [
+          "Aarohi Deshmukh\nDate"
+        ],
+        "locations": [],
+        "timestamps": [
+          "03:10 AM",
+          "February"
+        ],
+        "injuries": [],
+        "weapons": [],
+        "legal_entities": {
+          "ipc_sections": [],
+          "fir_numbers": [],
+          "mlc_numbers": [],
+          "hospital_names": [],
+          "vehicle_numbers": [],
+          "injury_terms": []
+        }
+      }
+    ],
+    "consolidated_text": "LOTUS MULTI-SPECIALTY HOSPITAL – MEDICAL REPORT\n\nPatient: Aarohi Deshmukh\nDate: 23 February 2025, 03:10 AM\n\nInjuries:\n- Multiple abrasions on wrists and upper arms\n- 1.5 cm superficial cut on left elbow\n- Psychological acute stress reaction and panic\n- No signs of sexual assault\n\nComments:\nInjuries consistent with physical struggle and restraint. Alcohol negative; high cortisol indicating distress. Report forwarded for investigation.",
+    "entity_files": {
+      "persons": {
+        "Aarohi Deshmukh\nDate": [
+          "unknown"
+        ]
+      },
+      "locations": {},
+      "timestamps": {
+        "03:10 AM": [
+          "unknown"
+        ],
+        "February": [
+          "unknown"
+        ]
+      },
+      "injuries": {},
+      "weapons": {}
+    }
+  },
+  "case_summary": "LOTUS MULTI-SPECIALTY HOSPITAL – MEDICAL REPORT\n\nPatient: Aarohi Deshmukh\nDate: 23 February 2025, 03:10 AM\n\nInjuries:\n- Multiple abrasions on wrists and upper arms\n- 1.5 cm superficial cut on left elbow\n- Psychological acute stress reaction and panic\n- No signs of sexual assault\n\nComments:\nInjuries consistent with physical struggle and restraint.\nAlcohol negative; high cortisol indicating distress.\nReport forwarded for investigation.",
+  "relationships": [
+    {
+      "source": "421b20c40e1d4689a421366093175c31",
+      "target": "013d906c35ba4770ad3d7f35d5fbce59",
+      "reasons": [
+        "👤 Same person: Aarohi Deshmukh Date",
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.7,
+      "similarity": 0.695,
+      "shared_entities": {
+        "persons": [
+          "Aarohi Deshmukh Date"
+        ],
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-02-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "421b20c40e1d4689a421366093175c31",
+      "target": "6a70dc446e2544ac8128950463fa46d3",
+      "reasons": [
+        "👤 Same person: Aarohi Deshmukh Date",
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.7,
+      "similarity": 0.695,
+      "shared_entities": {
+        "persons": [
+          "Aarohi Deshmukh Date"
+        ],
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-02-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "421b20c40e1d4689a421366093175c31",
+      "target": "debb88929f3b410285adf76100b52249",
+      "reasons": [
+        "👤 Same person: Aarohi Deshmukh Date",
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.7,
+      "similarity": 0.695,
+      "shared_entities": {
+        "persons": [
+          "Aarohi Deshmukh Date"
+        ],
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-02-28",
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "421b20c40e1d4689a421366093175c31",
+      "target": "e6d701fdc63e4860b2a1ddeed422f171",
+      "reasons": [
+        "👤 Same person: Aarohi Deshmukh Date",
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 3.7,
+      "similarity": 0.695,
+      "shared_entities": {
+        "persons": [
+          "Aarohi Deshmukh Date"
+        ],
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-02-28",
+          "2025-11-29"
+        ]
+      }
+    },
+    {
+      "source": "421b20c40e1d4689a421366093175c31",
+      "target": "89a9965eabef4abc8cacfc87db8fd84f",
+      "reasons": [
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 2.54,
+      "similarity": 0.538,
+      "shared_entities": {
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "421b20c40e1d4689a421366093175c31",
+      "target": "907fe4e2614e4a0cb7477da441454e2d",
+      "reasons": [
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 2.53,
+      "similarity": 0.525,
+      "shared_entities": {
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "421b20c40e1d4689a421366093175c31",
+      "target": "e4d1315946fc44c1b133f604df51a8d0",
+      "reasons": [
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 2.53,
+      "similarity": 0.525,
+      "shared_entities": {
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "421b20c40e1d4689a421366093175c31",
+      "target": "2d645081c6dd426c8f794598cf9f2dab",
+      "reasons": [
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 2.48,
+      "similarity": 0.478,
+      "shared_entities": {
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "421b20c40e1d4689a421366093175c31",
+      "target": "60dada902f3b4ad794c770152f7bb3db",
+      "reasons": [
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 2.48,
+      "similarity": 0.478,
+      "shared_entities": {
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "421b20c40e1d4689a421366093175c31",
+      "target": "a2d7bfa13a2e40eda43e81d0ee08cb0f",
+      "reasons": [
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 2.48,
+      "similarity": 0.478,
+      "shared_entities": {
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "421b20c40e1d4689a421366093175c31",
+      "target": "bd2180c11a154f99b995b1f01951d221",
+      "reasons": [
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 2.48,
+      "similarity": 0.478,
+      "shared_entities": {
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "421b20c40e1d4689a421366093175c31",
+      "target": "d8f5b91c649e4e72a35c329af86fa387",
+      "reasons": [
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 2.48,
+      "similarity": 0.478,
+      "shared_entities": {
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "421b20c40e1d4689a421366093175c31",
+      "target": "ff45444f599c477ea1d459edd8662f66",
+      "reasons": [
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 2.48,
+      "similarity": 0.478,
+      "shared_entities": {
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "421b20c40e1d4689a421366093175c31",
+      "target": "c3097a3e223d41a0ad5ad233e2775be3",
+      "reasons": [
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 2.37,
+      "similarity": 0.372,
+      "shared_entities": {
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "421b20c40e1d4689a421366093175c31",
+      "target": "0fa864a92a084855a36d166010344266",
+      "reasons": [
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 2.36,
+      "similarity": 0.356,
+      "shared_entities": {
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "421b20c40e1d4689a421366093175c31",
+      "target": "2da656a093564c708be9d1bdd7d88469",
+      "reasons": [
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 2.36,
+      "similarity": 0.356,
+      "shared_entities": {
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "421b20c40e1d4689a421366093175c31",
+      "target": "953aed710060452ca4d28ab54fa3fa13",
+      "reasons": [
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 2.36,
+      "similarity": 0.356,
+      "shared_entities": {
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "421b20c40e1d4689a421366093175c31",
+      "target": "9af52f2fd96146099b42c941b12cc85e",
+      "reasons": [
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 2.36,
+      "similarity": 0.356,
+      "shared_entities": {
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "421b20c40e1d4689a421366093175c31",
+      "target": "f444f19078c74aa884df5db8e13dfb25",
+      "reasons": [
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 2.36,
+      "similarity": 0.356,
+      "shared_entities": {
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "421b20c40e1d4689a421366093175c31",
+      "target": "671b87b349b14e1582526bcb04e76911",
+      "reasons": [
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 2.34,
+      "similarity": 0.34,
+      "shared_entities": {
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "421b20c40e1d4689a421366093175c31",
+      "target": "11f483d2360e4fb8bf9e36c15262f899",
+      "reasons": [
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 2.13,
+      "similarity": 0.135,
+      "shared_entities": {
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "421b20c40e1d4689a421366093175c31",
+      "target": "cafac347ceb242ca91b8be019da1bb52",
+      "reasons": [
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 2.13,
+      "similarity": 0.135,
+      "shared_entities": {
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "421b20c40e1d4689a421366093175c31",
+      "target": "117347727ad546efb234773dc3a4264d",
+      "reasons": [
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 2.1,
+      "similarity": 0.102,
+      "shared_entities": {
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "421b20c40e1d4689a421366093175c31",
+      "target": "43efee19bae440f782902f33559bdd90",
+      "reasons": [
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 2.1,
+      "similarity": 0.102,
+      "shared_entities": {
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "421b20c40e1d4689a421366093175c31",
+      "target": "9bc6495f1a3a4f53bbcb8238b64b928d",
+      "reasons": [
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 2.1,
+      "similarity": 0.102,
+      "shared_entities": {
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "421b20c40e1d4689a421366093175c31",
+      "target": "a5451944f62844469bf185052abb6215",
+      "reasons": [
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 2.1,
+      "similarity": 0.102,
+      "shared_entities": {
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "421b20c40e1d4689a421366093175c31",
+      "target": "ae64a58fae574e64a1a9d005f29075ee",
+      "reasons": [
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 2.1,
+      "similarity": 0.102,
+      "shared_entities": {
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    },
+    {
+      "source": "421b20c40e1d4689a421366093175c31",
+      "target": "dcbb258ce4f44b53992f268bbc077d61",
+      "reasons": [
+        "⚡ Matching event types: location_exit",
+        "🕒 Incidents within 48 hours"
+      ],
+      "weight": 2.1,
+      "similarity": 0.102,
+      "shared_entities": {
+        "events": [
+          "location_exit"
+        ],
+        "dates": [
+          "2025-11-28"
+        ]
+      }
+    }
+  ],
+  "evidence_relationships": []
+}

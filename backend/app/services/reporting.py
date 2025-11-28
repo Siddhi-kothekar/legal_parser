@@ -50,6 +50,7 @@ class ReportingService:
         # Add all extracted data (text, entities, objects, OCR, etc.)
         if extracted_data:
             for data in extracted_data:
+                filename = data.get("filename") or data.get("file") or data.get("source") or "unknown"
                 content_item = {
                     "file_type": data.get("type", "unknown"),
                     "classification": data.get("classification", {}),
@@ -60,32 +61,58 @@ class ReportingService:
                     "timestamps": [],
                     "locations": [],
                     "summary": "",
+                    "filename": filename,
                 }
                 
                 # Document content
                 if data.get("type") == "document":
-                    content_item["extracted_text"] = data.get("raw_text", "")[:5000]  # Limit to 5000 chars
-                    content_item["entities"] = data.get("entities", [])
-                    content_item["timestamps"] = data.get("time_mentions", [])
-                    content_item["dates"] = data.get("dates", [])
+                    content_item["extracted_text"] = data.get("raw_text", "")  # Full text, no truncation
+                    # Filter entities to remove non-entity words
+                    raw_entities = data.get("entities", [])
+                    filtered_entities = []
+                    non_entity_words = {"time visible", "action taken", "case reference", "incident description", 
+                                       "sections applied", "doctor's note", "findings", "notes", "the", "date", 
+                                       "march", "frame", "pm", "am", "name", "age", "occupation", "address", "phone"}
+                    for entity in raw_entities:
+                        entity_text = (entity.get("entity") or entity.get("text") or "").strip()
+                        if entity_text and len(entity_text) > 1:
+                            lower_text = entity_text.lower()
+                            # Skip if it's a non-entity word or too short
+                            if lower_text not in non_entity_words and len(entity_text) > 2:
+                                # Skip single words that are common English words
+                                if not (len(entity_text.split()) == 1 and lower_text in {"the", "a", "an", "is", "are", "was", "were"}):
+                                    filtered_entities.append(entity)
+                    content_item["entities"] = filtered_entities
+                    # Preserve original timestamp formats from time_mentions and dates
+                    time_mentions = data.get("time_mentions", [])
+                    dates = data.get("dates", [])
+                    content_item["timestamps"] = time_mentions + dates  # Keep original formats
+                    content_item["dates"] = dates
                     content_item["events"] = data.get("events", [])
                     content_item["legal_entities"] = data.get("legal_entities", {})
                     content_item["summary"] = data.get("summary", "")
+                    content_item["filename"] = data.get("filename") or data.get("file") or data.get("source") or "unknown"
+                    # Use normalized persons/locations from extraction
+                    content_item["persons"] = data.get("persons", [])
+                    content_item["locations"] = data.get("locations", [])
+                    content_item["injuries"] = data.get("injuries", [])
+                    content_item["weapons"] = data.get("weapons", [])
+                    content_item["camera_id"] = data.get("camera_id")  # Add camera ID if present
                 
                 # Image content
                 elif data.get("type") == "image":
-                    content_item["ocr_text"] = data.get("ocr_text", "")[:2000]  # Limit OCR text
+                    content_item["ocr_text"] = data.get("ocr_text", "")  # Full OCR text
                     content_item["objects_detected"] = data.get("objects", [])
                     content_item["timestamps"] = data.get("ocr_timestamps", [])
                     content_item["locations"] = data.get("ocr_locations", [])
                     content_item["gps_coordinates"] = data.get("gps_coordinates")
                     content_item["image_timestamp"] = data.get("timestamp")
+                    content_item["filename"] = filename
+                    content_item["persons"] = data.get("persons", [])
+                    content_item["weapons"] = data.get("weapons", [])
                 
                 detailed_report["extracted_content"].append(content_item)
         
-        # Generate structured timeline with source and notes
-        structured_timeline = self._build_structured_timeline(events, inconsistencies, extracted_data)
-
         # Build evidence map and add to the detailed report
         evidence_map = self._build_evidence_map(extracted_data)
         detailed_report["evidence_map"] = evidence_map
@@ -98,6 +125,8 @@ class ReportingService:
         detailed_report["relationships"] = self.case_graph.compute_relationships_for_case(
             case_id, detailed_report
         )
+        # Build evidence-to-evidence relationships
+        detailed_report["evidence_relationships"] = self._build_evidence_relationships(detailed_report.get("extracted_content", []))
         
         summary = ReportSummary(
             case_id=case_id,
@@ -107,12 +136,13 @@ class ReportingService:
             missing_evidence=missing,
             report_path=str(self._pdf_path(case_id)),
             preview={
-                "timeline": structured_timeline,
+                "timeline": [],
                 "inconsistencies": inconsistencies,
                 "generated_at": datetime.utcnow().isoformat(),
                 "evidence_map": detailed_report.get("evidence_map", {}),
                 "case_summary": case_summary_text,
                 "relationships": detailed_report.get("relationships", []),
+                "evidence_relationships": detailed_report.get("evidence_relationships", []),
                 "warnings": warnings,
             },
         )
@@ -365,6 +395,96 @@ class ReportingService:
         if "api key" in lower:
             return "LLM summary skipped: OpenAI API key missing or invalid."
         return "LLM summary skipped due to upstream error."
+    
+    def _build_evidence_relationships(self, extracted_content: List[dict]) -> List[dict]:
+        """Build relationships between evidence files (CCTV → FIR, FIR → Medical Report, etc.)."""
+        relationships = []
+        if not extracted_content or len(extracted_content) < 2:
+            return relationships
+        
+        # Get file names and classifications
+        files = []
+        for content in extracted_content:
+            filename = content.get("filename") or content.get("file") or "unknown"
+            file_type = content.get("file_type", "unknown")
+            classification = content.get("classification", {})
+            label = classification.get("label", "").lower()
+            files.append({
+                "filename": filename,
+                "type": file_type,
+                "label": label,
+                "persons": set(content.get("persons", []) or []),
+                "locations": set(content.get("locations", []) or []),
+                "timestamps": set(content.get("timestamps", []) or []),
+                "injuries": set(content.get("injuries", []) or []),
+                "weapons": set(content.get("weapons", []) or []),
+            })
+        
+        # Compare each file with every other file
+        for i, file1 in enumerate(files):
+            for j, file2 in enumerate(files[i+1:], start=i+1):
+                matches = []
+                
+                # Check for matching persons
+                common_persons = file1["persons"] & file2["persons"]
+                if common_persons:
+                    matches.append(f"Matches persons: {', '.join(sorted(common_persons))}")
+                
+                # Check for matching locations
+                common_locations = file1["locations"] & file2["locations"]
+                if common_locations:
+                    matches.append(f"Matches location: {', '.join(sorted(common_locations))}")
+                
+                # Check for matching timestamps
+                common_timestamps = file1["timestamps"] & file2["timestamps"]
+                if common_timestamps:
+                    matches.append(f"Matches timeline ({', '.join(sorted(common_timestamps))})")
+                
+                # Check for matching injuries
+                common_injuries = file1["injuries"] & file2["injuries"]
+                if common_injuries:
+                    matches.append(f"Injury matches: {', '.join(sorted(common_injuries))}")
+                
+                # Check for matching weapons
+                common_weapons = file1["weapons"] & file2["weapons"]
+                if common_weapons:
+                    matches.append(f"Weapon: {', '.join(sorted(common_weapons))}")
+                
+                # Determine relationship type based on file types
+                source_name = file1["filename"]
+                target_name = file2["filename"]
+                
+                # Map common file patterns to readable names
+                if "cctv" in source_name.lower() or "camera" in source_name.lower():
+                    source_display = "CCTV"
+                elif "fir" in source_name.lower():
+                    source_display = "FIR"
+                elif "med" in source_name.lower() or "medical" in source_name.lower() or "mlc" in source_name.lower():
+                    source_display = "Medical Report"
+                elif "witness" in source_name.lower():
+                    source_display = "Witness Statement"
+                else:
+                    source_display = source_name
+                
+                if "cctv" in target_name.lower() or "camera" in target_name.lower():
+                    target_display = "CCTV"
+                elif "fir" in target_name.lower():
+                    target_display = "FIR"
+                elif "med" in target_name.lower() or "medical" in target_name.lower() or "mlc" in target_name.lower():
+                    target_display = "Medical Report"
+                elif "witness" in target_name.lower():
+                    target_display = "Witness Statement"
+                else:
+                    target_display = target_name
+                
+                if matches:
+                    relationships.append({
+                        "source": source_display,
+                        "target": target_display,
+                        "matches": matches,
+                    })
+        
+        return relationships
     
     def _build_structured_timeline(self, events: List[TimelineEvent], inconsistencies: List[dict], extracted_data: List[dict]) -> List[dict]:
         """Build a structured timeline with source, event, and conflict notes."""
